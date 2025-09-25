@@ -4,6 +4,27 @@
 
 //CAMBIAR TOODS LOS "cls" POR "clear"
 
+typedef struct {
+    char titulo[51];
+    char idioma[51];
+    char genero[51];
+    char formato[21];
+    char clasificacionEdad[21];
+    int duracion;
+    int codigoInterno;
+} Pelicula;
+
+typedef struct {
+    char nombre[51];
+    char email[51];  //que no se repita, si ya existe uno que pida ingresar
+    char contrasenia[31]; //min de longitud
+    int DNI;  //numerico y unico
+    int fechaNac;  //que sea valida la fecha
+} Cliente;
+
+//sala de A-P, 1-17
+//reserva, funcion
+
 void menuCliente();
 void menuAdmin();
 
@@ -26,6 +47,19 @@ int main() {
 
             switch(seleccion){
                 case 1: //CLIENTE
+                    /*
+                    printf("------ INICIAR SESION ------");
+                    printf("1. Ingresar con email y contraseña");
+                    printf("2. Registrarse");
+                    printf("0. Salir");
+                    scanf("%d",&seleccion);
+
+                    switch(seleccion){
+                        case 1:
+                            printf
+
+                    }
+                    */
                     menuCliente();
                     break;
 
@@ -175,6 +209,4 @@ void menuAdmin(){
         }
 
     } while (opcion!=6);
-
 }
-
