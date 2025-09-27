@@ -13,16 +13,7 @@ int main() {
 
         while(seleccion!=0){
             //MENU PRINCIPAL
-            system("cls");
-            printf("---------------------------------\n");
-            printf("   Sistema de Reservas de Cine\n");
-            printf("---------------------------------\n");
-            printf("1. Operar como Cliente\n");
-            printf("2. Operar como Administrador\n");
-            printf("0. Salir del sistema\n");
-            printf("---------------------------------\n");
-            printf("Seleccione una opcion: ");
-            scanf("%d",&seleccion);
+            menuPrincipal();
 
             switch(seleccion){
                 case 1: //CLIENTE
@@ -36,8 +27,8 @@ int main() {
                     scanf("%d",&seleccion);
 
                     switch(seleccion){
-                       // case 1:
-                        //    break;
+                        case 1:
+                            break;
                         case 2:
                             registrar();
                             break;
@@ -60,7 +51,7 @@ int main() {
             }
 
             if(seleccion!=0 && seleccion != 1 && seleccion != 2){  //limpia el buffer
-                printf("MENU Presione Enter para continuar.");
+                printf("Presione Enter para continuar.");
                 tecla=getchar();
 
                 while ((tecla=getchar()) != '\n' && tecla != EOF) {}

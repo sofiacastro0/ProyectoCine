@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1758910217 source:c:\users\sofic\desktop\proyectocine\main.c
+1758925720 source:c:\users\sofic\desktop\proyectocine\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -11,14 +11,14 @@
 	<stdlib.h>
 	<time.h>
 
-1758909150 c:\users\sofic\desktop\proyectocine\menus.h
+1758925705 c:\users\sofic\desktop\proyectocine\menus.h
 
 1758909762 c:\users\sofic\desktop\proyectocine\clientes.h
 	"estructuras.h"
 
 1758910197 c:\users\sofic\desktop\proyectocine\estructuras.h
 
-1758909150 source:c:\users\sofic\desktop\proyectocine\menus.c
+1758927045 source:c:\users\sofic\desktop\proyectocine\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"

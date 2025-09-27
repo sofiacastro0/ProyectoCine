@@ -2,6 +2,22 @@
 #include <stdlib.h>
 #include "menus.h"
 
+int menuPrincipal(void) {
+
+    int seleccion;
+    system("cls");
+    printf("---------------------------------\n");
+    printf("   Sistema de Reservas de Cine\n");
+    printf("---------------------------------\n");
+    printf("1. Operar como Cliente\n");
+    printf("2. Operar como Administrador\n");
+    printf("0. Salir del sistema\n");
+    printf("---------------------------------\n");
+    printf("Seleccione una opcion: ");
+    scanf("%d",&seleccion);
+
+    return seleccion;
+}
 void menuCliente(){
     int opcion=1;
     char tecla;
@@ -56,7 +72,7 @@ void menuCliente(){
         }
 
         if(opcion!=7){  //limpia el buffer
-            printf("CLIENTE Presione Enter para continuar.");
+            printf("Presione Enter para continuar.");
             tecla=getchar();
 
             while ((tecla=getchar()) != '\n' && tecla != EOF) {}
@@ -113,7 +129,7 @@ void menuAdmin(){
         }
 
         if(opcion!=6){  //limpia el buffer
-            printf("ADMIN Presione Enter para continuar.");
+            printf("Presione Enter para continuar.");
             tecla=getchar();
 
             while ((tecla=getchar()) != '\n' && tecla != EOF) {}
