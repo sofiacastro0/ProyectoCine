@@ -6,7 +6,6 @@
 
 //CAMBIAR TODOS LOS "cls" POR "clear"
 
-
 int main() {
     int seleccion=1;
     char tecla;
@@ -17,24 +16,26 @@ int main() {
 
             switch(seleccion){
                 case 1: //CLIENTE
-
+                    int opcionLogin;
                     system("cls");
                     printf("------ INICIAR SESION ------\n");
                     printf("1. Ingresar con email y contraseña\n");
                     printf("2. Registrarse\n");
                     printf("0. Salir\n");
                     printf("Seleccione una opcion: ");
-                    scanf("%d",&seleccion);
+                    scanf("%d",&opcionLogin);
 
-                    switch(seleccion){
+                    switch(opcionLogin){
                         case 1:
+                            menuCliente();
                             break;
                         case 2:
                             registrar();
+                            menuCliente();
                             break;
                     }
 
-                    menuCliente();
+
                     break;
 
                 case 2: //ADMIN
