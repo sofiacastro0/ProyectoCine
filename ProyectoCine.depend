@@ -29,3 +29,43 @@
 	<stdlib.h>
 	"clientes.h"
 
+1759341149 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+
+1759341149 c:\users\natas\desktop\tp grupal programacion\proyectocine\clientes.h
+	"estructuras.h"
+
+1759341149 c:\users\natas\desktop\tp grupal programacion\proyectocine\estructuras.h
+
+1759341149 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"menus.h"
+	"clientes.h"
+
+1759341149 c:\users\natas\desktop\tp grupal programacion\proyectocine\menus.h
+
+1759347751 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\ids.c
+	"ids.h"
+
+1759347532 c:\users\natas\desktop\tp grupal programacion\proyectocine\ids.h
+
+1759347751 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"peliculas.h"
+	"ids.h"
+
+1759347887 c:\users\natas\desktop\tp grupal programacion\proyectocine\peliculas.h
+
+1759347887 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\peliculas.c
+	"peliculas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+

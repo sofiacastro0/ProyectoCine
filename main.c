@@ -1,67 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "menus.h"
 #include "clientes.h"
 
-//CAMBIAR TODOS LOS "cls" POR "clear"
-
+// Detecta el sistema operativo (Què lindoooo) y define clear
+#ifdef _WIN32
+    #define clear "cls"
+#else
+    #define clear "clear"
+#endif
 
 int main() {
-    int seleccion=1;
+    int seleccion = -1;  //opción elegida en menú principal
     char tecla;
 
-        while(seleccion!=0){
-            //MENU PRINCIPAL
-            menuPrincipal();
+    while (seleccion != 0) {
+        // Mostrar menu principal y guardar la opción
+        seleccion = menuPrincipal();
 
-            switch(seleccion){
-                case 1: //CLIENTE
+        switch (seleccion) {
+            case 1: // CLIENTE
+                system(clear);
+                printf("INICIAR SESION \n");
+                printf("1. Ingresar con email y contraseña\n");
+                printf("2. Registrarse\n");
+                printf("0. Volver al menu principal\n");
+                printf("Seleccione una opcion: ");
+                scanf("%d", &seleccion);
 
-                    system("cls");
-                    printf("------ INICIAR SESION ------\n");
-                    printf("1. Ingresar con email y contraseña\n");
-                    printf("2. Registrarse\n");
-                    printf("0. Salir\n");
-                    printf("Seleccione una opcion: ");
-                    scanf("%d",&seleccion);
+                switch (seleccion) {
+                    case 1:
+                        // Aca va la lógica de login
+                        break;
+                    case 2:
+                        registrar();
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        printf("Opcion invalida\n");
+                        break;
+                }
 
-                    switch(seleccion){
-                        case 1:
-                            break;
-                        case 2:
-                            registrar();
-                            break;
-                    }
+                menuCliente(); //maneja su propio submenú
+                break;
 
-                    menuCliente();
-                    break;
+            case 2: // admin
+                system(clear);
+                menuAdmin(); //maneja su propio submenú
+                break;
 
-                case 2: //ADMIN
-                    menuAdmin();
-                    break;
+            case 0:
+                break;
 
-                case 0: //SALIR
-                    break;
-
-                default:
-                    system("cls");
-                    printf("La opcion %d no existe en el menu.\n",seleccion);
-                    break;
-            }
-
-            if(seleccion!=0 && seleccion != 1 && seleccion != 2){  //limpia el buffer
-                printf("Presione Enter para continuar.");
-                tecla=getchar();
-
-                while ((tecla=getchar()) != '\n' && tecla != EOF) {}
-            }
-
+            default: //opción inválida
+                system(clear);
+                break;
         }
+    }
 
-    system("cls");
+    system(clear);
     printf("Gracias! Vuelva pronto!\n");
 
     return 0;
 }
-
