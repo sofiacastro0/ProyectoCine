@@ -16,47 +16,36 @@ int main() {
 
     while (seleccion != 0) {
         // Mostrar menu principal y guardar la opción
-        seleccion = menuPrincipal();
+        int seleccion;
+        system(clear);
+        printf("---------------------------------\n");
+        printf("   Sistema de Reservas de Cine\n");
+        printf("---------------------------------\n");
+        printf("1. Operar como Cliente\n");
+        printf("2. Operar como Administrador\n");
+        printf("0. Salir del sistema\n");
+        printf("---------------------------------\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d",&seleccion);
 
-        switch (seleccion) {
-            case 1: // CLIENTE
-                system(clear);
-                printf("INICIAR SESION \n");
-                printf("1. Ingresar con email y contraseña\n");
-                printf("2. Registrarse\n");
-                printf("0. Volver al menu principal\n");
-                printf("Seleccione una opcion: ");
-                scanf("%d", &seleccion);
+            switch (seleccion) {
+                case 1: // CLIENTE
+                    system(clear);
+                    inicioCliente();
+                    break;
 
-                switch (seleccion) {
-                    case 1:
-                        // Aca va la lógica de login
-                        break;
-                    case 2:
-                        registrar();
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        printf("Opcion invalida\n");
-                        break;
-                }
+                case 2: // admin
+                    system(clear);
+                    menuAdmin(); //maneja su propio submenú
+                    break;
 
-                menuCliente(); //maneja su propio submenú
-                break;
+                case 0:
+                    break;
 
-            case 2: // admin
-                system(clear);
-                menuAdmin(); //maneja su propio submenú
-                break;
-
-            case 0:
-                break;
-
-            default: //opción inválida
-                system(clear);
-                break;
-        }
+                default: //opción inválida
+                    system(clear);
+                    break;
+            }
     }
 
     system(clear);

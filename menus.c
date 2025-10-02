@@ -3,29 +3,50 @@
 #include "menus.h"
 #include "peliculas.h"
 #include "ids.h"
+#include "clientes.h"
 
-int menuPrincipal(void) {
+void inicioCliente() {
+    int opcion=1;
+    char tecla;
+        system("cls");
+        printf("INICIAR SESION \n");
+        printf("1. Ingresar con email y contraseña\n");
+        printf("2. Registrarse\n");
+        printf("0. Volver al menu principal\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
 
-    int seleccion;
-    system("cls");
-    printf("---------------------------------\n");
-    printf("   Sistema de Reservas de Cine\n");
-    printf("---------------------------------\n");
-    printf("1. Operar como Cliente\n");
-    printf("2. Operar como Administrador\n");
-    printf("0. Salir del sistema\n");
-    printf("---------------------------------\n");
-    printf("Seleccione una opcion: ");
-    scanf("%d",&seleccion);
+            switch (opcion) {
+                case 1:
+                    // Aca va la lógica de login
+                    if (iniciarSesion()) {
+                        menuCliente();
+                    }
+                    break;
+                case 2:
+                    registrar();
+                    break;
+                case 0:
+                    break;
+                default:
+                    printf("Opcion invalida\n");
+                    break;
+            }
 
-    return seleccion;
+            if(opcion != 0){
+            printf("Presione Enter para continuar.");
+            getchar();
+        }
 }
+
 void menuCliente(){
     int opcion=1;
     char tecla;
 
     do {
 
+
+                menuCliente(); //maneja su propio submenú
         system("cls");
         printf("--------- Menu Cliente -----------\n");
         printf("1. Buscar funciones por fecha\n");
@@ -38,6 +59,8 @@ void menuCliente(){
         printf("---------------------------------\n");
         printf("Seleccione una opcion: ");
         scanf("%d",&opcion);
+
+
 
         switch(opcion) {
             case 1:
