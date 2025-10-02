@@ -4,6 +4,8 @@
 #include "clientes.h"
 #include "ids.h"
 
+#include "util.h"
+
 Cliente clientes[CANT_MAX_CLIENTES];
 int cantClientes = 0;
 
@@ -12,6 +14,8 @@ int iniciarSesion() {
     char contrasenia[31];
 
     Cliente alta;
+    limpiarPantalla();
+    printf("---- INICIAR SESION ----\n\n");
     printf("Ingrese el Email:  ");
     scanf(" %50[^\n]", email);
     printf("Ingrese la contraseña:  ");
@@ -23,6 +27,7 @@ int iniciarSesion() {
             return 1;
         }
     }
+    return 0;
 
 }
 void registrar(){

@@ -1,7 +1,10 @@
 #include "peliculas.h"
 #include "ids.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
+#include "util.h"
 
 Pelicula peliculas[cant_max_peliculas];
 int cantidadPelis = 0;
@@ -16,6 +19,8 @@ void altaPeli() {
     alta.id = generarId(ENTIDAD_PELICULA);
     alta.altaObaja = 1;
 
+    limpiarPantalla();
+    printf("---- Alta de pelicula ----\n\n");
     printf("Ingrese titulo: ");
     scanf(" %[^\n]", alta.titulo);
 

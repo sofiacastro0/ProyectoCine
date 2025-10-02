@@ -4,11 +4,7 @@
 #include "clientes.h"
 
 // Detecta el sistema operativo (Què lindoooo) y define clear
-#ifdef _WIN32
-    #define clear "cls"
-#else
-    #define clear "clear"
-#endif
+#include "util.h"
 
 int main() {
     int seleccion = -1;  //opción elegida en menú principal
@@ -17,7 +13,7 @@ int main() {
     while (seleccion != 0) {
         // Mostrar menu principal y guardar la opción
         int seleccion;
-        system(clear);
+        limpiarPantalla();
         printf("---------------------------------\n");
         printf("   Sistema de Reservas de Cine\n");
         printf("---------------------------------\n");
@@ -30,12 +26,12 @@ int main() {
 
             switch (seleccion) {
                 case 1: // CLIENTE
-                    system(clear);
+                    limpiarPantalla();
                     inicioCliente();
                     break;
 
                 case 2: // admin
-                    system(clear);
+                    limpiarPantalla();
                     menuAdmin(); //maneja su propio submenú
                     break;
 
@@ -43,12 +39,12 @@ int main() {
                     break;
 
                 default: //opción inválida
-                    system(clear);
+                    limpiarPantalla();
                     break;
             }
     }
 
-    system(clear);
+    limpiarPantalla();
     printf("Gracias! Vuelva pronto!\n");
 
     return 0;

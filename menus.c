@@ -4,11 +4,12 @@
 #include "peliculas.h"
 #include "ids.h"
 #include "clientes.h"
+#include "util.h"
 
 void inicioCliente() {
     int opcion=1;
     char tecla;
-        system("cls");
+        limpiarPantalla();
         printf("INICIAR SESION \n");
         printf("1. Ingresar con email y contraseña\n");
         printf("2. Registrarse\n");
@@ -47,7 +48,7 @@ void menuCliente(){
 
 
                 menuCliente(); //maneja su propio submenú
-        system("cls");
+        limpiarPantalla();
         printf("--------- Menu Cliente -----------\n");
         printf("1. Buscar funciones por fecha\n");
         printf("2. Buscar funciones por pelicula\n");
@@ -65,33 +66,33 @@ void menuCliente(){
         switch(opcion) {
             case 1:
                 //1. Buscar funciones por fecha
-                system("cls");
+                limpiarPantalla();
                 break;
             case 2:
                 //Buscar funciones por película
-                system("cls");
+                limpiarPantalla();
                 break;
             case 3:
                 //Ver butacas disponibles
-                system("cls");
+                limpiarPantalla();
                 break;
             case 4:
                 //Reservar butacas
-                system("cls");
+                limpiarPantalla();
                 break;
             case 5:
                 //Cancelar reserva
-                system("cls");
+                limpiarPantalla();
                 break;
             case 6:
                 //Ver mis reservas
-                system("cls");
+                limpiarPantalla();
                 break;
             case 7:
                 //Volver al menú principal
                 break;
             default:
-                system("cls");
+                limpiarPantalla();
                 printf("La opcion %d no existe en el menu.\n",opcion);
                 break;
         }
@@ -112,7 +113,7 @@ void menuAdmin(){
     int opcion=1;
     char tecla;
     do {
-        system("cls");
+        limpiarPantalla();
         printf("------- Menu Administrador -------\n");
         printf("1. Gestion de Peliculas\n");
         printf("2. Gestion de Salas\n");
@@ -128,7 +129,7 @@ void menuAdmin(){
                 int opcionPeli = -1;
                 char teclaPeli;
                 while(opcionPeli != 0){
-                    system("cls");
+                    limpiarPantalla();
                     printf("---- Gestion de Peliculas ----\n");
                     printf("1. Alta de Pelicula\n");
                     printf("2. Listar Peliculas\n");
@@ -161,21 +162,21 @@ void menuAdmin(){
                 break;
             }
             case 2:
-                system("cls");
+                limpiarPantalla();
                 break;
             case 3:
-                system("cls");
+                limpiarPantalla();
                 break;
             case 4:
-                system("cls");
+                limpiarPantalla();
                 break;
             case 5:
-                system("cls");
+                limpiarPantalla();
                 break;
             case 6:
                 break;
             default:
-                system("cls");
+                limpiarPantalla();
                 printf("La opcion %d no existe en el menu.\n",opcion);
                 break;
         }
