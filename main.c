@@ -6,6 +6,8 @@
 // Detecta el sistema operativo (Què lindoooo) y define clear
 #include "util.h"
 
+//revisar todos los "Presione Enter para continuar."
+
 int main() {
     int seleccion = -1;  //opción elegida en menú principal
     char tecla;

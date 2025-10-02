@@ -45,9 +45,6 @@ void menuCliente(){
     char tecla;
 
     do {
-
-
-                menuCliente(); //maneja su propio submenú
         limpiarPantalla();
         printf("--------- Menu Cliente -----------\n");
         printf("1. Buscar funciones por fecha\n");
@@ -60,8 +57,6 @@ void menuCliente(){
         printf("---------------------------------\n");
         printf("Seleccione una opcion: ");
         scanf("%d",&opcion);
-
-
 
         switch(opcion) {
             case 1:

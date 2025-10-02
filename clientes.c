@@ -24,9 +24,17 @@ int iniciarSesion() {
     for (int i=0; i<cantClientes; i++) {
         if (strcmp(clientes[i].email, email) == 0 && strcmp(clientes[i].contrasenia, contrasenia) == 0) {
             printf("Bienvenido, %s!\n", clientes[i].nombre);
+            printf("Presione Enter para continuar...");
+                    getchar(); //limpia buffer
+                    getchar(); // espera enter
             return 1;
         }
     }
+
+    printf("Email o contraseña incorrectos\n");
+        printf("Presione Enter para continuar...");
+            getchar(); //limpia buffer
+            getchar(); // espera enter
     return 0;
 
 }
@@ -65,4 +73,8 @@ void registrar(){
     cantClientes++;
 
     printf("Cliente registrado correctamente.\n");
+
+        printf("Presione Enter para continuar...");
+            getchar(); //limpia buffer
+            getchar(); // espera enter
 }
