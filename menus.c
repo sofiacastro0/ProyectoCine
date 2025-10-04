@@ -20,6 +20,8 @@ int menuPrincipal(void) {
 
     return seleccion;
 }
+
+//Funcion para menu cliente
 void menuCliente(){
     int opcion=1;
     char tecla;
@@ -74,6 +76,8 @@ void menuCliente(){
         }
 
         if(opcion!=7){  //limpia el buffer
+             //Si la opcion elegida NO es 7. (pausa la ejecución hasta que el usuario presione enter y
+            //limpiar el buffer de entrada para que no queden caracteres pendientes que arruinen la próxima lectura.)
             printf("Presione Enter para continuar.");
             tecla=getchar();
 
@@ -86,8 +90,9 @@ void menuCliente(){
 
 //menu administrador//
 void menuAdmin(){
-    int opcion=1;
+    int opcion = -1;
     char tecla;
+
     do {
         system("cls");
         printf("------- Menu Administrador -------\n");
@@ -103,61 +108,68 @@ void menuAdmin(){
         switch(opcion) {
             case 1: { // Submenú Peliculas
                 int opcionPeli = -1;
-                char teclaPeli;
                 while(opcionPeli != 0){
                     system("cls");
                     printf("---- Gestion de Peliculas ----\n");
                     printf("1. Alta de Pelicula\n");
                     printf("2. Listar Peliculas\n");
+                    printf("3. Baja Peliculas\n");
+                    printf("4. Modificar Peliculas\n");
                     printf("0. Volver\n");
                     printf("Seleccione una opcion: ");
                     scanf("%d", &opcionPeli);
-
-                    switch(opcionPeli){
-                        case 1:
-                            altaPeli();
-                            break;
-                        case 2:
-                            listaDePelis();
-                            break;
-                        case 0:
-                            printf("Volviendo al menu admin\n");
-                            break;
-                        default:
-                            printf("Opcion invalida\n");
+//Hice el switch en una sola linea para que sea mas prolijo de leer
+                    switch(opcionPeli) {
+                        case 1: altaPeli(); break; //Listo
+                        case 2: listaDePelis(); break; //Listo
+                        case 3: bajaPeli(); break;
+                        case 4: modificarPeli(); break;
+                        case 0: printf("Volviendo al menú admin...\n"); break;
+                        default: printf("Opción inválida\n");
                     }
 
-                    printf("Presione Enter para continuar...");
-                    getchar(); //limpia buffer
-                    getchar(); // espera enter
+                    if(opcionPeli != 0){
+                        printf("Presione Enter para continuar...");
+                        getchar(); getchar();
+                    }
                 }
                 break;
             }
-            case 2:
-                system("cls");
+            case 2: { // Submenú Salas
+                int opcionSala = -1;
+                while(opcionSala != 5){
+                    system("cls");
+                    printf("\n--- GESTIÓN DE SALAS ---\n");
+                    printf("1. Alta de sala\n");
+                    printf("2. Baja de sala\n");
+                    printf("3. Modificación de sala\n");
+                    printf("4. Listar salas\n");
+                    printf("5. Volver al menú anterior\n");
+                    printf("Ingrese opción: ");
+                    scanf("%d", &opcionSala);
+
+                    switch(opcionSala) {
+                        case 1: altaSala(); break;
+                        case 2: bajaSala(); break;
+                        case 3: modificarSala(); break;
+                        case 4: listarSalas(); break;
+                        case 5: printf("Volviendo al menú anterior...\n"); break;
+                        default: printf("Opción inválida.\n");
+                    }
+
+                    if(opcionSala != 5){
+                        printf("Presione Enter para continuar...");
+                        getchar(); getchar();
+                    }
+                }
                 break;
-            case 3:
-                system("cls");
-                break;
-            case 4:
-                system("cls");
-                break;
-            case 5:
-                system("cls");
-                break;
+            }
             case 6:
+                printf("Volviendo al menu principal...\n");
                 break;
             default:
-                system("cls");
-                printf("La opcion %d no existe en el menu.\n",opcion);
-                break;
+                printf("Opción inválida\n");
         }
 
-        if(opcion != 6){
-            printf("Presione Enter para continuar.");
-            getchar();
-        }
-
-    } while (opcion!=6);
+    } while(opcion != 6);
 }
-
