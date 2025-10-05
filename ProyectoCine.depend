@@ -1,11 +1,71 @@
 # depslib dependency file v1.0
-1758765829 source:c:\users\sofic\desktop\proyectocine\main.c
+1758925720 source:c:\users\sofic\desktop\proyectocine\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+	"menus.h"
+	"clientes.h"
 
 1758650621 source:g:\otros ordenadores\mi pc\unla\primer a—o\segundo cuatrimestre\programaci”n de computadoras\tp grupal\repositorio\proyectocine\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+
+1758925705 c:\users\sofic\desktop\proyectocine\menus.h
+
+1758909762 c:\users\sofic\desktop\proyectocine\clientes.h
+	"estructuras.h"
+
+1758910197 c:\users\sofic\desktop\proyectocine\estructuras.h
+
+1758927045 source:c:\users\sofic\desktop\proyectocine\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+
+1758910263 source:c:\users\sofic\desktop\proyectocine\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+
+1759341149 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+
+1759341149 c:\users\natas\desktop\tp grupal programacion\proyectocine\clientes.h
+	"estructuras.h"
+
+1759341149 c:\users\natas\desktop\tp grupal programacion\proyectocine\estructuras.h
+
+1759341149 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"menus.h"
+	"clientes.h"
+
+1759341149 c:\users\natas\desktop\tp grupal programacion\proyectocine\menus.h
+
+1759347751 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\ids.c
+	"ids.h"
+
+1759347532 c:\users\natas\desktop\tp grupal programacion\proyectocine\ids.h
+
+1759347751 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"peliculas.h"
+	"ids.h"
+
+1759347887 c:\users\natas\desktop\tp grupal programacion\proyectocine\peliculas.h
+
+1759347887 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\peliculas.c
+	"peliculas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
 
