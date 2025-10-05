@@ -2,19 +2,15 @@
 #include <stdlib.h>
 #include "menus.h"
 #include "clientes.h"
-
-// Detecta el sistema operativo (Què lindoooo) y define clear
 #include "util.h"
 
 //revisar todos los "Presione Enter para continuar."
 
 int main() {
-    int seleccion = -1;  //opción elegida en menú principal
+    int seleccion = -1;
     char tecla;
 
-    while (seleccion != 0) {
-        // Mostrar menu principal y guardar la opción
-        int seleccion;
+    do {
         limpiarPantalla();
         printf("---------------------------------\n");
         printf("   Sistema de Reservas de Cine\n");
@@ -28,23 +24,26 @@ int main() {
 
             switch (seleccion) {
                 case 1: // CLIENTE
-                    limpiarPantalla();
                     inicioCliente();
                     break;
-
                 case 2: // admin
-                    limpiarPantalla();
                     menuAdmin(); //maneja su propio submenú
                     break;
-
                 case 0:
                     break;
-
-                default: //opción inválida
-                    limpiarPantalla();
+                default:
+                    printf("Opcion invalida\n");
                     break;
             }
-    }
+
+            if(seleccion!=0){  //limpia el buffer
+
+                printf("Presione Enter para continuar.");
+                tecla=getchar();
+
+                while ((tecla=getchar()) != '\n' && tecla != EOF) {}
+            }
+    } while (seleccion != 0);
 
     limpiarPantalla();
     printf("Gracias! Vuelva pronto!\n");

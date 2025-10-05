@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include "clientes.h"
 #include "ids.h"
-
 #include "util.h"
 
+#define CANT_MAX_CLIENTES 100
 Cliente clientes[CANT_MAX_CLIENTES];
 int cantClientes = 0;
 
@@ -65,8 +65,6 @@ void registrar(){
 
     printf("Fecha de nacimiento (dd/mm/aaaa): ");  //Arreglar lo de la fecha de nacimiento
     scanf(" %d/%d/%d", &alta.fechaNac.dia, &alta.fechaNac.mes, &alta.fechaNac.anio);
-
-    //no anda esta parte, saltea las lineas de abajo, revisar
 
     //Guardar en el array
     clientes[cantClientes] = alta;
