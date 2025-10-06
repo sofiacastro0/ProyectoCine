@@ -157,13 +157,13 @@ void menuAdmin(){
                         default: printf("Opción inválida.\n");
                     }
 
-                    if(opcionSala != 5){
+                    if(opcionSala != 6){
                         printf("Presione Enter para continuar...");
                         getchar(); getchar();
-                    }
-                }
+                    } //termina el if
+                } //termina el while
                 break;
-            }
+            } //termina el case 2 del submenu salas
             case 6:
                 printf("Volviendo al menu principal...\n");
                 break;
