@@ -3,12 +3,6 @@
 #include "menus.h"
 #include "clientes.h"
 
-// Detecta el sistema operativo (Què lindoooo) y define clear
-#ifdef _WIN32
-    #define clear "cls"
-#else
-    #define clear "clear"
-#endif
 
 int main() {
     int seleccion = -1;  //opción elegida en menú principal

@@ -18,8 +18,13 @@ typedef struct  {
 extern Pelicula peliculas[cant_max_peliculas]; // array global
 extern int cantidadPelis;
 
-// funciones
+// Funciones
 void altaPeli();
+<<<<<<< Updated upstream
+=======
+void bajaPeli();
+void modificacionPeli();
+>>>>>>> Stashed changes
 void listaDePelis();
 
 #endif

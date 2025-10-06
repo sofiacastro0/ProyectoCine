@@ -69,3 +69,84 @@
 	<stdio.h>
 	<string.h>
 
+<<<<<<< Updated upstream
+=======
+1759368240 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+
+1759368240 c:\users\sofic\desktop\proyectocine-ramanati\clientes.h
+	"estructuras.h"
+
+1759368240 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
+
+1759368240 source:c:\users\sofic\desktop\proyectocine-ramanati\ids.c
+	"ids.h"
+
+1759368240 c:\users\sofic\desktop\proyectocine-ramanati\ids.h
+
+1759368240 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"clientes.h"
+
+1759368240 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
+
+1759368366 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"peliculas.h"
+	"ids.h"
+
+1759368366 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
+
+1759368366 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
+	"peliculas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+
+1759705266 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+
+1759705266 c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.h
+	"estructuras.h"
+
+1759705266 c:\users\mateo\documents\unla\año 1\programación\proyectocine\estructuras.h
+
+1759705266 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.c
+	"ids.h"
+
+1759705266 c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.h
+
+1759705988 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"clientes.h"
+
+1759705986 c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.h
+
+1759710162 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"peliculas.h"
+	"ids.h"
+
+1759709953 c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.h
+
+1759713796 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.c
+	"peliculas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+
+>>>>>>> Stashed changes

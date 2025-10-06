@@ -7,7 +7,7 @@
 int menuPrincipal(void) {
 
     int seleccion;
-    system("cls");
+    system(clear);
     printf("---------------------------------\n");
     printf("   Sistema de Reservas de Cine\n");
     printf("---------------------------------\n");
@@ -28,7 +28,7 @@ void menuCliente(){
 
     do {
 
-        system("cls");
+        system(clear);
         printf("--------- Menu Cliente -----------\n");
         printf("1. Buscar funciones por fecha\n");
         printf("2. Buscar funciones por pelicula\n");
@@ -44,33 +44,33 @@ void menuCliente(){
         switch(opcion) {
             case 1:
                 //1. Buscar funciones por fecha
-                system("cls");
+                system(clear);
                 break;
             case 2:
                 //Buscar funciones por película
-                system("cls");
+                system(clear);
                 break;
             case 3:
                 //Ver butacas disponibles
-                system("cls");
+                system(clear);
                 break;
             case 4:
                 //Reservar butacas
-                system("cls");
+                system(clear);
                 break;
             case 5:
                 //Cancelar reserva
-                system("cls");
+                system(clear);
                 break;
             case 6:
                 //Ver mis reservas
-                system("cls");
+                system(clear);
                 break;
             case 7:
                 //Volver al menú principal
                 break;
             default:
-                system("cls");
+                system(clear);
                 printf("La opcion %d no existe en el menu.\n",opcion);
                 break;
         }
@@ -94,7 +94,7 @@ void menuAdmin(){
     char tecla;
 
     do {
-        system("cls");
+        system(clear);
         printf("------- Menu Administrador -------\n");
         printf("1. Gestion de Peliculas\n");
         printf("2. Gestion de Salas\n");
@@ -109,9 +109,10 @@ void menuAdmin(){
             case 1: { // Submenú Peliculas
                 int opcionPeli = -1;
                 while(opcionPeli != 0){
-                    system("cls");
+                    system(clear);
                     printf("---- Gestion de Peliculas ----\n");
                     printf("1. Alta de Pelicula\n");
+<<<<<<< Updated upstream
                     printf("2. Listar Peliculas\n");
                     printf("3. Baja Peliculas\n");
                     printf("4. Modificar Peliculas\n");
@@ -162,13 +163,65 @@ void menuAdmin(){
                         getchar(); getchar();
                     }
                 }
+=======
+                    printf("2. Baja de Pelicula\n");
+                    printf("3. Modificion de Pelicula\n");
+                    printf("4. Listar Peliculas\n");
+                    printf("0. Volver\n");
+                    printf("Seleccione una opcion: ");
+                    scanf("%d", &opcionPeli);
+
+                    switch(opcionPeli){
+                        case 1:
+                            altaPeli();
+                            break;
+                        case 2:
+                            bajaPeli();
+                            break;
+                        case 3:
+                            modificacionPeli();
+                            break;
+                        case 4:
+                            listaDePelis();
+                            break;
+                        case 0:
+                            printf("Volviendo al menu admin\n");
+                            break;
+                        default:
+                            printf("Opcion invalida\n");
+                    }
+
+                    printf("Presione Enter para continuar...");
+                    getchar(); //limpia buffer
+                    getchar(); //espera enter
+                }
+                break;
+            }
+            case 2:
+                system(clear);
+                break;
+            case 3:
+                system(clear);
+                break;
+            case 4:
+                system(clear);
+                break;
+            case 5:
+                system(clear);
+>>>>>>> Stashed changes
                 break;
             }
             case 6:
                 printf("Volviendo al menu principal...\n");
                 break;
             default:
+<<<<<<< Updated upstream
                 printf("Opción inválida\n");
+=======
+                system(clear);
+                printf("La opcion %d no existe en el menu.\n",opcion);
+                break;
+>>>>>>> Stashed changes
         }
 
     } while(opcion != 6);
