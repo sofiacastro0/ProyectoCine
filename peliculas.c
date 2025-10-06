@@ -40,8 +40,6 @@ void altaPeli() {
     printf("Pelicula cargada con ID %d\n", alta.id);
 }
 
-<<<<<<< Updated upstream
-=======
 void bajaPeli() {
     if (cantidadPelis==0){
         printf("No hay peliculas registradas\n");
@@ -116,7 +114,6 @@ void modificacionPeli() {
     printf("No se ha encontrado ese ID.\n");
 }
 
->>>>>>> Stashed changes
 void listaDePelis() {
     printf("\n--- Listado de Peliculas ---\n");
     for(int i = 0; i < cantidadPelis; i++){
@@ -132,7 +129,3 @@ void listaDePelis() {
         }
     }
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes

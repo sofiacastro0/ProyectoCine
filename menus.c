@@ -112,14 +112,13 @@ void menuAdmin(){
                     system(clear);
                     printf("---- Gestion de Peliculas ----\n");
                     printf("1. Alta de Pelicula\n");
-<<<<<<< Updated upstream
                     printf("2. Listar Peliculas\n");
                     printf("3. Baja Peliculas\n");
                     printf("4. Modificar Peliculas\n");
                     printf("0. Volver\n");
                     printf("Seleccione una opcion: ");
                     scanf("%d", &opcionPeli);
-//Hice el switch en una sola linea para que sea mas prolijo de leer
+                    //Hice el switch en una sola linea para que sea mas prolijo de leer
                     switch(opcionPeli) {
                         case 1: altaPeli(); break; //Listo
                         case 2: listaDePelis(); break; //Listo
@@ -163,7 +162,6 @@ void menuAdmin(){
                         getchar(); getchar();
                     }
                 }
-=======
                     printf("2. Baja de Pelicula\n");
                     printf("3. Modificion de Pelicula\n");
                     printf("4. Listar Peliculas\n");
@@ -208,20 +206,16 @@ void menuAdmin(){
                 break;
             case 5:
                 system(clear);
->>>>>>> Stashed changes
                 break;
             }
             case 6:
                 printf("Volviendo al menu principal...\n");
                 break;
             default:
-<<<<<<< Updated upstream
                 printf("Opción inválida\n");
-=======
                 system(clear);
                 printf("La opcion %d no existe en el menu.\n",opcion);
                 break;
->>>>>>> Stashed changes
         }
 
     } while(opcion != 6);
