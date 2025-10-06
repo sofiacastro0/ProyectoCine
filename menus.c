@@ -3,30 +3,50 @@
 #include "menus.h"
 #include "peliculas.h"
 #include "ids.h"
+#include "clientes.h"
+#include "util.h"
+#include "salas.h"
 
-int menuPrincipal(void) {
+void inicioCliente() {
+    int opcion=1;
+    char tecla;
+        limpiarPantalla();
+        printf("INICIAR SESION \n");
+        printf("1. Ingresar con email y contraseña\n");
+        printf("2. Registrarse\n");
+        printf("0. Volver al menu principal\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
 
-    int seleccion;
-    system("cls");
-    printf("---------------------------------\n");
-    printf("   Sistema de Reservas de Cine\n");
-    printf("---------------------------------\n");
-    printf("1. Operar como Cliente\n");
-    printf("2. Operar como Administrador\n");
-    printf("0. Salir del sistema\n");
-    printf("---------------------------------\n");
-    printf("Seleccione una opcion: ");
-    scanf("%d",&seleccion);
+            switch (opcion) {
+                case 1:
+                    // Aca va la lógica de login
+                    if (iniciarSesion()) {
+                        menuCliente();
+                    }
+                    break;
+                case 2:
+                    registrar();
+                    break;
+                case 0:
+                    break;
+                default:
+                    printf("Opcion invalida\n");
+                    break;
+            }
 
-    return seleccion;
+            if(opcion != 0){
+            printf("Presione Enter para continuar.");
+            getchar();
+        }
 }
+
 void menuCliente(){
     int opcion=1;
     char tecla;
 
     do {
-
-        system("cls");
+        limpiarPantalla();
         printf("--------- Menu Cliente -----------\n");
         printf("1. Buscar funciones por fecha\n");
         printf("2. Buscar funciones por pelicula\n");
@@ -42,38 +62,40 @@ void menuCliente(){
         switch(opcion) {
             case 1:
                 //1. Buscar funciones por fecha
-                system("cls");
+                limpiarPantalla();
                 break;
             case 2:
                 //Buscar funciones por película
-                system("cls");
+                limpiarPantalla();
                 break;
             case 3:
                 //Ver butacas disponibles
-                system("cls");
+                limpiarPantalla();
                 break;
             case 4:
                 //Reservar butacas
-                system("cls");
+                limpiarPantalla();
                 break;
             case 5:
                 //Cancelar reserva
-                system("cls");
+                limpiarPantalla();
                 break;
             case 6:
                 //Ver mis reservas
-                system("cls");
+                limpiarPantalla();
                 break;
             case 7:
                 //Volver al menú principal
                 break;
             default:
-                system("cls");
+                limpiarPantalla();
                 printf("La opcion %d no existe en el menu.\n",opcion);
                 break;
         }
 
         if(opcion!=7){  //limpia el buffer
+        //Si la opcion elegida NO es 7. (pausa la ejecución hasta que el usuario presione enter y
+        //limpiar el buffer de entrada para que no queden caracteres pendientes que arruinen la próxima lectura.)
             printf("Presione Enter para continuar.");
             tecla=getchar();
 
@@ -86,10 +108,10 @@ void menuCliente(){
 
 //menu administrador//
 void menuAdmin(){
-    int opcion=1;
+    int opcion = -1;
     char tecla;
     do {
-        system("cls");
+        limpiarPantalla();
         printf("------- Menu Administrador -------\n");
         printf("1. Gestion de Peliculas\n");
         printf("2. Gestion de Salas\n");
@@ -103,65 +125,70 @@ void menuAdmin(){
         switch(opcion) {
             case 1: { // Submenú Peliculas
                 int opcionPeli = -1;
-                char teclaPeli;
                 while(opcionPeli != 0){
-                    system("cls");
+                    limpiarPantalla();
                     printf("---- Gestion de Peliculas ----\n");
                     printf("1. Alta de Pelicula\n");
-                    printf("2. Listar Peliculas\n");
-                    printf("3. Baja de Pelicula\n");
+                    printf("2. Baja de Pelicula\n");
+                    printf("3. Modificacion de Pelicula\n");
+                    printf("4. Listar Peliculas\n");
                     printf("0. Volver\n");
                     printf("Seleccione una opcion: ");
                     scanf("%d", &opcionPeli);
 
-                    switch(opcionPeli){
-                        case 1:
-                            altaPeli();
-                            break;
-                        case 2:
-                            listaDePelis();
-                            break;
-                        case 3:
-                            bajaPeli();
-                            break;
-                        case 0:
-                            printf("Volviendo al menu admin\n");
-                            break;
-                        default:
-                            printf("Opcion invalida\n");
+//Switch en una sola linea para que sea mas prolijo de leer
+                    switch(opcionPeli) {
+                        case 1: altaPeli(); break; //Listo
+                        case 2: bajaPeli(); break; //Listo
+                        case 3: modificacionPeli(); break; //Listo
+                        case 4: listaDePelis(); break; //Listo
+                        case 0: printf("Volviendo al menú admin...\n"); break;
+                        default: printf("Opción inválida\n"); break;
                     }
 
-                    printf("Presione Enter para continuar...");
-                    getchar(); //limpia buffer
-                    getchar(); // espera enter
+                    if(opcionPeli != 0){
+                        printf("Presione Enter para continuar...");
+                        getchar(); getchar();
+                    }
                 }
                 break;
             }
-            case 2:
-                system("cls");
+            case 2: { // Submenú Salas
+                int opcionSala = -1;
+                while(opcionSala != 5){
+                    system("cls");
+                    printf("\n--- GESTIÓN DE SALAS ---\n");
+                    printf("1. Alta de sala\n");
+                    printf("2. Baja de sala\n");
+                    printf("3. Modificación de sala\n");
+                    printf("4. Listar salas\n");
+                    printf("5. Volver al menú anterior\n");
+                    printf("Ingrese opción: ");
+                    scanf("%d", &opcionSala);
+
+                    switch(opcionSala) {
+                        case 1: altaSala(); break;
+                        case 2: bajaSala(); break;
+                        case 3: modificarSala(); break;
+                        case 4: listarSalas(); break;
+                        case 5: printf("Volviendo al menú anterior...\n"); break;
+                        default: printf("Opción inválida.\n");
+                    }
+
+                    if(opcionSala != 5){
+                        printf("Presione Enter para continuar...");
+                        getchar(); getchar();
+                    }
+                }
                 break;
-            case 3:
-                system("cls");
-                break;
-            case 4:
-                system("cls");
-                break;
-            case 5:
-                system("cls");
-                break;
+            }
             case 6:
+                printf("Volviendo al menu principal...\n");
                 break;
             default:
-                system("cls");
-                printf("La opcion %d no existe en el menu.\n",opcion);
-                break;
+                printf("Opción inválida\n");
         }
 
-        if(opcion != 6){
-            printf("Presione Enter para continuar.");
-            getchar();
-        }
-
-    } while (opcion!=6);
+    } while(opcion != 6);
 }
 

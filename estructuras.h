@@ -1,31 +1,28 @@
 #ifndef ESTRUCTURAS_H_INCLUDED
 #define ESTRUCTURAS_H_INCLUDED
 
-typedef struct {  //fecha de nacimiento
-    int dia, mes, anio;
-} Fecha;
+#define MAX_BUTACAS_RESERVA 10
 
-typedef struct {  //pelicula
-    char titulo[51];
-    char idioma[51];
-    char genero[51];
-    char formato[21];
-    char clasificacionEdad[21];
-    int duracion;
-    int codigoInterno;
-} Pelicula;
+typedef struct {
+    int hora, minuto;
+} Hora;
 
-typedef struct {  //cliente
-    char nombre[51];
-    char email[51];         //que no se repita, si ya existe uno que pida ingresar
-    char contrasenia[31];   //min de longitud
-    int dni;                //numerico y unico
-    Fecha fechaNac;         //que sea valida la fecha
-} Cliente;
-//sala de A-P, 1-17
-//reserva, funcion
+typedef struct {
+    int   id;
+    int   idPelicula;
+    int   idSala;
+    Fecha fecha;
+    Hora  horaInicio;
+    int   duracionConLimpieza;
+    int   precio;
+} Funcion;
 
-
-
+typedef struct {
+    int   id;
+    int   idCliente;
+    int   idFuncion;
+    int   butaca;                 // numero de asiento reservado
+    EstadoReserva estado;         // activa, cancelada o asistida
+} Reserva;
 
 #endif // ESTRUCTURAS_H_INCLUDED

@@ -69,42 +69,163 @@
 	<stdio.h>
 	<string.h>
 
-1759368240 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
+1759714355 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"clientes.h"
+	"ids.h"
+	"util.h"
 
-1759368240 c:\users\sofic\desktop\proyectocine-ramanati\clientes.h
+1759779785 c:\users\sofic\desktop\proyectocine-ramanati\clientes.h
+
+1759703334 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
+
+1759430211 source:c:\users\sofic\desktop\proyectocine-ramanati\ids.c
+	"ids.h"
+
+1759709175 c:\users\sofic\desktop\proyectocine-ramanati\ids.h
+
+1759780102 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"clientes.h"
+	"util.h"
+
+1759430211 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
+
+1759780080 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"peliculas.h"
+	"ids.h"
+	"clientes.h"
+	"util.h"
+	"salas.h"
+
+1759779919 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
+
+1759780322 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"peliculas.h"
+	"ids.h"
+
+1759431794 source:c:\users\sofic\desktop\proyectocine-sofirama\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+	"ids.h"
+	"util.h"
+
+1759430211 c:\users\sofic\desktop\proyectocine-sofirama\clientes.h
 	"estructuras.h"
 
-1759368240 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
+1759430211 c:\users\sofic\desktop\proyectocine-sofirama\estructuras.h
 
-1759368240 source:c:\users\sofic\desktop\proyectocine-ramanati\ids.c
+1759430211 c:\users\sofic\desktop\proyectocine-sofirama\ids.h
+
+1759430211 source:c:\users\sofic\desktop\proyectocine-sofirama\ids.c
 	"ids.h"
 
-1759368240 c:\users\sofic\desktop\proyectocine-ramanati\ids.h
-
-1759368240 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
+1759431452 source:c:\users\sofic\desktop\proyectocine-sofirama\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
 	"clientes.h"
+	"util.h"
 
-1759368240 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
+1759430211 c:\users\sofic\desktop\proyectocine-sofirama\menus.h
 
-1759368366 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
+1759431441 source:c:\users\sofic\desktop\proyectocine-sofirama\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
 	"peliculas.h"
 	"ids.h"
+	"clientes.h"
+	"util.h"
 
-1759368366 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
+1759430211 c:\users\sofic\desktop\proyectocine-sofirama\peliculas.h
 
-1759368366 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
+1759431223 source:c:\users\sofic\desktop\proyectocine-sofirama\util.c
+	<stdlib.h>
+	"util.h"
+
+1759431223 c:\users\sofic\desktop\proyectocine-sofirama\util.h
+
+1759431462 source:c:\users\sofic\desktop\proyectocine-sofirama\peliculas.c
 	"peliculas.h"
 	"ids.h"
 	<stdio.h>
+	<stdlib.h>
 	<string.h>
+	"util.h"
+
+1759709519 c:\users\sofic\desktop\proyectocine-ramanati\util.h
+
+1759709519 source:c:\users\sofic\desktop\proyectocine-ramanati\util.c
+	<stdlib.h>
+	"util.h"
+
+1759780322 source:c:\users\sofic\desktop\proyectocine-ramanati\salas.c
+	"salas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+
+1759780337 c:\users\sofic\desktop\proyectocine-ramanati\salas.h
+
+1759705266 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.c
+	"ids.h"
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+	"ids.h"
+	"util.h"
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.h
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"clientes.h"
+	"util.h"
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.h
+
+1759781900 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"peliculas.h"
+	"ids.h"
+
+1759781832 c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.c
+	"salas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.c
+	<stdlib.h>
+	"util.h"
 

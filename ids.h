@@ -1,5 +1,5 @@
-#ifndef ids_h
-#define ids_h
+#ifndef IDS_H_INCLUDED
+#define IDS_H_INCLUDED
 
 //Entidades de lo que queremos que tena ID, con enum, enumeramos las entidades con n umeros enteros
 typedef enum {
