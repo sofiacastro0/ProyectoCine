@@ -181,3 +181,51 @@
 
 1759780337 c:\users\sofic\desktop\proyectocine-ramanati\salas.h
 
+1759705266 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.c
+	"ids.h"
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"clientes.h"
+	"ids.h"
+	"util.h"
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.h
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"clientes.h"
+	"util.h"
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.h
+
+1759781900 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"peliculas.h"
+	"ids.h"
+
+1759781832 c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.c
+	"salas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.h
+
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.c
+	<stdlib.h>
+	"util.h"
+

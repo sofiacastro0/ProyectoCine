@@ -129,8 +129,9 @@ void menuAdmin(){
                     limpiarPantalla();
                     printf("---- Gestion de Peliculas ----\n");
                     printf("1. Alta de Pelicula\n");
-                    printf("2. Listar Peliculas\n");
-                    printf("3. Baja de Pelicula\n");
+                    printf("2. Baja de Pelicula\n");
+                    printf("3. Modificacion de Pelicula\n");
+                    printf("4. Listar Peliculas\n");
                     printf("0. Volver\n");
                     printf("Seleccione una opcion: ");
                     scanf("%d", &opcionPeli);
@@ -138,9 +139,9 @@ void menuAdmin(){
 //Switch en una sola linea para que sea mas prolijo de leer
                     switch(opcionPeli) {
                         case 1: altaPeli(); break; //Listo
-                        case 2: listaDePelis(); break; //Listo
-                        case 3: bajaPeli(); break; //Listo
-                        case 4: modificarPeli(); break;
+                        case 2: bajaPeli(); break; //Listo
+                        case 3: modificacionPeli(); break; //Listo
+                        case 4: listaDePelis(); break; //Listo
                         case 0: printf("Volviendo al menú admin...\n"); break;
                         default: printf("Opción inválida\n"); break;
                     }
