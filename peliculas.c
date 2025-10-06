@@ -37,21 +37,14 @@ void altaPeli() {
     peliculas[cantidadPelis] = alta;
     cantidadPelis++;
 
-    printf("Pelicula cargada con ID %d\n", alta.id);
+    printf("Pelicula cargada con el ID: %d\n", alta.id);
 }
 
 void listaDePelis() {
-    printf("\n--- Listado de Peliculas ---\n");
+    printf("\n Listado de Peliculas \n");
     for(int i = 0; i < cantidadPelis; i++){
         if(peliculas[i].altaObaja){
-            printf("ID:%d | Titulo:%s | Duracion:%d | Clasificacion:%s | Idioma:%s | Genero:%s | Formato:%s\n",
-                   peliculas[i].id,
-                   peliculas[i].titulo,
-                   peliculas[i].duracion,
-                   peliculas[i].clasificacion,
-                   peliculas[i].idioma,
-                   peliculas[i].genero,
-                   peliculas[i].formato);
+            printf("ID:%d | Titulo:%s | Duracion:%d | Clasificacion:%s | Idioma:%s | Genero:%s | Formato:%s\n",peliculas[i].id,peliculas[i].titulo,peliculas[i].duracion,peliculas[i].clasificacion,peliculas[i].idioma,peliculas[i].genero, peliculas[i].formato);
         }
     }
 }

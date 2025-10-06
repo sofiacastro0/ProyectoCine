@@ -3,7 +3,7 @@
 #include "menus.h"
 #include "peliculas.h"
 #include "ids.h"
-
+//menu principal
 int menuPrincipal(void) {
 
     int seleccion;
@@ -90,7 +90,7 @@ void menuCliente(){
 
 //menu administrador//
 void menuAdmin(){
-    int opcion = -1;
+    int opcion = -1; //numero bajo para evitar errores
     char tecla;
 
     do {
@@ -110,7 +110,7 @@ void menuAdmin(){
                 int opcionPeli = -1;
                 while(opcionPeli != 0){
                     system("cls");
-                    printf("---- Gestion de Peliculas ----\n");
+                    printf(" Gestion de Peliculas \n");
                     printf("1. Alta de Pelicula\n");
                     printf("2. Listar Peliculas\n");
                     printf("3. Baja Peliculas\n");
@@ -118,16 +118,15 @@ void menuAdmin(){
                     printf("0. Volver\n");
                     printf("Seleccione una opcion: ");
                     scanf("%d", &opcionPeli);
-//Hice el switch en una sola linea para que sea mas prolijo de leer
+           //Hice el switch en una sola linea para que sea mas prolijo de leer
                     switch(opcionPeli) {
                         case 1: altaPeli(); break; //Listo
                         case 2: listaDePelis(); break; //Listo
-                        case 3: bajaPeli(); break;
-                        case 4: modificarPeli(); break;
+                        case 3: bajaPeli(); break; //listo
+                        case 4: modificarPeli(); break; //listo
                         case 0: printf("Volviendo al menú admin...\n"); break;
                         default: printf("Opción inválida\n");
                     }
-
                     if(opcionPeli != 0){
                         printf("Presione Enter para continuar...");
                         getchar(); getchar();

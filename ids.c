@@ -1,6 +1,6 @@
 #include "ids.h"
 
-//con static evitamos que se puedan modificar las variables fuera de ids.c sin querer
+//con static evitamos que se puedan modificar las variables fuera de ids.c sin querer, asi no vuelven aq 0 cada vez que se llame la funcion
 static int idPelicula = 0;
 static int idSala     = 0;
 static int idCliente  = 0;
