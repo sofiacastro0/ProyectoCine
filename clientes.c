@@ -48,7 +48,7 @@ void registrar(){
     alta.id = generarId(ENTIDAD_CLIENTE);
     alta.altaObaja = 1;
 
-    system("cls");
+    limpiarPantalla();
     printf("---- REGISTRO ----\n\n");
 
     printf("Ingrese su nombre:  ");

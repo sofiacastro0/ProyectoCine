@@ -69,7 +69,7 @@
 	<stdio.h>
 	<string.h>
 
-1759701644 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
+1759709850 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -77,17 +77,16 @@
 	"ids.h"
 	"util.h"
 
-1759703334 c:\users\sofic\desktop\proyectocine-ramanati\clientes.h
-	"estructuras.h"
+1759711834 c:\users\sofic\desktop\proyectocine-ramanati\clientes.h
 
 1759703334 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
 
 1759430211 source:c:\users\sofic\desktop\proyectocine-ramanati\ids.c
 	"ids.h"
 
-1759430211 c:\users\sofic\desktop\proyectocine-ramanati\ids.h
+1759709175 c:\users\sofic\desktop\proyectocine-ramanati\ids.h
 
-1759702071 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
+1759703342 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -105,7 +104,7 @@
 	"clientes.h"
 	"util.h"
 
-1759430211 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
+1759709175 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
 
 1759431462 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
 	"peliculas.h"
@@ -167,11 +166,14 @@
 	<string.h>
 	"util.h"
 
-1759431223 c:\users\sofic\desktop\proyectocine-ramanati\util.h
+1759709519 c:\users\sofic\desktop\proyectocine-ramanati\util.h
 
-1759701323 source:c:\users\sofic\desktop\proyectocine-ramanati\util.c
+1759709519 source:c:\users\sofic\desktop\proyectocine-ramanati\util.c
 	<stdlib.h>
 	"util.h"
 
-1759681999 source:c:\users\sofic\desktop\proyectocine-ramanati\salas.c
+1759709175 source:c:\users\sofic\desktop\proyectocine-ramanati\salas.c
+	"salas.h"
+
+1759709175 c:\users\sofic\desktop\proyectocine-ramanati\salas.h
 

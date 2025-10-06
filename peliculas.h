@@ -1,5 +1,5 @@
-#ifndef PELICULAS_H
-#define PELICULAS_H
+#ifndef PELICULAS_H_INCLUDED
+#define PELICULAS_H_INCLUDED
 
 #define cant_max_peliculas 30
 #define cant_char 60
