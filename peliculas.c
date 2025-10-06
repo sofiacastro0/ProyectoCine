@@ -1,10 +1,9 @@
-#include "peliculas.h"
-#include "ids.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "util.h"
+#include "peliculas.h"
+#include "ids.h"
 
 Pelicula peliculas[cant_max_peliculas];
 int cantidadPelis = 0;
@@ -18,6 +17,8 @@ void altaPeli() {
     Pelicula alta;
     alta.id = generarId(ENTIDAD_PELICULA);
     alta.altaObaja = 1;
+
+    // [^\n] Lee una línea completa (con espacios incluidos) hasta que el usuario aprieta Enter. Sino nos lee solo la primera palabra del titulo de las peliculas
 
     limpiarPantalla();
     printf("---- Alta de pelicula ----\n\n");
@@ -82,6 +83,10 @@ void bajaPeli() {
             return;
         }
     }
+}
+
+void modificarPeli() {
+
 }
 
 

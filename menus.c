@@ -5,6 +5,7 @@
 #include "ids.h"
 #include "clientes.h"
 #include "util.h"
+#include "salas.h"
 
 void inicioCliente() {
     int opcion=1;
@@ -138,8 +139,8 @@ void menuAdmin(){
                     switch(opcionPeli) {
                         case 1: altaPeli(); break; //Listo
                         case 2: listaDePelis(); break; //Listo
-                        case 3: bajaPeli(); break;
-                        case 4: /*modificarPeli();*/ break;
+                        case 3: bajaPeli(); break; //Listo
+                        case 4: modificarPeli(); break;
                         case 0: printf("Volviendo al menú admin...\n"); break;
                         default: printf("Opción inválida\n"); break;
                     }
@@ -164,14 +165,14 @@ void menuAdmin(){
                     printf("Ingrese opción: ");
                     scanf("%d", &opcionSala);
 
-                   /* switch(opcionSala) {
+                    switch(opcionSala) {
                         case 1: altaSala(); break;
                         case 2: bajaSala(); break;
                         case 3: modificarSala(); break;
                         case 4: listarSalas(); break;
                         case 5: printf("Volviendo al menú anterior...\n"); break;
                         default: printf("Opción inválida.\n");
-                    }*/
+                    }
 
                     if(opcionSala != 5){
                         printf("Presione Enter para continuar...");

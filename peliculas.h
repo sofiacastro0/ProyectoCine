@@ -22,5 +22,6 @@ extern int cantidadPelis;
 void altaPeli();
 void listaDePelis();
 void bajaPeli();
+void modificarPeli();
 
 #endif
