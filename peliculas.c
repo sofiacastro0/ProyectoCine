@@ -15,7 +15,7 @@ void altaPeli() {
     Pelicula alta;
     alta.id = generarId(ENTIDAD_PELICULA);
     alta.altaObaja = 1;
-
+// [^\n] Lee una línea completa (con espacios incluidos) hasta que el usuario aprieta Enter. Sino nos lee solo la primera palabra del titulo de las peliculas
     printf("Ingrese titulo: ");
     scanf(" %[^\n]", alta.titulo);
 
