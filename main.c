@@ -23,7 +23,7 @@ int main() {
         scanf("%d",&seleccion);
 
             switch (seleccion) {
-                case 1: // CLIENTE
+                case 1: // cliente
                     inicioCliente();
                     break;
                 case 2: // admin

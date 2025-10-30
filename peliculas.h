@@ -20,8 +20,8 @@ extern int cantidadPelis;
 
 // funciones
 void altaPeli();
-void listaDePelis();
 void bajaPeli();
-void modificarPeli();
+void modificacionPeli();
+void listaDePelis();
 
 #endif
