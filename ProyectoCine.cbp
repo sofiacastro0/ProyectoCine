@@ -36,6 +36,10 @@
 		</Unit>
 		<Unit filename="clientes.h" />
 		<Unit filename="estructuras.h" />
+		<Unit filename="fecha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fecha.h" />
 		<Unit filename="ids.c">
 			<Option compilerVar="CC" />
 		</Unit>

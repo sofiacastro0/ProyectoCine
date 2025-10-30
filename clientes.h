@@ -32,7 +32,6 @@ bool emailUnico(char email[], Cliente clientes[], int cant);
 bool dniValido(int dni);
 bool dniUnico(int dni, Cliente clientes[], int cant);
 bool contraseniaValida(char contrasenia[]);
-bool fechaNacValida(int dia, int mes, int anio);
 bool esBisiesto(int anio);
 
 #endif // CLIENTES_H_INCLUDED

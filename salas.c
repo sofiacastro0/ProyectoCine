@@ -22,3 +22,11 @@ void modificarSala(){
 void listarSalas(){
     printf("---- Lista Salas ----");
 }
+
+int generarIdSala(){
+
+}
+
+void menuGestionSalas(){
+
+}

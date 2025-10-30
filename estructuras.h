@@ -8,20 +8,27 @@ typedef struct {
 } Hora;
 
 typedef struct {
-    int   id;
-    int   idPelicula;
-    int   idSala;
+    int id;
+    int idPelicula;
+    int idSala;
     Fecha fecha;
-    Hora  horaInicio;
-    int   duracionConLimpieza;
-    int   precio;
+    Hora horaInicio;
+    int duracionConLimpieza;
+    int precio;
 } Funcion;
 
 typedef struct {
-    int   id;
-    int   idCliente;
-    int   idFuncion;
-    int   butaca;                 // numero de asiento reservado
+    int activa;
+    int cancelada;
+    int asistida;
+} EstadoReserva;
+
+typedef struct {
+    int id;
+    int idCliente;
+    int idFuncion;
+    int cantidad
+    int butaca[5];                 // numero de asiento reservado
     EstadoReserva estado;         // activa, cancelada o asistida
 } Reserva;
 

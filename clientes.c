@@ -5,6 +5,7 @@
 #include "clientes.h"
 #include "ids.h"
 #include "util.h"
+#include "fecha.h"
 
 #define CANT_MAX_CLIENTES 100
 Cliente clientes[CANT_MAX_CLIENTES];
@@ -47,7 +48,6 @@ void altaCliente(){
     char email[50], contrasenia[30];
     int dni, dia, mes, anio;
     bool errorEmail=false, errorContrasenia=false, errorDni=false, errorFechaNac=false;
-    int anioActual = 2025;
 
     Cliente alta;
     alta.id = generarId(ENTIDAD_CLIENTE);
@@ -98,7 +98,8 @@ void altaCliente(){
     do {
     printf("Fecha de nacimiento (dd/mm/aaaa): ");  //Arreglar lo de la fecha de nacimiento
     scanf(" %d/%d/%d", &dia, &mes, &anio);
-        if (fechaNacValida(dia, mes, anio)){
+        fechaCompleta nacimiento = {dia, mes, anio, -1, -1};
+        if (fecha_es_valida(nacimiento)){
             alta.fechaNac.dia = dia;
             alta.fechaNac.mes = mes;
             alta.fechaNac.anio = anio;
@@ -109,7 +110,9 @@ void altaCliente(){
         }
     } while (errorFechaNac);
 
-    alta.edad = anioActual - alta.fechaNac.anio;
+    fechaCompleta nacimiento = {dia, mes, anio, -1, -1};
+    fechaCompleta hoy = fecha_actual();
+    alta.edad = diferencia_anios(nacimiento, hoy);
     if (alta.edad > 18){
         alta.cantEntradas = 5;
     } else {
@@ -244,7 +247,8 @@ void modificacionCliente(){
                     case 5: do {
                             printf("Fecha de nacimiento anterior: %d/%d/%d. Nueva Fecha de nacimiento: ",clientes[i].fechaNac.dia, clientes[i].fechaNac.mes, clientes[i].fechaNac.anio);
                             scanf(" %d/%d/%d", &modificacion.fechaNac.dia, &modificacion.fechaNac.mes, &modificacion.fechaNac.anio);
-                                if (fechaNacValida(modificacion.fechaNac.dia, modificacion.fechaNac.mes, modificacion.fechaNac.anio)){
+                                fechaCompleta nacimiento = {modificacion.fechaNac.dia, modificacion.fechaNac.mes, modificacion.fechaNac.anio, -1,-1};
+                                if (fecha_es_valida(nacimiento)){
                                     clientes[i].fechaNac.dia = modificacion.fechaNac.dia;
                                     clientes[i].fechaNac.mes = modificacion.fechaNac.mes;
                                     clientes[i].fechaNac.anio = modificacion.fechaNac.anio;
@@ -331,23 +335,6 @@ bool dniUnico(int dni, Cliente clientes[], int cant){
 }
 bool contraseniaValida(char contrasenia[]){
     if (strlen(contrasenia) < 8){
-        return false;
-    }
-    return true;
-}
-bool fechaNacValida(int dia, int mes, int anio){
-    if (anio < 1900 || anio > 2025){
-        return false;
-    }
-
-    int diasPorMes[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
-    if (esBisiesto(anio)){
-        diasPorMes[1] = 29;
-    }
-    if (mes < 1 || mes > 12) {
-        return false;
-    }
-    if (dia < 1 || dia > diasPorMes[mes-1]) {  //se pone mes-1 porque toma el primer indice como un 0, Ej: julio es el mes 7 pero en el array esta en el indice 6
         return false;
     }
     return true;
