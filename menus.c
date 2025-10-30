@@ -6,6 +6,7 @@
 #include "clientes.h"
 #include "util.h"
 #include "salas.h"
+#include "funciones.h"
 
 void inicioCliente() {
     int opcion=1;
@@ -178,12 +179,63 @@ void menuAdmin(){
                 }
                 break;
             }
-            case 3: limpiarPantalla(); break;
-            case 4: limpiarPantalla(); break;
-            case 5: limpiarPantalla(); break;
-            case 6:
-                printf("Volviendo al menu principal...\n");
+
+            case 3: {
+                    int opcionCliente = -1;
+                    while(opcionCliente != 2){
+                    limpiarPantalla();
+                    printf("\n--- GESTION DE CLIENTES ---\n");
+                    printf("1. Listar clientes\n");
+                    printf("2. Volver al menú anterior\n");
+                    printf("Ingrese opción: ");
+                    scanf("%d", &opcionCliente);
+
+                    switch(opcionCliente) {
+                        case 1: listarClientes(); break;
+                        case 2: printf("Volviendo al menú anterior...\n"); break;
+                        default: printf("Opción inválida.\n");
+                    }
+
+                    if(opcionCliente != 2){
+                        printf("Presione Enter para continuar...");
+                        getchar(); getchar();
+                    }
+                }
                 break;
+            }
+
+            case 4: {
+                    int opcionFuncion = -1;
+                    while(opcionFuncion != 5){
+                    limpiarPantalla();
+                    printf("\n--- GESTION DE FUNCIONES ---\n");
+                    printf("1. Alta de funcion\n");
+                    printf("2. Baja de funcion\n");
+                    printf("3. Modificación de funcion\n");
+                    printf("4. Listar funciones\n");
+                    printf("5. Volver al menú anterior\n");
+                    printf("Ingrese opción: ");
+                    scanf("%d", &opcionFuncion);
+
+                    switch(opcionFuncion) {
+                        case 1: altaFuncion(); break;
+                        case 2: bajaFuncion(); break;
+                        case 3: modificarFuncion(); break;
+                        case 4: listarFunciones(); break;
+                        case 5: printf("Volviendo al menú anterior...\n"); break;
+                        default: printf("Opción inválida.\n");
+                    }
+
+                    if(opcionFuncion != 5){
+                        printf("Presione Enter para continuar...");
+                        getchar(); getchar();
+                    }
+                }
+                break;
+            }
+
+            case 5: limpiarPantalla(); break;  // ACA VAN LOS REPORTES
+            case 6: printf("Volviendo al menu principal...\n"); break;
             default:
                 printf("Opción inválida\n");
         }

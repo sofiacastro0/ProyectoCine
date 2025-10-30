@@ -6,6 +6,7 @@
 #include "ids.h"
 #include "util.h"
 #include "fecha.h"
+#include "estructuras.h"
 
 #define CANT_MAX_CLIENTES 100
 Cliente clientes[CANT_MAX_CLIENTES];
@@ -151,7 +152,7 @@ void bajaCliente(){
                 printf("Este cliente ya fue dado de baja\n");
             } else {
                 clientes[i].altaObaja = 0;
-                printf("Su cuenta se dio de baja correctamente\n");
+                printf("Su cuenta se dio de baja correctamente\n");   // falta confirmacion
             }
             return;
         }
@@ -274,7 +275,7 @@ void modificacionCliente(){
 
 }
 
-void listaDeClientes() {  //esta lista tiene que estar en administrador
+void listarClientes() {  //esta lista tiene que estar en administrador
 
     printf("\n--- Listado de Clientes ---\n");
     if (cantClientes == 0) {

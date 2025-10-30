@@ -1,10 +1,8 @@
+#include "estructuras.h"
+
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
 #include <stdbool.h>
-
-typedef struct {  //fecha de nacimiento
-    int dia, mes, anio;
-} Fecha;
 
 typedef struct {
     int id;
@@ -25,7 +23,7 @@ int iniciarSesion();
 void altaCliente();
 void bajaCliente();
 void modificacionCliente();
-void listaDeClientes();
+void listarClientes();
 
 bool formatoEmailValido(char email[]);
 bool emailUnico(char email[], Cliente clientes[], int cant);

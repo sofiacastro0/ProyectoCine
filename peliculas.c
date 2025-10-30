@@ -78,7 +78,7 @@ void bajaPeli() {
                 printf("Esta pelicula ya fue dada de baja\n");
             } else {
                 peliculas[i].altaObaja = 0;
-                printf("La pelicula se dio de baja correctamente\n");
+                printf("La pelicula se dio de baja correctamente\n");  // falta confirmacion
             }
             return;
         }
