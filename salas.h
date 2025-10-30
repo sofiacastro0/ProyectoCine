@@ -7,8 +7,9 @@
 
 typedef struct {
     int id;             // ID unico de la sala
-    int butacas[MAX_FILAS][MAX_COLUMNAS];      // cantidad de butacas
+    int butacas[MAX_FILAS][MAX_COLUMNAS];// cantidad de butacas
     int activo;         // 1 = activa, 0 = eliminada
+    char nombre[31];
 } Sala;
 
 int generarIdSala();

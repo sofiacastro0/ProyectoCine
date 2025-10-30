@@ -21,6 +21,9 @@ void altaSala() {
     nueva.id = generarId(ENTIDAD_SALA);
     nueva.activo = 1;
 
+    printf("Ingrese nombre de la sala: ");
+    scanf(" %[^\n]", nueva.nombre); //%[^\n] sirve para leer todo hasta el salto de linea, si no lo usamos solo queda la primera palabra de todo lo ingresado
+
     // Inicializamos todas las butacas en 0
     for(int i = 0; i < MAX_FILAS; i++)
         for(int j = 0; j < MAX_COLUMNAS; j++)
@@ -49,36 +52,57 @@ void bajaSala() {
 
 void modificarSala() {
     int id;
+    int opcion;
     printf("Ingrese ID de sala que quiere modificar: ");
     scanf("%d", &id);
 
+
     for(int i = 0; i < cantidadSalas; i++) {
         if(salas[i].id == id && salas[i].activo) {
-            printf("Se reiniciaran todas las butacas.\n");
-            for(int f = 0; f < MAX_FILAS; f++)
-                for(int c = 0; c < MAX_COLUMNAS; c++)
-                    salas[i].butacas[f][c] = 0;
-            printf("Sala ID: %d modificada.\n", id);
+
+            printf("Ingrese nuevo nombre para sala: ");
+            scanf(" %[^\n]", salas[i].nombre);
+
+            //Pregunto si quiere reiniciar butacas por si solo quería cambiar el nombre
+            printf("¿Quiere reiniciar todas las butacas? (s/n): ");
+            scanf(" %c", &opcion);
+            if (opcion=='s') {
+                for (int f = 0; f < MAX_FILAS; f++){ //Recorremos y ponemos filas y columnas en 0
+                    for (int c = 0; c < MAX_COLUMNAS; c++){
+                        salas[i].butacas[f][c] = 0;
+                    }
+                      }
+
+                  printf("Butacas reiniciadas.\n");
+            } else {
+                  printf("Ok, butacas no modificadas.\n");
+            }
+
+            printf("Sala ID: %d modificada correctamente.\n", id);
             return;
         }
     }
     printf("No se encontro sala activa con ese ID %d\n", id);
 }
+
+
 //Pusimos un max de 16 filas y 17 columnas , por eso da igual a 272 butacas
 //lista de salas
-    void listarSalas() {
-    printf("Lista de salas \n");
+void listarSalas() {
+    printf("Lista de salas\n");
     for(int i = 0; i < cantidadSalas; i++) {
         if(salas[i].activo) {
-            printf("ID: %d . Butacas libres: ", salas[i].id); //Las butacas no se eligen, sino que van incrementando su valor automáticamente con el for
             int libres = 0;
-            for(int f = 0; f < MAX_FILAS; f++)
-                for(int c = 0; c < MAX_COLUMNAS; c++)
-                    if(salas[i].butacas[f][c] == 0) libres++;
-            printf("%d/%d\n", libres, MAX_FILAS * MAX_COLUMNAS);
+            for(int f = 0; f < MAX_FILAS; f++){
+                for(int c = 0; c < MAX_COLUMNAS; c++){
+                    if(salas[i].butacas[f][c] == 0){
+                      libres++;
+                      }
+                   }
+                }
+        printf("ID: %d . Nombre sala: %s . Butacas libres: %d/%d\n", salas[i].id, salas[i].nombre,libres, MAX_FILAS * MAX_COLUMNAS);
         }
     }
 }
-
 
 
