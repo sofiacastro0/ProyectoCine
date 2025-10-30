@@ -23,4 +23,13 @@ void listarFunciones();
 bool fechaFuncionValida(int dia, int mes, int anio);
 bool precioValido(int precio);
 
+void menuBuscarFunciones();
+
+void buscarFuncionesPorHorario();
+void buscarFuncionesPorPelicula();
+void buscarFuncionesPorIdioma();
+void buscarFuncionesPorGenero();
+void buscarFuncionesPorDisponibilidad();
+
+
 #endif // FUNCIONES_H_INCLUDED

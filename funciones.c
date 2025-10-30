@@ -13,7 +13,7 @@
 Funcion funciones[CANT_MAX_FUNCIONES];
 int cantFunciones = 0;
 
-// FALTAN ALGUNAS VALIDACIONES
+// FALTAN ALGUNAS VALIDACIONES y buscar funciones por disponibilidad
 
 void altaFuncion(){
 
@@ -284,7 +284,7 @@ void listarFunciones(){
     }
 }
 
-bool fechaFuncionValida(int dia, int mes, int anio){
+bool fechaFuncionValida(int dia, int mes, int anio){   // esta funcion valida que no se pongan fechas antes de la fecha actual
 
     fechaCompleta hoy = fecha_actual();
 
@@ -302,3 +302,187 @@ bool fechaFuncionValida(int dia, int mes, int anio){
 bool precioValido(int precio){
     return (precio > 0);
 }
+
+void menuBuscarFunciones(){
+
+    int opcionCliente = -1;
+    while(opcionCliente != 6){
+        limpiarPantalla();
+        printf("\n--- BUSCAR FUNCIONES ---\n");
+        printf("1. Buscar funcion por Pelicula\n");
+        printf("2. Buscar funcion por Horario\n");
+        printf("3. Buscar funcion por Idioma\n");
+        printf("4. Buscar funcion por Genero\n");
+        printf("5. Buscar funcion por Disponibilidad\n");
+        printf("6. Volver al menú anterior\n");
+        printf("Ingrese opción: ");
+        scanf("%d", &opcionCliente);
+
+        switch(opcionCliente) {
+            case 1: buscarFuncionesPorPelicula(); break;
+            case 2: buscarFuncionesPorHorario(); break;
+            case 3: buscarFuncionesPorIdioma(); break;
+            case 4: buscarFuncionesPorGenero(); break;
+            case 5: buscarFuncionesPorDisponibilidad(); break;
+            case 6: printf("Volviendo al menú anterior...\n"); break;
+            default: printf("Opción inválida.\n");
+        }
+
+        if(opcionCliente != 6){
+            printf("Presione Enter para continuar...");
+            getchar(); getchar();
+        }
+    }
+}
+
+void buscarFuncionesPorHorario() {
+    int horaBuscada, minutoBuscado;
+    printf("Ingrese la hora (hh:mm): ");
+    scanf("%d:%d", &horaBuscada, &minutoBuscado);
+
+    bool encontrado = false;
+
+    printf("Funciones a partir de las %d:%d: \n", horaBuscada, minutoBuscado);
+
+    for (int i=0; i<cantFunciones; i++) {
+        if (funciones[i].altaObaja) {
+            int hora = funciones[i].horaInicio.hora;
+            int minuto = funciones[i].horaInicio.minuto;
+
+            if (hora>horaBuscada || (hora==horaBuscada && minuto>=minutoBuscado)) {
+                // busca datos de las peliculas con ese horario
+                for (int j = 0; j < cantidadPelis; j++) {
+                    if (peliculas[j].id == funciones[i].idPelicula && peliculas[j].altaObaja) {
+                        printf("Pelicula: %s | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d | Genero: %s | Idioma: %s\n",
+                               peliculas[j].titulo,
+                               funciones[i].idSala,
+                               funciones[i].fecha.dia,
+                               funciones[i].fecha.mes,
+                               funciones[i].fecha.anio,
+                               funciones[i].horaInicio.hora,
+                               funciones[i].horaInicio.minuto,
+                               peliculas[j].genero,
+                               peliculas[j].idioma);
+                        encontrado = true;
+                    }
+                }
+            }
+        }
+    }
+
+    if (!encontrado) {
+        printf("No hay funciones a partir de ese horario.\n");
+    }
+
+    printf("\nPresione Enter para continuar...");
+    getchar(); getchar();
+}
+
+void buscarFuncionesPorPelicula() {
+    char nombreBuscado[50];
+    printf("Ingrese el título de la película: ");
+    scanf(" %50[^\n]", nombreBuscado);
+
+    bool encontrado=false;
+    for (int i=0; i<cantidadPelis; i++) {
+        if (peliculas[i].altaObaja && strcmp(peliculas[i].titulo, nombreBuscado)) {
+            encontrado = true;
+            printf("Película encontrada: %s\n", peliculas[i].titulo);
+
+            // Buscar funciones de esa película
+            for (int j=0; j < cantFunciones; j++) {
+                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id) {
+                    printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                           funciones[j].id,
+                           funciones[j].idSala,
+                           funciones[j].fecha.dia,
+                           funciones[j].fecha.mes,
+                           funciones[j].fecha.anio,
+                           funciones[j].horaInicio.hora,
+                           funciones[j].horaInicio.minuto);
+                }
+            }
+        }
+    }
+
+    if (!encontrado)
+        printf("No se encontró ninguna película con ese titulo.\n");
+
+    printf("\nPresione Enter para continuar...");
+    getchar(); getchar();
+}
+
+void buscarFuncionesPorIdioma(){
+    char idiomaBuscado[50];
+    printf("Ingrese el idioma de la película: ");
+    scanf(" %50[^\n]", idiomaBuscado);
+
+    bool encontrado=false;
+    for (int i=0; i<cantidadPelis; i++) {
+        if (peliculas[i].altaObaja && strcmp(peliculas[i].idioma, idiomaBuscado)) {
+            encontrado = true;
+            printf("Película encontrada: %s\n", peliculas[i].idioma);
+
+            // Buscar funciones de esa película
+            for (int j=0; j < cantFunciones; j++) {
+                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id) {
+                    printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                           funciones[j].id,
+                           funciones[j].idSala,
+                           funciones[j].fecha.dia,
+                           funciones[j].fecha.mes,
+                           funciones[j].fecha.anio,
+                           funciones[j].horaInicio.hora,
+                           funciones[j].horaInicio.minuto);
+                }
+            }
+        }
+    }
+
+    if (!encontrado)
+        printf("No se encontró ninguna película con ese idioma.\n");
+
+    printf("\nPresione Enter para continuar...");
+    getchar(); getchar();
+}
+
+void buscarFuncionesPorGenero(){
+char generoBuscado[50];
+    printf("Ingrese el genero de la película: ");
+    scanf(" %50[^\n]", generoBuscado);
+
+    bool encontrado=false;
+    for (int i=0; i<cantidadPelis; i++) {
+        if (peliculas[i].altaObaja && strcmp(peliculas[i].genero, generoBuscado)) {
+            encontrado = true;
+            printf("Película encontrada: %s\n", peliculas[i].genero);
+
+            // Buscar funciones de esa película
+            for (int j=0; j < cantFunciones; j++) {
+                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id) {
+                    printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                           funciones[j].id,
+                           funciones[j].idSala,
+                           funciones[j].fecha.dia,
+                           funciones[j].fecha.mes,
+                           funciones[j].fecha.anio,
+                           funciones[j].horaInicio.hora,
+                           funciones[j].horaInicio.minuto);
+                }
+            }
+        }
+    }
+
+    if (!encontrado)
+        printf("No se encontró ninguna película con ese genero.\n");
+
+    printf("\nPresione Enter para continuar...");
+    getchar(); getchar();
+}
+
+void buscarFuncionesPorDisponibilidad(){
+
+}
+
+
+

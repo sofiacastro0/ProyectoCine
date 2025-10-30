@@ -39,49 +39,41 @@ void inicioCliente() {
 }
 
 void menuCliente(){
-    int opcion=1;
+    int opcion=-1;
     char tecla;
 
     do {
         limpiarPantalla();
         printf("--------- Menu Cliente -----------\n");
-        printf("1. Buscar funciones por fecha\n");
-        printf("2. Buscar funciones por pelicula\n");
-        printf("3. Ver butacas disponibles\n");
-        printf("4. Reservar butacas\n");
-        printf("5. Cancelar reserva\n");
-        printf("6. Ver mis reservas\n");
-        printf("7. Volver al menu principal\n");
+        printf("1. Buscar funciones\n");
+        printf("2. Ver butacas disponibles\n");
+        printf("3. Reservar butacas\n");
+        printf("4. Cancelar reserva\n");
+        printf("5. Ver mis reservas\n");
+        printf("6. Volver al menu principal\n");
         printf("---------------------------------\n");
         printf("Seleccione una opcion: ");
         scanf("%d",&opcion);
 
         switch(opcion) {
-            case 1:
-                //1. Buscar funciones por fecha
-                limpiarPantalla();
-                break;
+            case 1: menuBuscarFunciones(); break;
             case 2:
-                //Buscar funciones por película
-                limpiarPantalla();
-                break;
-            case 3:
                 //Ver butacas disponibles
                 limpiarPantalla();
                 break;
-            case 4:
+            case 3:
                 //Reservar butacas
                 limpiarPantalla();
                 break;
-            case 5:
+            case 4:
                 //Cancelar reserva
                 limpiarPantalla();
                 break;
-            case 6:
+            case 5:
                 //Ver mis reservas
                 limpiarPantalla();
                 break;
-            case 7:
+            case 6:
                 //Volver al menú principal
                 break;
             default:
@@ -90,7 +82,7 @@ void menuCliente(){
                 break;
         }
 
-        if(opcion!=7){  //limpia el buffer
+        if(opcion!=6){  //limpia el buffer
         //Si la opcion elegida NO es 7. (pausa la ejecución hasta que el usuario presione enter y
         //limpiar el buffer de entrada para que no queden caracteres pendientes que arruinen la próxima lectura.)
             printf("Presione Enter para continuar.");
@@ -99,7 +91,7 @@ void menuCliente(){
             while ((tecla=getchar()) != '\n' && tecla != EOF) {}
         }
 
-    } while(opcion!=7);
+    } while(opcion!=6);
 
 }
 
@@ -157,10 +149,10 @@ void menuAdmin(){
                     printf("\n--- GESTIÓN DE SALAS ---\n");
                     printf("1. Alta de sala\n");
                     printf("2. Baja de sala\n");
-                    printf("3. Modificación de sala\n");
+                    printf("3. Modificacion de sala\n");
                     printf("4. Listar salas\n");
-                    printf("5. Volver al menú anterior\n");
-                    printf("Ingrese opción: ");
+                    printf("5. Volver al menu anterior\n");
+                    printf("Ingrese opcion: ");
                     scanf("%d", &opcionSala);
 
                     switch(opcionSala) {
@@ -168,8 +160,8 @@ void menuAdmin(){
                         case 2: bajaSala(); break;
                         case 3: modificarSala(); break;
                         case 4: listarSalas(); break;
-                        case 5: printf("Volviendo al menú anterior...\n"); break;
-                        default: printf("Opción inválida.\n");
+                        case 5: printf("Volviendo al menú anterior\n"); break;
+                        default: printf("Opcion invalida.\n");
                     }
 
                     if(opcionSala != 5){
