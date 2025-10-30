@@ -4,9 +4,7 @@
 #include <string.h>
 
 // Alta de sala hay que indicar que le pongan un nombre a la sala
-// Modificacion de sala se puede elegir entre modificar el nombre
-// hay que asignarle una horario a cada sala para poder programar funciones y que no se solapen
-// el horario de cada sala depende de la duracion de la pelicula + 30 minutos de limpieza
+// Modificacion de sala se puede elegir modificar el nombre
 
 Sala salas[MAX_SALAS];  // Array de salas
 int cantidadSalas = 0;  // Contador de salas actuales
