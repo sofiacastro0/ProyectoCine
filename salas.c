@@ -80,5 +80,14 @@ void modificarSala() {
     }
 }
 
+int salaEstaActiva(int idSala) {
+    for(int i = 0; i < cantidadSalas; i++) {
+        if(salas[i].id == idSala) {
+            return salas[i].activo;
+        }
+    }
+    return 0;
+}
+
 
 

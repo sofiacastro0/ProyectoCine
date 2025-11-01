@@ -18,4 +18,6 @@ void modificarSala();
 void listarSalas();
 void menuGestionSalas();
 
+int salaEstaActiva(int idSala);
+
 #endif
