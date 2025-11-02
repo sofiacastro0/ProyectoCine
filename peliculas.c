@@ -33,7 +33,7 @@ void altaPeli() {
 
     int opcionIdioma;
     printf("\nSeleccione el idioma:\n");
-    printf("1. Español (Latino)\n2. Inglés\n3. Francés\n4. Portugués\n5. Japonés\n6. Coreano\n7. Italiano\n");
+    printf("1. Español\n2. Inglés\n3. Francés\n4. Portugués\n5. Japonés\n6. Coreano\n7. Italiano\n");
     printf("Opción: ");
     scanf("%d", &opcionIdioma);
 
@@ -77,23 +77,6 @@ void altaPeli() {
 
     printf("Pelicula cargada con ID %d\n", alta.id);
 }
-
-void listaDePelis() {
-    printf("\n--- Listado de Peliculas ---\n");
-    for(int i = 0; i < cantidadPelis; i++){
-        if(peliculas[i].altaObaja){
-            printf("ID:%d | Titulo:%s | Duracion:%d | Clasificacion:%s | Idioma:%s | Genero:%s | Formato:%s\n",
-                   peliculas[i].id,
-                   peliculas[i].titulo,
-                   peliculas[i].duracion,
-                   peliculas[i].clasificacion,
-                   peliculas[i].idioma,
-                   peliculas[i].genero,
-                   peliculas[i].formato);
-        }
-    }
-}
-
 void bajaPeli() {
     if (cantidadPelis==0){
         printf("No hay peliculas registradas\n");
@@ -116,7 +99,6 @@ void bajaPeli() {
         }
     }
 }
-
 void modificacionPeli() {
     int encontrado=0;
     int i=0;
@@ -168,5 +150,19 @@ void modificacionPeli() {
     }
     printf("No se ha encontrado ese ID.\n");
 }
-
+void listaDePelis() {
+    printf("\n--- Listado de Peliculas ---\n");
+    for(int i = 0; i < cantidadPelis; i++){
+        if(peliculas[i].altaObaja){
+            printf("ID:%d | Titulo:%s | Duracion:%d | Clasificacion:%s | Idioma:%s | Genero:%s | Formato:%s\n",
+                   peliculas[i].id,
+                   peliculas[i].titulo,
+                   peliculas[i].duracion,
+                   peliculas[i].clasificacion,
+                   peliculas[i].idioma,
+                   peliculas[i].genero,
+                   peliculas[i].formato);
+        }
+    }
+}
 

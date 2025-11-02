@@ -122,7 +122,29 @@ if (entradas > maxEntradas) {
     reservas[cantidadReservas++] = nueva;
     funciones[posFuncion].cantidadReservas += entradas;
 
-    printf("Reserva generada con ID: %d\n", nueva.id);
+    char peliculaReservada[50];
+
+    for (int i = 0; i < cantidadPelis; i++) {
+        if (peliculas[i].id == funciones[posFuncion].idPelicula) {
+            strcpy(peliculaReservada, peliculas[i].titulo);
+        }
+    }
+
+    printf("\nReserva generada con ID: %d\n", nueva.id);
+    printf("Datos de la funcion:\n\nID Funcion: %d | Pelicula: %s | Sala: %d | Fecha y hora: %d/%d/%d - %02d:%02d",
+           funciones[posFuncion].id,
+           peliculaReservada,
+           funciones[posFuncion].idSala,
+           funciones[posFuncion].fecha.dia,
+           funciones[posFuncion].fecha.mes,
+           funciones[posFuncion].fecha.anio,
+           funciones[posFuncion].horaInicio.hora,
+           funciones[posFuncion].horaInicio.minuto);
+
+   printf("\n\nPrecio por entrada: $%d\nCantidad de entradas: %d\n\nTotal a pagar: $%d\n\n",
+        funciones[posFuncion].precio,
+        nueva.cantidad,
+        funciones[posFuncion].precio*nueva.cantidad);
 }
 
 void verMisReservas() {
@@ -146,12 +168,30 @@ void verMisReservas() {
         return;
     }
 
-    printf("Reservas del cliente \n");
+    printf("\nReservas del cliente \n");
     int tieneReservas = 0;
     for (int i = 0; i < cantidadReservas; i++) {
         if (reservas[i].idCliente == idCliente && reservas[i].estado.activa) {
             tieneReservas = 1;
-            printf("ID Reserva: %d |Función: %d |Entradas: %d\n", reservas[i].id, reservas[i].idFuncion, reservas[i].cantidad);
+            printf("ID Reserva: %d | Función: %d | Entradas: %d\n", reservas[i].id, reservas[i].idFuncion, reservas[i].cantidad);
+
+            int posFuncion = reservas[i].idFuncion;
+            char peliculaReservada[50];
+
+            for (int i = 0; i < cantidadPelis; i++) {
+                if (peliculas[i].id == funciones[posFuncion].idPelicula) {
+                    strcpy(peliculaReservada, peliculas[i].titulo);
+                }
+            }
+
+            printf("Pelicula: %s | Sala: %d | Fecha y hora: %d/%d/%d - %02d:%02d\n\n",
+                   peliculaReservada,
+                   funciones[posFuncion].idSala,
+                   funciones[posFuncion].fecha.dia,
+                   funciones[posFuncion].fecha.mes,
+                   funciones[posFuncion].fecha.anio,
+                   funciones[posFuncion].horaInicio.hora,
+                   funciones[posFuncion].horaInicio.minuto);
         }
     }
 
@@ -164,6 +204,26 @@ void verMisReservas() {
 
 
 void cancelarReserva() {
+    int dni;
+    printf("Ingrese su DNI: ");
+    scanf("%d", &dni);
+    getchar(); // limpia el '\n' que queda en el buffer
+
+    int idCliente = -1;
+    for (int i = 0; i < cantClientes; i++) {
+        if (clientes[i].dni == dni) {
+            idCliente = clientes[i].id;
+            break;
+        }
+    }
+
+    if (idCliente == -1) {
+        printf("Cliente no encontrado.\n");
+        printf("Presione Enter para continuar...");
+        getchar();
+        return;
+    }
+
     int idReserva;
     printf("Ingrese el ID de la reserva a cancelar: ");
     scanf("%d", &idReserva);

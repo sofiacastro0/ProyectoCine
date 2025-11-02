@@ -116,7 +116,7 @@
 
 1762111456 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
 
-1762111455 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
+1762112991 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -305,7 +305,7 @@
 
 1761845914 c:\users\sofic\desktop\proyectocine-ramanati\fecha.h
 
-1762110572 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
+1762112991 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
@@ -337,7 +337,7 @@
 	<stdbool.h>
 	"estructuras.h"
 
-1762112308 source:c:\users\sofic\desktop\proyectocine-ramanati\reservas.c
+1762115985 source:c:\users\sofic\desktop\proyectocine-ramanati\reservas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

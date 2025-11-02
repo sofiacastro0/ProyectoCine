@@ -396,6 +396,14 @@ void buscarFuncionesPorHorario() {
 void buscarFuncionesPorPelicula() {
     actualizarReservasAsistidas();
     char nombreBuscado[50];
+
+    printf("\n--- Titulos de peliculas disponibles ---\n");
+        for(int i = 0; i < cantidadPelis; i++){
+            if(peliculas[i].altaObaja){
+                printf("Nº %d: %s\n", i+1, peliculas[i].titulo);
+        }
+    }
+
     printf("Ingrese el título de la película: ");
     scanf(" %50[^\n]", nombreBuscado);
 
@@ -432,6 +440,10 @@ void buscarFuncionesPorPelicula() {
 void buscarFuncionesPorIdioma(){
     actualizarReservasAsistidas();
     char idiomaBuscado[50];
+
+    printf("\n--- Idiomas de peliculas disponibles ---\n");
+    printf("1. Español\n2. Inglés\n3. Francés\n4. Portugués\n5. Japonés\n6. Coreano\n7. Italiano\n");
+
     printf("Ingrese el idioma de la película: ");
     scanf(" %50[^\n]", idiomaBuscado);
 
@@ -469,6 +481,10 @@ void buscarFuncionesPorIdioma(){
 void buscarFuncionesPorGenero(){
     actualizarReservasAsistidas();
     char generoBuscado[50];
+
+    printf("\n--- Generos de peliculas disponibles ---\n");
+    printf("1. Acción\n2. Aventura\n3. Ciencia ficción\n4. Fantasía\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animación\n10. Documental\n");
+
     printf("Ingrese el genero de la película: ");
     scanf(" %50[^\n]", generoBuscado);
 
