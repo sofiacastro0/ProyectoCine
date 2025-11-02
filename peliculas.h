@@ -11,6 +11,7 @@ typedef struct  {
     char titulo[cant_char];
     char idioma[cant_char];
     char genero[cant_char];
+    int cantGeneros[10];
     char clasificacion[15];
     char formato[15];
 } Pelicula;

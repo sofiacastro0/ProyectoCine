@@ -7,6 +7,7 @@
 #include "util.h"
 #include "salas.h"
 #include "funciones.h"
+#include "reportes.h"
 
 void inicioCliente() {
     int opcion=1;
@@ -28,6 +29,7 @@ void inicioCliente() {
                 case 4: if (iniciarSesion()){
                             menuCliente();
                         }
+                        break;
                 case 0: break;
                 default: printf("Opcion invalida\n"); break;
             }
@@ -59,27 +61,24 @@ void menuCliente(){
             case 1: menuBuscarFunciones(); break;
             case 2:
                 //Ver butacas disponibles
-                limpiarPantalla();
+
                 break;
             case 3:
                 //Reservar butacas
-                limpiarPantalla();
+
                 break;
             case 4:
                 //Cancelar reserva
-                limpiarPantalla();
+
                 break;
             case 5:
                 //Ver mis reservas
-                limpiarPantalla();
+
                 break;
             case 6:
                 //Volver al menú principal
                 break;
-            default:
-                limpiarPantalla();
-                printf("La opcion %d no existe en el menu.\n",opcion);
-                break;
+            default: printf("La opcion %d no existe en el menu.\n",opcion); break;
         }
 
         if(opcion!=6){  //limpia el buffer
@@ -198,14 +197,13 @@ void menuAdmin(){
 
             case 4: {
                     int opcionFuncion = -1;
-                    while(opcionFuncion != 5){
+                    while(opcionFuncion != 4){
                     limpiarPantalla();
                     printf("\n--- GESTION DE FUNCIONES ---\n");
                     printf("1. Alta de funcion\n");
                     printf("2. Baja de funcion\n");
                     printf("3. Modificación de funcion\n");
-                    printf("4. Listar funciones\n");
-                    printf("5. Volver al menú anterior\n");
+                    printf("4. Volver al menú anterior\n");
                     printf("Ingrese opción: ");
                     scanf("%d", &opcionFuncion);
 
@@ -213,12 +211,11 @@ void menuAdmin(){
                         case 1: altaFuncion(); break;
                         case 2: bajaFuncion(); break;
                         case 3: modificarFuncion(); break;
-                        case 4: listarFunciones(); break;
-                        case 5: printf("Volviendo al menú anterior...\n"); break;
+                        case 4: printf("Volviendo al menú anterior...\n"); break;
                         default: printf("Opción inválida.\n");
                     }
 
-                    if(opcionFuncion != 5){
+                    if(opcionFuncion != 4){
                         printf("Presione Enter para continuar...");
                         getchar(); getchar();
                     }
@@ -226,7 +223,44 @@ void menuAdmin(){
                 break;
             }
 
-            case 5: limpiarPantalla(); break;  // ACA VAN LOS REPORTES
+            case 5: {
+                    int opcionReportes = -1;
+                    while(opcionReportes != 9){
+                    limpiarPantalla();
+                    printf("\n--- REPORTES ---\n");
+                    printf("1. Listado de funciones programadas\n");
+                    printf("2. Ranking de peliculas mas vistas\n");
+                    printf("3. Listado de reservas activas\n");
+                    printf("4. Historial de reservas de un cliente\n");
+                    printf("5. Reporte de ocupacion promedio por sala\n");
+                    printf("6. Ranking de generos mas vistos\n");
+                    printf("7. Listado de cancelaciones realizadas\n");
+                    printf("8. Listado de clientes con mayor cantidad de reservas en el cine\n");
+                    printf("9. Volver al menú anterior\n");
+                    printf("Ingrese opción: ");
+                    scanf("%d", &opcionReportes);
+
+                    switch(opcionReportes) {
+                        case 1: listarFunciones(); break;
+                        case 2: break;
+                        case 3: break;
+                        case 4: break;
+                        case 5: break;
+                        case 6: generosMasVistos(); break;
+                        case 7: break;
+                        case 8: break;
+                        case 9: printf("Volviendo al menú anterior...\n"); break;
+                        default: printf("Opción inválida.\n");
+                    }
+
+                    if(opcionReportes != 9){
+                        printf("Presione Enter para continuar...");
+                        getchar(); getchar();
+                    }
+                }
+                break;
+            }
+
             case 6: printf("Volviendo al menu principal...\n"); break;
             default:
                 printf("Opción inválida\n");

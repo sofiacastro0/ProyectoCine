@@ -9,7 +9,6 @@
 #include "fecha.h"
 #include "estructuras.h"
 
-#define CANT_MAX_FUNCIONES 100
 Funcion funciones[CANT_MAX_FUNCIONES];
 int cantFunciones = 0;
 
@@ -274,7 +273,7 @@ void modificarFuncion(){
 
 void listarFunciones(){
 
-    printf("\n--- Listado de Funciones ---\n");
+    printf("\n\n--- Listado de Funciones ---\n");
         if (cantFunciones == 0) {
             printf("No hay funciones registrados.\n");
             return;

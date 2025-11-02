@@ -4,6 +4,8 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
+#define CANT_MAX_FUNCIONES 100
+
 typedef struct {
     int id;
     int altaObaja;
@@ -16,6 +18,9 @@ typedef struct {
     int cantidadReservas;   // Cada vez que se hace una reserva = cantidadReservas++
     int reservasAsistidas;
 } Funcion;
+
+extern Funcion funciones[CANT_MAX_FUNCIONES];
+extern int cantFunciones;
 
 void altaFuncion();
 void bajaFuncion();
