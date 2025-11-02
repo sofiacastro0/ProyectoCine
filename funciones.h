@@ -25,7 +25,7 @@ extern int cantFunciones;
 void altaFuncion();
 void bajaFuncion();
 void modificarFuncion();
-void listarFunciones();
+
 bool fechaFuncionValida(Fecha fecha, Hora hora);
 bool precioValido(int precio);
 

@@ -270,46 +270,6 @@ void modificarFuncion(){
         printf("No se encontro una funcion con ese ID.\n");
     }
 }
-void listarFunciones(){
-
-    printf("\n\n--- Listado de Funciones ---\n");
-        if (cantFunciones == 0) {
-            printf("No hay funciones registrados.\n");
-            return;
-        }
-
-        actualizarReservasAsistidas();
-
-    for(int i=0; i<cantFunciones; i++){
-
-        if(funciones[i].altaObaja){
-            int disponibles = butacasDisponibles(funciones[i]);
-            printf("ID:%d | Pelicula: %d | Sala :%d | Fecha y hora: %d/%d/%d - %02d:%02d | Precio: $%d | Reservas activas: %d | Reservas asistidas: %d",
-                   funciones[i].id,
-                   funciones[i].idPelicula,
-                   funciones[i].idSala,
-                   funciones[i].fecha.dia,
-                   funciones[i].fecha.mes,
-                   funciones[i].fecha.anio,
-                   funciones[i].horaInicio.hora,
-                   funciones[i].horaInicio.minuto,
-                   funciones[i].precio,
-                   funciones[i].cantidadReservas,
-                   funciones[i].reservasAsistidas);
-
-                if(disponibles > 0) {
-                printf(" | Butacas disponibles: %d", disponibles);
-                }
-            printf(" | Estado: ");
-        }
-
-        if (funciones[i].altaObaja == 1) {
-            printf("Funcion activa\n");
-        } else {
-            printf("Funcion cancelada\n");
-        }
-    }
-}
 
 bool fechaFuncionValida(Fecha fecha, Hora hora) {     // esta funcion valida que no se pongan fechas antes de la fecha actual
     fechaCompleta inicio = {fecha.dia, fecha.mes, fecha.anio, hora.hora, hora.minuto};

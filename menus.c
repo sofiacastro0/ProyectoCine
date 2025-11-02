@@ -229,11 +229,11 @@ void menuAdmin(){
                         case 1: listarFunciones(); break;
                         case 2: peliculasMasVistas(); break;
                         case 3: listarReservasActivas(); break;
-                        case 4: break;
-                        case 5: break;
+                        case 4: historialReservasCliente(); break;
+                        case 5: reporteOcupacionSalas(); break;
                         case 6: generosMasVistos(); break;
-                        case 7: break;
-                        case 8: break;
+                        case 7: listadoCancelaciones(); break;
+                        case 8: listadoClientesMayorCantidadReservas(); break;
                         case 0: printf("Volviendo al menú anterior...\n"); break;
                         default: printf("Opción inválida.\n");
                     }

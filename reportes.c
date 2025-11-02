@@ -12,81 +12,46 @@
 
 char nombresGeneros[CANT_GENEROS][20] = {"Accion", "Aventura", "Ciencia Ficcion", "Fantasia", "Terror", "Comedia", "Romance", "Drama", "Animacion", "Documental"};
 
-void generosMasVistos() {
-    printf("\n\n--- Ranking de Generos Mas Vistos ---\n");
 
-    int vistasPorGenero[CANT_GENEROS] = {0,0,0,0,0,0,0,0,0,0};
+void listarFunciones(){
 
-    // Recorre todas las funciones que esten activas
-    for (int i=0; i<cantFunciones; i++) {
-        if (funciones[i].reservasAsistidas>0) {
-            // Busca el genero de la pelicula que sale
-            for (int j=0; j<cantidadPelis; j++) {
-                if (peliculas[j].id == funciones[i].idPelicula && peliculas[j].altaObaja) {
-                    // Sumamos las vistas al género correspondiente
-                    if (strcmp(peliculas[j].genero, "Accion") == 0)
-                        vistasPorGenero[0] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Aventura") == 0)
-                        vistasPorGenero[1] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Ciencia Ficcion") == 0)
-                        vistasPorGenero[2] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Fantasia") == 0)
-                        vistasPorGenero[3] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Terror") == 0)
-                        vistasPorGenero[4] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Comedia") == 0)
-                        vistasPorGenero[5] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Romance") == 0)
-                        vistasPorGenero[6] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Drama") == 0)
-                        vistasPorGenero[7] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Animacion") == 0)
-                        vistasPorGenero[8] += funciones[i].reservasAsistidas;
-                    if (strcmp(peliculas[j].genero, "Documental") == 0)
-                        vistasPorGenero[9] += funciones[i].reservasAsistidas;
+    printf("\n\n--- Listado de Funciones ---\n");
+        if (cantFunciones == 0) {
+            printf("No hay funciones registrados.\n");
+            return;
+        }
+
+        actualizarReservasAsistidas();
+
+    for(int i=0; i<cantFunciones; i++){
+
+        if(funciones[i].altaObaja){
+            int disponibles = butacasDisponibles(funciones[i]);
+            printf("ID:%d | Pelicula: %d | Sala :%d | Fecha y hora: %d/%d/%d - %02d:%02d | Precio: $%d | Reservas activas: %d | Reservas asistidas: %d",
+                   funciones[i].id,
+                   funciones[i].idPelicula,
+                   funciones[i].idSala,
+                   funciones[i].fecha.dia,
+                   funciones[i].fecha.mes,
+                   funciones[i].fecha.anio,
+                   funciones[i].horaInicio.hora,
+                   funciones[i].horaInicio.minuto,
+                   funciones[i].precio,
+                   funciones[i].cantidadReservas,
+                   funciones[i].reservasAsistidas);
+
+                if(disponibles > 0) {
+                printf(" | Butacas disponibles: %d", disponibles);
                 }
-            }
+            printf(" | Estado: ");
+        }
+
+        if (funciones[i].altaObaja == 1) {
+            printf("Funcion activa\n");
+        } else {
+            printf("Funcion cancelada\n");
         }
     }
-
-    // metodo de ordenamiento descendente
-    for (int i=0; i<CANT_GENEROS-1; i++) {
-        for (int j=i+1; j<CANT_GENEROS; j++) {
-            if (vistasPorGenero[i] < vistasPorGenero[j]) {
-                int auxVistas = vistasPorGenero[i];
-                vistasPorGenero[i] = vistasPorGenero[j];
-                vistasPorGenero[j] = auxVistas;
-
-                // esto cambia en el array el genero que corresponde con su indice
-                // ej: si romance(i6) para a ser indice 2, no queda con el nombre del i2 anterior (aventura)
-                char auxNombre[20];
-                strcpy(auxNombre, nombresGeneros[i]);
-                strcpy(nombresGeneros[i], nombresGeneros[j]);
-                strcpy(nombresGeneros[j], auxNombre);
-            }
-        }
-    }
-
-    int totalVistas=0;
-    for (int i=0; i<CANT_GENEROS; i++) {
-        totalVistas += vistasPorGenero[i];
-    }
-
-    if (totalVistas == 0) {
-        printf("No hay funciones vistas todavia.\n");
-        return;
-    }
-
-    //muestra el ranking
-    int posicion=1;
-    for (int i=0; i<CANT_GENEROS; i++) {
-        if (vistasPorGenero[i] > 0) {
-            printf("%d. %s - %d vistas\n", posicion, nombresGeneros[i], vistasPorGenero[i]);
-            posicion++;
-        }
-    }
-
-    printf("\n");
 }
 void peliculasMasVistas() {
     printf("\n\n--- Ranking de Peliculas Mas Vistas ---\n");
@@ -195,3 +160,84 @@ void listarReservasActivas() {
         printf("No hay reservas activas registradas.\n");
     }
 }
+void historialReservasCliente() {}
+void reporteOcupacionSalas(){}
+void generosMasVistos() {
+    printf("\n\n--- Ranking de Generos Mas Vistos ---\n");
+
+    int vistasPorGenero[CANT_GENEROS] = {0,0,0,0,0,0,0,0,0,0};
+
+    // Recorre todas las funciones que esten activas
+    for (int i=0; i<cantFunciones; i++) {
+        if (funciones[i].reservasAsistidas>0) {
+            // Busca el genero de la pelicula que sale
+            for (int j=0; j<cantidadPelis; j++) {
+                if (peliculas[j].id == funciones[i].idPelicula && peliculas[j].altaObaja) {
+                    // Sumamos las vistas al género correspondiente
+                    if (strcmp(peliculas[j].genero, "Accion") == 0)
+                        vistasPorGenero[0] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Aventura") == 0)
+                        vistasPorGenero[1] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Ciencia Ficcion") == 0)
+                        vistasPorGenero[2] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Fantasia") == 0)
+                        vistasPorGenero[3] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Terror") == 0)
+                        vistasPorGenero[4] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Comedia") == 0)
+                        vistasPorGenero[5] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Romance") == 0)
+                        vistasPorGenero[6] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Drama") == 0)
+                        vistasPorGenero[7] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Animacion") == 0)
+                        vistasPorGenero[8] += funciones[i].reservasAsistidas;
+                    if (strcmp(peliculas[j].genero, "Documental") == 0)
+                        vistasPorGenero[9] += funciones[i].reservasAsistidas;
+                }
+            }
+        }
+    }
+
+    // metodo de ordenamiento descendente
+    for (int i=0; i<CANT_GENEROS-1; i++) {
+        for (int j=i+1; j<CANT_GENEROS; j++) {
+            if (vistasPorGenero[i] < vistasPorGenero[j]) {
+                int auxVistas = vistasPorGenero[i];
+                vistasPorGenero[i] = vistasPorGenero[j];
+                vistasPorGenero[j] = auxVistas;
+
+                // esto cambia en el array el genero que corresponde con su indice
+                // ej: si romance(i6) para a ser indice 2, no queda con el nombre del i2 anterior (aventura)
+                char auxNombre[20];
+                strcpy(auxNombre, nombresGeneros[i]);
+                strcpy(nombresGeneros[i], nombresGeneros[j]);
+                strcpy(nombresGeneros[j], auxNombre);
+            }
+        }
+    }
+
+    int totalVistas=0;
+    for (int i=0; i<CANT_GENEROS; i++) {
+        totalVistas += vistasPorGenero[i];
+    }
+
+    if (totalVistas == 0) {
+        printf("No hay funciones vistas todavia.\n");
+        return;
+    }
+
+    //muestra el ranking
+    int posicion=1;
+    for (int i=0; i<CANT_GENEROS; i++) {
+        if (vistasPorGenero[i] > 0) {
+            printf("%d. %s - %d vistas\n", posicion, nombresGeneros[i], vistasPorGenero[i]);
+            posicion++;
+        }
+    }
+
+    printf("\n");
+}
+void listadoCancelaciones(){}
+void listadoClientesMayorCantidadReservas(){}
+
