@@ -8,7 +8,7 @@
 #include "salas.h"
 #include "funciones.h"
 #include "reportes.h"
-#include "reserva.h"
+#include "reservas.h"
 
 void inicioCliente() {
     int opcion=1;
@@ -228,7 +228,7 @@ void menuAdmin(){
                     switch(opcionReportes) {
                         case 1: listarFunciones(); break;
                         case 2: peliculasMasVistas(); break;
-                        case 3: break;
+                        case 3: listarReservasActivas(); break;
                         case 4: break;
                         case 5: break;
                         case 6: generosMasVistos(); break;
@@ -254,5 +254,3 @@ void menuAdmin(){
     } while(opcion != 0);
     return;
 }
-
-

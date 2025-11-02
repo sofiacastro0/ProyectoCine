@@ -3,5 +3,6 @@
 
 void generosMasVistos();
 void peliculasMasVistas();
+void listarReservasActivas();
 
 #endif // REPORTES_H_INCLUDED

@@ -4,6 +4,9 @@
 #include "reportes.h"
 #include "peliculas.h"
 #include "funciones.h"
+#include "reservas.h"
+#include "clientes.h"
+#include "salas.h"
 
 #define CANT_GENEROS 10
 
@@ -141,4 +144,54 @@ void peliculasMasVistas() {
     }
 
     printf("\n");
+}
+void listarReservasActivas() {
+    printf("\n\n--- Listado de Reservas Activas por Funcion ---\n");
+
+    int hayReservas = 0;
+
+    for (int i = 0; i < cantFunciones; i++) {
+        if (funciones[i].altaObaja) {
+            int reservasEnFuncion = 0;
+
+            for (int j = 0; j < cantidadReservas; j++) {
+                if (reservas[j].estado.activa && reservas[j].idFuncion == funciones[i].id) {
+                    if (reservasEnFuncion == 0) {
+
+                        printf("\nFuncion: %d | Sala: %d | Fecha y Hora: %d/%d/%d - %02d:%02d\n",  //pongo %02d para que muestre 17:00 y no 17:0
+                               funciones[i].id,
+                               funciones[i].idSala,
+                               funciones[i].fecha.dia,
+                               funciones[i].fecha.mes,
+                               funciones[i].fecha.anio,
+                               funciones[i].horaInicio.hora,
+                               funciones[i].horaInicio.minuto);
+
+                        reservasEnFuncion = 1;
+                    }
+
+                    int clienteEncontrado = 0;
+                    char nombreCliente[51];
+
+                    for (int k = 0; k < cantClientes; k++) {
+                        if (clientes[k].id == reservas[j].idCliente) {
+                            strcpy(nombreCliente, clientes[k].nombre);
+                            clienteEncontrado = 1;
+                            break;
+                        }
+                    }
+
+                    if (clienteEncontrado) {
+                        printf("Nombre: %s - %d Entradas\n", nombreCliente, reservas[j].cantidad);
+                    }
+
+                    hayReservas = 1;
+                }
+            }
+        }
+    }
+
+    if (!hayReservas) {
+        printf("No hay reservas activas registradas.\n");
+    }
 }

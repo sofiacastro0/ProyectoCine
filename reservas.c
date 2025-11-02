@@ -7,9 +7,9 @@
 #include "clientes.h"
 #include "peliculas.h"
 #include "funciones.h"
-#include "reserva.h"
+#include "reservas.h"
 #include "estructuras.h"
-
+#include "reportes.h"
 
 extern Funcion funciones[];
 extern int cantFunciones;
@@ -141,10 +141,18 @@ if (entradas > maxEntradas) {
            funciones[posFuncion].horaInicio.hora,
            funciones[posFuncion].horaInicio.minuto);
 
-   printf("\n\nPrecio por entrada: $%d\nCantidad de entradas: %d\n\nTotal a pagar: $%d\n\n",
-        funciones[posFuncion].precio,
-        nueva.cantidad,
-        funciones[posFuncion].precio*nueva.cantidad);
+    int precioEntradaBase = funciones[posFuncion].precio;
+    int precioEntrada = aplicarDescuento(funciones[posFuncion], precioEntradaBase);
+    int total = precioEntrada * nueva.cantidad;
+
+        if (precioEntrada != precioEntradaBase) {
+            printf("\n\nDe lunes a miercoles entradas a mitad de precio!\nPrecio original por entrada: $%d\n", precioEntradaBase);
+        }
+
+        printf("Precio con descuento: $%d\nCantidad de entradas: %d\n\nTotal a pagar: $%d\n\n",
+               precioEntrada,
+               nueva.cantidad,
+               total);
 }
 
 void verMisReservas() {
@@ -265,8 +273,6 @@ void mostrarButacasDisponibles() {
     getchar();
 }
 
-//
-
 void asistencia(int idFuncion) {
     int asistencia = 0;
 
@@ -282,5 +288,55 @@ void asistencia(int idFuncion) {
     } else {
         printf("No hay reservas activas para la función con ID: %d.\n", idFuncion);
     }
+}
+
+int obtenerDiaSemana(Fecha fecha) {
+    int dia = fecha.dia;
+    int mes = fecha.mes;
+    int anio = fecha.anio;
+
+    // enero y febrero tienen que ser los meses 11 y 12 del año anterior
+    if (mes == 1) {
+        mes = 11;
+        anio -= 1;
+    } else
+        if (mes == 2) {
+        mes = 12;
+        anio -= 1;
+        } else {
+        mes -= 2; // marzo es igual a 1, abril = 2, mayo = 3
+    }
+
+    int D = anio % 100;
+    int C = anio / 100;
+    int diaSemana = (dia + ((13*mes - 1) / 5) + D + (D/4) + (C/4) - 2*C) % 7;
+
+    // esto hace que no devuelva un numero negativo
+    if (diaSemana < 0)
+        diaSemana += 7;
+
+    return diaSemana;
+    /*
+    0 = domingo
+    1 = lunes
+    2 = martes
+    3 = miercoles
+    4 = jueves
+    5 = viernes
+    6 = sabado
+    */
+
+}
+int aplicarDescuento(Funcion funcion, int precioBase) {
+    int lunes = 1;
+    int martes = 2;
+    int miercoles = 3;
+
+    if (obtenerDiaSemana(funcion.fecha) == lunes || obtenerDiaSemana(funcion.fecha) == martes || obtenerDiaSemana(funcion.fecha) == miercoles) {
+        int precioConDescuento = precioBase / 2;
+        return precioConDescuento;
+    }
+
+    return precioBase;
 }
 
