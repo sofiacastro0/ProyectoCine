@@ -101,10 +101,16 @@ void altaCliente(){
     scanf(" %d/%d/%d", &dia, &mes, &anio);
         fechaCompleta nacimiento = {dia, mes, anio, -1, -1};
         if (fecha_es_valida(nacimiento)){
-            alta.fechaNac.dia = dia;
-            alta.fechaNac.mes = mes;
-            alta.fechaNac.anio = anio;
-            errorFechaNac=false;
+            fechaCompleta hoy = fecha_actual();
+            if (comparar_fechas(nacimiento, hoy) <= 0) {
+                alta.fechaNac.dia = dia;
+                alta.fechaNac.mes = mes;
+                alta.fechaNac.anio = anio;
+                errorFechaNac=false;
+            } else {
+                errorFechaNac=true;
+                printf("ERROR: La fecha de nacimiento no puede ser futura\n");
+            }
         } else {
             errorFechaNac=true;
             printf("ERROR: Fecha de nacimiento invalida\n");
@@ -243,15 +249,25 @@ void modificacionCliente(){
                             } while (errorDni);
                             break;
 
-                    case 5: do {
+                     case 5: do {
                             printf("Fecha de nacimiento anterior: %d/%d/%d. Nueva Fecha de nacimiento: ",clientes[i].fechaNac.dia, clientes[i].fechaNac.mes, clientes[i].fechaNac.anio);
                             scanf(" %d/%d/%d", &modificacion.fechaNac.dia, &modificacion.fechaNac.mes, &modificacion.fechaNac.anio);
                                 fechaCompleta nacimiento = {modificacion.fechaNac.dia, modificacion.fechaNac.mes, modificacion.fechaNac.anio, -1,-1};
                                 if (fecha_es_valida(nacimiento)){
-                                    clientes[i].fechaNac.dia = modificacion.fechaNac.dia;
-                                    clientes[i].fechaNac.mes = modificacion.fechaNac.mes;
-                                    clientes[i].fechaNac.anio = modificacion.fechaNac.anio;
-                                    errorFechaNac=false;
+
+                                    fechaCompleta hoy = fecha_actual();
+
+                                    if (comparar_fechas(nacimiento, hoy) <= 0) {
+                                        clientes[i].fechaNac.dia = modificacion.fechaNac.dia;
+                                        clientes[i].fechaNac.mes = modificacion.fechaNac.mes;
+                                        clientes[i].fechaNac.anio = modificacion.fechaNac.anio;
+                                        clientes[i].edad = diferencia_anios(nacimiento, hoy);
+                                        clientes[i].cantEntradas = clientes[i].edad > 18 ? 5 : 1;
+                                        errorFechaNac=false;
+                                    } else {
+                                        errorFechaNac=true;
+                                        printf("ERROR: La fecha de nacimiento no puede ser futura\n");
+                                    }
                                 } else {
                                     errorFechaNac=true;
                                     printf("ERROR: Fecha de nacimiento invalida\n");

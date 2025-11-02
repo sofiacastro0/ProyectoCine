@@ -169,7 +169,6 @@ void modificarFuncion(){
     Funcion modificacion;
     int opcion=-1, i=0;
     bool encontrado=false;
-    bool errorFechaFuncion=false;
     bool errorHoraFuncion=false;
     bool errorPrecio=false;
 
@@ -213,20 +212,23 @@ void modificarFuncion(){
                             printf("Fecha y hora anterior: %d/%d/%d - %d:%d Nueva Fecha: ",funciones[i].fecha.dia,funciones[i].fecha.mes,funciones[i].fecha.anio,funciones[i].horaInicio.hora,funciones[i].horaInicio.minuto);
                             scanf(" %d/%d/%d", &modificacion.fecha.dia, &modificacion.fecha.mes, &modificacion.fecha.anio);
 
-                            Fecha fechaFuncion = {modificacion.fecha.dia, modificacion.fecha.mes, modificacion.fecha.anio};
-
                             printf("Nueva hora: ");
                             scanf(" %d:%d", &modificacion.horaInicio.hora, &modificacion.horaInicio.minuto);
 
                                 fechaCompleta horaFuncion = {modificacion.fecha.dia, modificacion.fecha.mes, modificacion.fecha.anio, modificacion.horaInicio.hora, modificacion.horaInicio.minuto};
 
-                                if (fecha_es_valida(horaFuncion)){
-                                    funciones[i].fecha.dia = modificacion.fecha.dia;
-                                    funciones[i].fecha.mes = modificacion.fecha.mes;
-                                    funciones[i].fecha.anio = modificacion.fecha.anio;
-                                    funciones[i].horaInicio.hora = modificacion.horaInicio.hora;
-                                    funciones[i].horaInicio.minuto = modificacion.horaInicio.minuto;
-                                    errorHoraFuncion=false;
+                                if (fecha_es_valida(horaFuncion) && fechaFuncionValida(modificacion.fecha, modificacion.horaInicio)){
+                                    if(haySolapamiento(i, funciones[i].idSala, modificacion.fecha, modificacion.horaInicio, funciones[i].duracionConLimpieza)) {
+                                        printf("Esta sala tiene otra funcion en ese horario\n");
+                                        errorHoraFuncion=true;
+                                    } else {
+                                        funciones[i].fecha.dia = modificacion.fecha.dia;
+                                        funciones[i].fecha.mes = modificacion.fecha.mes;
+                                        funciones[i].fecha.anio = modificacion.fecha.anio;
+                                        funciones[i].horaInicio.hora = modificacion.horaInicio.hora;
+                                        funciones[i].horaInicio.minuto = modificacion.horaInicio.minuto;
+                                        errorHoraFuncion=false;
+                                    }
                                 } else {
                                     errorHoraFuncion=true;
                                     printf("ERROR: Fecha y Hora invalida\n");

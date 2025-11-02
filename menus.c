@@ -11,7 +11,6 @@
 
 void inicioCliente() {
     int opcion=1;
-    char tecla;
         limpiarPantalla();
         printf("---- Gestion de Clientes ----\n");
         printf("1. Alta\n");
@@ -26,16 +25,14 @@ void inicioCliente() {
                 case 1: altaCliente(); break;
                 case 2: bajaCliente(); break;
                 case 3: modificacionCliente(); break;
-                case 4: if (iniciarSesion()){
-                            menuCliente();
-                        }
-                        break;
+                case 4: if (iniciarSesion()){ menuCliente(); } break;
                 case 0: break;
                 default: printf("Opcion invalida\n"); break;
             }
 
             if(opcion != 0){
             printf("Presione Enter para continuar.");
+            getchar();
             getchar();
         }
 }
@@ -59,30 +56,16 @@ void menuCliente(){
 
         switch(opcion) {
             case 1: menuBuscarFunciones(); break;
-            case 2:
-                //Ver butacas disponibles
-
-                break;
-            case 3:
-                //Reservar butacas
-
-                break;
-            case 4:
-                //Cancelar reserva
-
-                break;
-            case 5:
-                //Ver mis reservas
-
-                break;
-            case 0:
-                //Volver al menú principal
-                break;
+            case 2: break; //Ver butacas disponibles
+            case 3: break; //Reservar butacas
+            case 4: break; //Cancelar reserva
+            case 5: break; //Ver mis reservas
+            case 0: break; //Volver al menú principal
             default: printf("La opcion %d no existe en el menu.\n",opcion); break;
         }
 
         if(opcion!=0){  //limpia el buffer
-        //Si la opcion elegida NO es 7. (pausa la ejecución hasta que el usuario presione enter y
+        //Si la opcion elegida NO es 0. (pausa la ejecución hasta que el usuario presione enter y
         //limpiar el buffer de entrada para que no queden caracteres pendientes que arruinen la próxima lectura.)
             printf("Presione Enter para continuar.");
             tecla=getchar();
@@ -90,14 +73,13 @@ void menuCliente(){
             while ((tecla=getchar()) != '\n' && tecla != EOF) {}
         }
 
-    } while(opcion!=6);
+    } while(opcion!=0);
 
 }
 
 //menu administrador//
 void menuAdmin(){
     int opcion = -1;
-    char tecla;
     do {
         limpiarPantalla();
         printf("------- Menu Administrador -------\n");
