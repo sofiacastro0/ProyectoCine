@@ -132,7 +132,6 @@ void altaCliente(){
             getchar(); //limpia buffer
             getchar(); // espera enter
 }
-
 void bajaCliente(){
     int i=0;
     bool encontrado=false;
@@ -165,7 +164,6 @@ void bajaCliente(){
 
     return;
 }
-
 void modificacionCliente(){
 
     Cliente modificacion;

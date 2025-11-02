@@ -57,26 +57,16 @@ void altaPeli() {
     scanf("%d", &opcionGenero);
 
     switch(opcionGenero) {
-        case 1: strcpy(alta.genero, "Accion");
-                break;
-        case 2: strcpy(alta.genero, "Aventura");
-                break;
-        case 3: strcpy(alta.genero, "Ciencia Ficcion");
-                break;
-        case 4: strcpy(alta.genero, "Fantasia");
-                break;
-        case 5: strcpy(alta.genero, "Terror");
-                break;
-        case 6: strcpy(alta.genero, "Comedia");
-                break;
-        case 7: strcpy(alta.genero, "Romance");
-                break;
-        case 8: strcpy(alta.genero, "Drama");
-                break;
-        case 9: strcpy(alta.genero, "Animacion");
-                break;
-        case 10: strcpy(alta.genero, "Documental");
-                break;
+        case 1: strcpy(alta.genero, "Accion"); break;
+        case 2: strcpy(alta.genero, "Aventura"); break;
+        case 3: strcpy(alta.genero, "Ciencia Ficcion"); break;
+        case 4: strcpy(alta.genero, "Fantasia"); break;
+        case 5: strcpy(alta.genero, "Terror"); break;
+        case 6: strcpy(alta.genero, "Comedia"); break;
+        case 7: strcpy(alta.genero, "Romance"); break;
+        case 8: strcpy(alta.genero, "Drama"); break;
+        case 9: strcpy(alta.genero, "Animacion"); break;
+        case 10: strcpy(alta.genero, "Documental"); break;
         default: strcpy(alta.genero, "Sin definir"); break;
     }
 

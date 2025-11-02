@@ -22,7 +22,6 @@ void altaFuncion(){
     }
 
     Funcion alta;
-    alta.id = generarId(ENTIDAD_FUNCION);
     alta.altaObaja = 1;
     alta.cantidadReservas = 0;
     alta.reservasAsistidas = 0;
@@ -123,6 +122,7 @@ void altaFuncion(){
     } while (errorPrecio);
 
     //Guardar en el array
+    alta.id = generarId(ENTIDAD_FUNCION);
     funciones[cantFunciones] = alta;
     cantFunciones++;
 
@@ -133,7 +133,6 @@ void altaFuncion(){
             getchar(); // espera enter
 
 }
-
 void bajaFuncion(){
 
     if (cantFunciones==0){
@@ -158,7 +157,6 @@ void bajaFuncion(){
     }
 
 }
-
 void modificarFuncion(){
 
     if (cantFunciones==0){
@@ -270,7 +268,6 @@ void modificarFuncion(){
         printf("No se encontro una funcion con ese ID.\n");
     }
 }
-
 void listarFunciones(){
 
     printf("\n\n--- Listado de Funciones ---\n");
@@ -285,7 +282,7 @@ void listarFunciones(){
 
         if(funciones[i].altaObaja){
             int disponibles = butacasDisponibles(funciones[i]);
-            printf("ID:%d | Pelicula: %d | Sala :%d | Fecha y hora: %d/%d/%d - %02d:%02d | Precio: %d | Reservas activas: %d | Reservas asistidas: %d",
+            printf("ID:%d | Pelicula: %d | Sala :%d | Fecha y hora: %d/%d/%d - %02d:%02d | Precio: $%d | Reservas activas: %d | Reservas asistidas: %d",
                    funciones[i].id,
                    funciones[i].idPelicula,
                    funciones[i].idSala,
@@ -316,8 +313,6 @@ bool fechaFuncionValida(Fecha fecha, Hora hora) {     // esta funcion valida que
     fechaCompleta inicio = {fecha.dia, fecha.mes, fecha.anio, hora.hora, hora.minuto};
     return comparar_fechas(inicio, fecha_actual());
 }
-
-
 bool precioValido(int precio){
     return (precio > 0);
 }
@@ -325,7 +320,7 @@ bool precioValido(int precio){
 void menuBuscarFunciones(){
     actualizarReservasAsistidas();
     int opcionCliente = -1;
-    while(opcionCliente != 6){
+    while(opcionCliente != 0){
         limpiarPantalla();
         printf("\n--- BUSCAR FUNCIONES ---\n");
         printf("1. Buscar funcion por Pelicula\n");
@@ -333,7 +328,7 @@ void menuBuscarFunciones(){
         printf("3. Buscar funcion por Idioma\n");
         printf("4. Buscar funcion por Genero\n");
         printf("5. Buscar funcion por Disponibilidad\n");
-        printf("6. Volver al menú anterior\n");
+        printf("0. Volver al menú anterior\n");
         printf("Ingrese opción: ");
         scanf("%d", &opcionCliente);
 
@@ -343,11 +338,11 @@ void menuBuscarFunciones(){
             case 3: buscarFuncionesPorIdioma(); break;
             case 4: buscarFuncionesPorGenero(); break;
             case 5: buscarFuncionesPorDisponibilidad(); break;
-            case 6: printf("Volviendo al menú anterior...\n"); break;
+            case 0: printf("Volviendo al menú anterior...\n"); break;
             default: printf("Opción inválida.\n");
         }
 
-        if(opcionCliente != 6){
+        if(opcionCliente != 0){
             printf("Presione Enter para continuar...");
             getchar(); getchar();
         }
@@ -539,8 +534,6 @@ void buscarFuncionesPorDisponibilidad(){
     printf("\nPresione Enter para continuar...");
     getchar(); getchar();
 }
-
-
 
 int fechasIguales(Fecha a, Fecha b) {  //compara 2 fechas para ver si hay solapamiento
     return a.dia == b.dia && a.mes == b.mes && a.anio == b.anio;

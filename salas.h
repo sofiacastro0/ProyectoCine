@@ -11,6 +11,9 @@ typedef struct {
     int activo;         // 1 = activa, 0 = eliminada
 } Sala;
 
+extern Sala salas[MAX_SALAS];
+extern int cantidadSalas;
+
 int generarIdSala();
 void altaSala();
 void bajaSala();

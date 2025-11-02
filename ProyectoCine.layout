@@ -2,34 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="reportes.c" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funciones.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="367" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="util.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="peliculas.c" open="1" top="1" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="188" topLine="42" />
-		</Cursor>
-	</File>
-	<File name="fecha.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="588" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="salas.c" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2683" topLine="59" />
-		</Cursor>
-	</File>
-	<File name="clientes.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="479" topLine="0" />
+			<Cursor1 position="142" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="estructuras.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,14 +12,177 @@
 			<Cursor1 position="500" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="reportes.c" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5539" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="11" />
+			<Collapse line="87" />
+		</Folding>
+	</File>
+	<File name="menus.c" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9940" topLine="238" />
+		</Cursor>
+	</File>
+	<File name="salas.c" open="1" top="1" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2286" topLine="3" />
+		</Cursor>
+	</File>
 	<File name="menus.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="funciones.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="fecha.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="142" topLine="0" />
+			<Cursor1 position="1636" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="funciones.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11786" topLine="14" />
+		</Cursor>
+		<Folding>
+			<Collapse line="16" />
+			<Collapse line="18" />
+			<Collapse line="42" />
+			<Collapse line="47" />
+			<Collapse line="48" />
+			<Collapse line="50" />
+			<Collapse line="62" />
+			<Collapse line="70" />
+			<Collapse line="79" />
+			<Collapse line="91" />
+			<Collapse line="105" />
+			<Collapse line="111" />
+			<Collapse line="114" />
+			<Collapse line="135" />
+			<Collapse line="137" />
+			<Collapse line="146" />
+			<Collapse line="147" />
+			<Collapse line="148" />
+			<Collapse line="159" />
+			<Collapse line="161" />
+			<Collapse line="175" />
+			<Collapse line="184" />
+			<Collapse line="185" />
+			<Collapse line="194" />
+			<Collapse line="195" />
+			<Collapse line="198" />
+			<Collapse line="202" />
+			<Collapse line="211" />
+			<Collapse line="222" />
+			<Collapse line="237" />
+			<Collapse line="242" />
+			<Collapse line="266" />
+			<Collapse line="270" />
+			<Collapse line="273" />
+			<Collapse line="280" />
+			<Collapse line="282" />
+			<Collapse line="284" />
+			<Collapse line="297" />
+			<Collapse line="303" />
+			<Collapse line="311" />
+			<Collapse line="315" />
+			<Collapse line="350" />
+			<Collapse line="360" />
+			<Collapse line="361" />
+			<Collapse line="365" />
+			<Collapse line="367" />
+			<Collapse line="368" />
+			<Collapse line="369" />
+			<Collapse line="386" />
+			<Collapse line="393" />
+			<Collapse line="400" />
+			<Collapse line="401" />
+			<Collapse line="406" />
+			<Collapse line="407" />
+			<Collapse line="409" />
+			<Collapse line="429" />
+			<Collapse line="436" />
+			<Collapse line="437" />
+			<Collapse line="442" />
+			<Collapse line="443" />
+			<Collapse line="445" />
+			<Collapse line="466" />
+			<Collapse line="473" />
+			<Collapse line="474" />
+			<Collapse line="479" />
+			<Collapse line="480" />
+			<Collapse line="482" />
+			<Collapse line="503" />
+			<Collapse line="507" />
+			<Collapse line="508" />
+			<Collapse line="510" />
+			<Collapse line="511" />
+			<Collapse line="512" />
+			<Collapse line="513" />
+			<Collapse line="530" />
+			<Collapse line="537" />
+			<Collapse line="540" />
+			<Collapse line="543" />
+			<Collapse line="547" />
+			<Collapse line="548" />
+			<Collapse line="551" />
+			<Collapse line="559" />
+			<Collapse line="563" />
+			<Collapse line="565" />
+			<Collapse line="566" />
+			<Collapse line="568" />
+			<Collapse line="576" />
+			<Collapse line="578" />
+			<Collapse line="583" />
+		</Folding>
+	</File>
+	<File name="salas.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="407" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="fecha.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="588" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ids.h" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="clientes.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4819" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="14" />
+			<Collapse line="43" />
+			<Collapse line="134" />
+			<Collapse line="166" />
+			<Collapse line="275" />
+			<Collapse line="300" />
+			<Collapse line="317" />
+			<Collapse line="324" />
+			<Collapse line="327" />
+			<Collapse line="334" />
+			<Collapse line="340" />
+		</Folding>
+	</File>
+	<File name="peliculas.c" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2591" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="reportes.h" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="109" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="peliculas.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="297" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.c" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -57,49 +195,19 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ids.c" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="670" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="menus.c" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="9898" topLine="238" />
-		</Cursor>
-	</File>
-	<File name="fecha.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1636" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="reportes.h" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="79" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="peliculas.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="297" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="clientes.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="141" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ids.h" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="util.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="funciones.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="ids.c" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8312" topLine="231" />
-		</Cursor>
-	</File>
-	<File name="salas.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="512" topLine="0" />
+			<Cursor1 position="670" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

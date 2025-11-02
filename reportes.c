@@ -85,3 +85,60 @@ void generosMasVistos() {
 
     printf("\n");
 }
+void peliculasMasVistas() {
+    printf("\n\n--- Ranking de Peliculas Mas Vistas ---\n");
+
+    if (cantidadPelis == 0) {
+        printf("No hay peliculas registradas.\n");
+        return;
+    }
+
+    int vistasPorPelicula[cant_max_peliculas] = {0}; //pone todo en 0
+    int indices[cant_max_peliculas];  // al no saber los titulos compara por indice y reservas asistidas
+
+    for (int i=0; i<cantidadPelis; i++) {
+        indices[i] = i;
+    }
+
+    for (int i=0; i<cantFunciones; i++) {
+        if (funciones[i].altaObaja && funciones[i].reservasAsistidas>0) {
+            for (int j=0; j<cantidadPelis; j++) {
+                if (peliculas[j].altaObaja && peliculas[j].id == funciones[i].idPelicula) {
+                    vistasPorPelicula[j] += funciones[i].reservasAsistidas;
+                    break;
+                }
+            }
+        }
+    }
+
+    int totalVistas=0;
+    for (int i=0; i<cantidadPelis; i++) {
+        totalVistas+=vistasPorPelicula[i];
+    }
+
+    if (totalVistas==0) {
+        printf("No hay funciones vistas todavia.\n");
+        return;
+    }
+
+    for (int i=0; i<cantidadPelis-1; i++) {
+        for (int j=i+1; j<cantidadPelis; j++) {
+            if (vistasPorPelicula[indices[j]] > vistasPorPelicula[indices[i]]) {
+                int auxIndice = indices[i];
+                indices[i] = indices[j];
+                indices[j] = auxIndice;
+            }
+        }
+    }
+
+    int posicion=1;
+    for (int i=0; i<cantidadPelis; i++) {
+        int j = indices[i];
+        if (peliculas[j].altaObaja && vistasPorPelicula[j] > 0) {
+            printf("%d. %s - %d vistas\n", posicion, peliculas[j].titulo, vistasPorPelicula[j]);
+            posicion++;
+        }
+    }
+
+    printf("\n");
+}
