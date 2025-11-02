@@ -318,3 +318,124 @@
 	<stdbool.h>
 	"estructuras.h"
 
+1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdbool.h>
+	"clientes.h"
+	"ids.h"
+	"util.h"
+	"fecha.h"
+	"estructuras.h"
+
+1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\clientes.h
+	"estructuras.h"
+	<stdbool.h>
+
+1762044439 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\estructuras.h
+
+1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\ids.h
+
+1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\util.h
+
+1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\fecha.h
+
+1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\fecha.c
+	"fecha.h"
+	<stdio.h>
+	<time.h>
+
+1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	"funciones.h"
+	"peliculas.h"
+	"salas.h"
+	"util.h"
+	"ids.h"
+	"fecha.h"
+	"estructuras.h"
+
+1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\funciones.h
+	<stdbool.h>
+	"estructuras.h"
+
+1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\peliculas.h
+
+1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\salas.h
+
+1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\ids.c
+	"ids.h"
+
+1762049059 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"clientes.h"
+	"util.h"
+	"datos_prueba.h"
+
+1762050266 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\menus.h
+
+1762049782 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\peliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"peliculas.h"
+	"ids.h"
+
+1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\salas.c
+	"salas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+
+1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\util.c
+	<stdlib.h>
+	"util.h"
+
+1762050266 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"peliculas.h"
+	"ids.h"
+	"clientes.h"
+	"util.h"
+	"salas.h"
+	"funciones.h"
+	"reserva.h"
+
+1762047446 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\reserva.h
+	<stdbool.h>
+	"estructuras.h"
+
+1762050577 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"ids.h"
+	"salas.h"
+	"clientes.h"
+	"peliculas.h"
+	"funciones.h"
+	"reserva.h"
+	"estructuras.h"
+
+1762049965 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\datos_prueba.c
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	"estructuras.h"
+	"ids.h"
+	"clientes.h"
+	"peliculas.h"
+	"salas.h"
+	"funciones.h"
+
+1762048843 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\datos_prueba.h
+

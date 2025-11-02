@@ -3,4 +3,4 @@
 
 void limpiarPantalla();
 
-#endif // UTIL_H_INCLUDED
+#endif

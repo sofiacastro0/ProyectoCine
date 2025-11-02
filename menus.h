@@ -4,5 +4,5 @@
 void inicioCliente();
 void menuCliente();
 void menuAdmin();
-
-#endif // MENUS_H_INCLUDED
+void menuBuscarFunciones();
+#endif

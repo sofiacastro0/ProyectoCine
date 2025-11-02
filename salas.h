@@ -6,9 +6,9 @@
 #define MAX_COLUMNAS 17
 
 typedef struct {
-    int id;             // ID unico de la sala
-    int butacas[MAX_FILAS][MAX_COLUMNAS];      // cantidad de butacas
-    int activo;         // 1 = activa, 0 = eliminada
+    int id;
+    int butacas[MAX_FILAS][MAX_COLUMNAS];
+    int activo;
 } Sala;
 
 int generarIdSala();

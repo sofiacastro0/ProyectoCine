@@ -31,7 +31,7 @@ void altaPeli() {
     printf("Ingrese clasificacion (ATP, +13, +16, +18): ");
     scanf(" %s", alta.clasificacion);
 
-    // ----- IDIOMA -----
+
     int opcionIdioma;
     printf("\nSeleccione el idioma:\n");
     printf("1. Español (Latino)\n2. Inglés\n3. Francés\n4. Portugués\n5. Japonés\n6. Coreano\n7. Italiano\n");
@@ -49,7 +49,7 @@ void altaPeli() {
         default: strcpy(alta.idioma, "Sin definir"); break;
     }
 
-    // ----- GÉNERO -----
+
     int opcionGenero;
     printf("\nSeleccione el genero:\n");
     printf("1. Acción\n2. Aventura\n3. Ciencia ficción\n4. Fantasía\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animación\n10. Documental\n");

@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="clientes.h" />
+		<Unit filename="datos_prueba.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="datos_prueba.h" />
 		<Unit filename="estructuras.h" />
 		<Unit filename="fecha.c">
 			<Option compilerVar="CC" />
@@ -59,6 +63,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="peliculas.h" />
+		<Unit filename="reserva.h" />
+		<Unit filename="reservas.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="salas.c">
 			<Option compilerVar="CC" />
 		</Unit>
