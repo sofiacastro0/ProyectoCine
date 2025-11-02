@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include "menus.h"
 #include "clientes.h"
-#include "util.h"
+#include "util.h"+
+#include "datos_prueba.h"
 
 //revisar todos los "Presione Enter para continuar."
 
 int main() {
+    cargarDatosDePrueba();
     int seleccion = -1;
     char tecla;
 

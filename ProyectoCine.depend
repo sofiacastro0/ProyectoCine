@@ -69,7 +69,7 @@
 	<stdio.h>
 	<string.h>
 
-1762104199 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
+1762112432 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -84,23 +84,24 @@
 	"estructuras.h"
 	<stdbool.h>
 
-1761845914 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
+1762111455 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
 
 1759782353 source:c:\users\sofic\desktop\proyectocine-ramanati\ids.c
 	"ids.h"
 
 1761786293 c:\users\sofic\desktop\proyectocine-ramanati\ids.h
 
-1761786293 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
+1762111456 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
 	"clientes.h"
 	"util.h"
+	"datos_prueba.h"
 
-1761786293 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
+1762111455 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
 
-1762047726 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
+1762111456 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -111,10 +112,11 @@
 	"salas.h"
 	"funciones.h"
 	"reportes.h"
+	"reserva.h"
 
-1762043696 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
+1762111456 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
 
-1762046209 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
+1762111455 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -174,7 +176,7 @@
 	<string.h>
 	"util.h"
 
-1761786293 c:\users\sofic\desktop\proyectocine-ramanati\util.h
+1762111456 c:\users\sofic\desktop\proyectocine-ramanati\util.h
 
 1761786293 source:c:\users\sofic\desktop\proyectocine-ramanati\util.c
 	<stdlib.h>
@@ -186,7 +188,7 @@
 	<stdio.h>
 	<string.h>
 
-1762046879 c:\users\sofic\desktop\proyectocine-ramanati\salas.h
+1762111455 c:\users\sofic\desktop\proyectocine-ramanati\salas.h
 
 1759705266 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.c
 	"ids.h"
@@ -303,7 +305,7 @@
 
 1761845914 c:\users\sofic\desktop\proyectocine-ramanati\fecha.h
 
-1762110290 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
+1762110572 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
@@ -327,5 +329,35 @@
 	<string.h>
 	"reportes.h"
 	"peliculas.h"
+	"funciones.h"
+
+1762110767 c:\users\sofic\desktop\proyectocine-ramanati\datos_prueba.h
+
+1762110767 c:\users\sofic\desktop\proyectocine-ramanati\reserva.h
+	<stdbool.h>
+	"estructuras.h"
+
+1762112308 source:c:\users\sofic\desktop\proyectocine-ramanati\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"ids.h"
+	"salas.h"
+	"clientes.h"
+	"peliculas.h"
+	"funciones.h"
+	"reserva.h"
+	"estructuras.h"
+
+1762111494 source:c:\users\sofic\desktop\proyectocine-ramanati\datos_prueba.c
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	"estructuras.h"
+	"ids.h"
+	"clientes.h"
+	"peliculas.h"
+	"salas.h"
 	"funciones.h"
 

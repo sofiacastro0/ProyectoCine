@@ -8,24 +8,21 @@
 #include "salas.h"
 #include "funciones.h"
 #include "reportes.h"
+#include "reserva.h"
 
 void inicioCliente() {
     int opcion=1;
         limpiarPantalla();
         printf("---- Gestion de Clientes ----\n");
-        printf("1. Alta\n");
-        printf("2. Baja\n");
-        printf("3. Modificacion\n");
-        printf("4. Menu cliente\n");
+        printf("1. Registrarse\n");
+        printf("2. Log-in\n");
         printf("0. Volver al menu principal\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 
             switch (opcion) {
                 case 1: altaCliente(); break;
-                case 2: bajaCliente(); break;
-                case 3: modificacionCliente(); break;
-                case 4: if (iniciarSesion()){ menuCliente(); } break;
+                case 2: if (iniciarSesion()){ menuCliente(); } break;
                 case 0: break;
                 default: printf("Opcion invalida\n"); break;
             }
@@ -38,7 +35,7 @@ void inicioCliente() {
 }
 
 void menuCliente(){
-    int opcion=-1;
+    int opcion = -1;
     char tecla;
 
     do {
@@ -49,17 +46,23 @@ void menuCliente(){
         printf("3. Reservar butacas\n");
         printf("4. Cancelar reserva\n");
         printf("5. Ver mis reservas\n");
+        printf("6. Eliminar cuenta\n");
+        printf("7. Editar datos de cuenta\n");
         printf("0. Volver al menu principal\n");
         printf("---------------------------------\n");
         printf("Seleccione una opcion: ");
         scanf("%d",&opcion);
 
+        while ((tecla = getchar()) != '\n' && tecla != EOF) {}
+
         switch(opcion) {
             case 1: menuBuscarFunciones(); break;
-            case 2: break; //Ver butacas disponibles
-            case 3: break; //Reservar butacas
-            case 4: break; //Cancelar reserva
-            case 5: break; //Ver mis reservas
+            case 2: mostrarButacasDisponibles(); break;
+            case 3: reservar(); break;
+            case 4: cancelarReserva(); break;
+            case 5: verMisReservas(); break;
+            case 6: bajaCliente(); break;
+            case 7: modificacionCliente(); break;
             case 0: break; //Volver al menú principal
             default: printf("La opcion %d no existe en el menu.\n",opcion); break;
         }
@@ -159,13 +162,13 @@ void menuAdmin(){
                     limpiarPantalla();
                     printf("\n--- GESTION DE CLIENTES ---\n");
                     printf("1. Listar clientes\n");
-                    printf("0. Volver al menú anterior\n");
+                    printf("0. Volver al menu anterior\n");
                     printf("Ingrese opción: ");
                     scanf("%d", &opcionCliente);
 
                     switch(opcionCliente) {
                         case 1: listarClientes(); break;
-                        case 0: printf("Volviendo al menú anterior...\n"); break;
+                        case 0: printf("Volviendo al menu anterior...\n"); break;
                         default: printf("Opción inválida.\n");
                     }
 
@@ -184,8 +187,8 @@ void menuAdmin(){
                     printf("\n--- GESTION DE FUNCIONES ---\n");
                     printf("1. Alta de funcion\n");
                     printf("2. Baja de funcion\n");
-                    printf("3. Modificación de funcion\n");
-                    printf("0. Volver al menú anterior\n");
+                    printf("3. Modificacion de funcion\n");
+                    printf("0. Volver al menu anterior\n");
                     printf("Ingrese opción: ");
                     scanf("%d", &opcionFuncion);
 

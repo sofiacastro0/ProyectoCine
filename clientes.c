@@ -261,10 +261,20 @@ void modificacionCliente(){
                                         clientes[i].fechaNac.dia = modificacion.fechaNac.dia;
                                         clientes[i].fechaNac.mes = modificacion.fechaNac.mes;
                                         clientes[i].fechaNac.anio = modificacion.fechaNac.anio;
+
+                                        fechaCompleta hoy = fecha_actual();
                                         clientes[i].edad = diferencia_anios(nacimiento, hoy);
-                                        clientes[i].cantEntradas = clientes[i].edad > 18 ? 5 : 1;
+                                        if (clientes[i].edad > 18){
+                                            clientes[i].cantEntradas = 5;
+                                        } else {
+                                            clientes[i].cantEntradas = 1;
+                                        }
+
+                                        printf("Tu edad es: %d \n", clientes[i].edad);
+                                        printf("La cantidad de entradas que podes adquirir es de: %d\n", clientes[i].cantEntradas);
+
                                         errorFechaNac=false;
-                                    } else {
+                                        } else {
                                         errorFechaNac=true;
                                         printf("ERROR: La fecha de nacimiento no puede ser futura\n");
                                     }

@@ -16,10 +16,9 @@ typedef struct  {
     char formato[15];
 } Pelicula;
 
-extern Pelicula peliculas[cant_max_peliculas]; // array global
+extern Pelicula peliculas[cant_max_peliculas];
 extern int cantidadPelis;
 
-// funciones
 void altaPeli();
 void bajaPeli();
 void modificacionPeli();
