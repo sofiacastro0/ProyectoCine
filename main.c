@@ -2,58 +2,52 @@
 #include <stdlib.h>
 #include "menus.h"
 #include "clientes.h"
+#include "util.h"
+#include "datos_prueba.h"
 
+//revisar todos los "Presione Enter para continuar."
 
 int main() {
-    int seleccion = -1;  //opción elegida en menú principal
+    cargarDatosDePrueba();
+    int seleccion = -1;
     char tecla;
 
-    while (seleccion != 0) {
-        // Mostrar menu principal y guardar la opción
-        seleccion = menuPrincipal();
+    do {
+        limpiarPantalla();
+        printf("---------------------------------\n");
+        printf("          Cine Hoyts \n");
+        printf("---------------------------------\n");
+        printf("1. Operar como Cliente\n");
+        printf("2. Operar como Administrador\n");
+        printf("0. Salir del sistema\n");
+        printf("---------------------------------\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d",&seleccion);
 
-        switch (seleccion) {
-            case 1: // CLIENTE
-                system(clear);
-                printf("INICIAR SESION \n");
-                printf("1. Ingresar con email y contraseña\n");
-                printf("2. Registrarse\n");
-                printf("0. Volver al menu principal\n");
-                printf("Seleccione una opcion: ");
-                scanf("%d", &seleccion);
+            switch (seleccion) {
+                case 1: // cliente
+                    inicioCliente();
+                    break;
+                case 2: // admin
+                    menuAdmin(); //maneja su propio submenú
+                    break;
+                case 0:
+                    break;
+                default:
+                    printf("Opcion invalida\n");
+                    break;
+            }
 
-                switch (seleccion) {
-                    case 1:
-                        // Aca va la lógica de login
-                        break;
-                    case 2:
-                        registrar();
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        printf("Opcion invalida\n");
-                        break;
-                }
+            if(seleccion!=0){  //limpia el buffer
 
-                menuCliente(); //maneja su propio submenú
-                break;
+                printf("Presione Enter para continuar.");
+                tecla=getchar();
 
-            case 2: // admin
-                system(clear);
-                menuAdmin(); //maneja su propio submenú
-                break;
+                while ((tecla=getchar()) != '\n' && tecla != EOF) {}
+            }
+    } while (seleccion != 0);
 
-            case 0:
-                break;
-
-            default: //opción inválida
-                system(clear);
-                break;
-        }
-    }
-
-    system(clear);
+    limpiarPantalla();
     printf("Gracias! Vuelva pronto!\n");
 
     return 0;

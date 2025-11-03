@@ -1,5 +1,5 @@
-#ifndef PELICULAS_H
-#define PELICULAS_H
+#ifndef PELICULAS_H_INCLUDED
+#define PELICULAS_H_INCLUDED
 
 #define cant_max_peliculas 30
 #define cant_char 60
@@ -11,20 +11,17 @@ typedef struct  {
     char titulo[cant_char];
     char idioma[cant_char];
     char genero[cant_char];
-    char clasificacion[15];
+    char clasificacion[5];
     char formato[15];
 } Pelicula;
 
-extern Pelicula peliculas[cant_max_peliculas]; // array global
+extern Pelicula peliculas[cant_max_peliculas];
 extern int cantidadPelis;
 
-// Funciones
+
 void altaPeli();
-<<<<<<< Updated upstream
-=======
 void bajaPeli();
 void modificacionPeli();
->>>>>>> Stashed changes
 void listaDePelis();
 
 #endif
