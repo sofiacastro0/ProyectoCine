@@ -6,7 +6,6 @@
 #include "ids.h"
 #include "util.h"
 #include "fecha.h"
-#include "estructuras.h"
 
 #define CANT_MAX_CLIENTES 100
 Cliente clientes[CANT_MAX_CLIENTES];

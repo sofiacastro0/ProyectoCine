@@ -7,7 +7,6 @@
 #include "util.h"
 #include "ids.h"
 #include "fecha.h"
-#include "estructuras.h"
 
 Funcion funciones[CANT_MAX_FUNCIONES];
 int cantFunciones = 0;

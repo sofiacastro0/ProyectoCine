@@ -33,7 +33,6 @@ void inicioCliente() {
             getchar();
         }
 }
-
 void menuCliente(){
     int opcion = -1;
     char tecla;
@@ -79,7 +78,6 @@ void menuCliente(){
     } while(opcion!=0);
 
 }
-
 //menu administrador//
 void menuAdmin(){
     int opcion = -1;

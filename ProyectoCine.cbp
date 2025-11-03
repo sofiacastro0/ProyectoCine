@@ -39,7 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="datos_prueba.h" />
-		<Unit filename="estructuras.h" />
 		<Unit filename="fecha.c">
 			<Option compilerVar="CC" />
 		</Unit>

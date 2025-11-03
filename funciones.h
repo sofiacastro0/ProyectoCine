@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#include "estructuras.h"
+#include "util.h"
 
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
@@ -43,9 +43,5 @@ int horaEnMinutos(Hora hora);
 int haySolapamiento(int ix, int idSala, Fecha fecha, Hora horaInicio, int duracion);
 int funcionYaEmpezo(Funcion funcion);
 int butacasDisponibles(Funcion funcion);
-
-
-
-
 
 #endif // FUNCIONES_H_INCLUDED

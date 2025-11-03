@@ -1,4 +1,4 @@
-#include "estructuras.h"
+#include "util.h"
 
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED

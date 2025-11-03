@@ -2,9 +2,9 @@
 #define RESERVA_H_INCLUDED
 
 #include <stdbool.h>
-#include "estructuras.h"
 
 #define MAX_RESERVAS 1088 //272 * 4 (272 butacas * 4 salas)
+#define MAX_BUTACAS_RESERVA 10
 
 typedef struct {
     int activa;
@@ -16,15 +16,13 @@ typedef struct {
     int id;
     int idCliente;
     int idFuncion;
-    int cantidad;                 // cantidad de entradas
+    int cantidad;                      // cantidad de entradas
     int butaca[MAX_BUTACAS_RESERVA];  // asientos reservados
-    EstadoReserva estado;         // activa, cancelada o asistida
+    EstadoReserva estado;            // activa, cancelada o asistida
 } Reserva;
-
 
 extern Reserva reservas[MAX_RESERVAS];
 extern int cantidadReservas;
-
 
 void reservar();
 void verMisReservas();
@@ -33,6 +31,5 @@ void mostrarButacasDisponibles();
 
 int obtenerDiaSemana(Fecha fecha);
 int aplicarDescuento(Funcion funcion, int precioBase);
-
 
 #endif // RESERVA_H_INCLUDED

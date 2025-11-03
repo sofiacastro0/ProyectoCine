@@ -9,7 +9,6 @@
 Sala salas[MAX_SALAS];  // Array de salas
 int cantidadSalas = 0;  // Contador de salas actuales
 
-    //alta
 void altaSala() {
 
     if (cantidadSalas >= MAX_SALAS) {
@@ -31,7 +30,6 @@ void altaSala() {
 
     printf("Sala agregada. ID: %d\n", nueva.id);
 }
-
 void bajaSala() {
     int id;
     printf("Ingrese ID de sala a dar de baja: ");
@@ -46,7 +44,6 @@ void bajaSala() {
     }
     printf("No se encontro sala activa con ese ID %d\n", id);
 }
-
 void modificarSala() {
     int id;
     printf("Ingrese ID de sala que quiere modificar: ");

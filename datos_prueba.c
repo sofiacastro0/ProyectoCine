@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include "estructuras.h"
 #include "ids.h"
 #include "clientes.h"
 #include "peliculas.h"
 #include "salas.h"
 #include "funciones.h"
-
-
 
 extern Cliente clientes[100];
 extern int cantClientes;

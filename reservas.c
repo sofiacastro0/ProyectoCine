@@ -8,7 +8,6 @@
 #include "peliculas.h"
 #include "funciones.h"
 #include "reservas.h"
-#include "estructuras.h"
 #include "reportes.h"
 
 extern Funcion funciones[];
@@ -23,13 +22,11 @@ extern int cantClientes;
 Reserva reservas[MAX_RESERVAS];
 int cantidadReservas = 0;
 
-
 int clasificacionAInt(const char *clasificacion) {
     if (strcmp(clasificacion, "ATP") == 0) return 0;
     if (clasificacion[0] == '+') return atoi(clasificacion + 1); //atoi pasa de string a num entero
     return atoi(clasificacion);
 }
-
 int edadMinima(int edadCliente, int clasificacion) {
     if (clasificacion == 0) return 1; // ATP seria 0
     return edadCliente >= clasificacion;
@@ -45,7 +42,6 @@ void sugerirFuncionesAlt(Funcion funcionAlt) {
         }
     }
 }
-
 void reservar() {
     int dni, idFuncion, entradas;
 
@@ -154,7 +150,6 @@ if (entradas > maxEntradas) {
                nueva.cantidad,
                total);
 }
-
 void verMisReservas() {
     int dni;
     printf("Ingrese su DNI: ");
@@ -209,8 +204,6 @@ void verMisReservas() {
          printf("Presione Enter para continuar...");
          getchar();
 }
-
-
 void cancelarReserva() {
     int dni;
     printf("Ingrese su DNI: ");
@@ -252,7 +245,6 @@ void cancelarReserva() {
     }
     printf("No se encontró la reserva.\n");
 }
-
 void mostrarButacasDisponibles() {
     int idFuncion;
     printf("Ingrese ID de la función: ");
@@ -272,7 +264,6 @@ void mostrarButacasDisponibles() {
     printf("Presione Enter para continuar...");
     getchar();
 }
-
 void asistencia(int idFuncion) {
     int asistencia = 0;
 
@@ -289,7 +280,6 @@ void asistencia(int idFuncion) {
         printf("No hay reservas activas para la función con ID: %d.\n", idFuncion);
     }
 }
-
 int obtenerDiaSemana(Fecha fecha) {
     int dia = fecha.dia;
     int mes = fecha.mes;
