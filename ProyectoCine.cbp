@@ -63,6 +63,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="peliculas.h" />
+		<Unit filename="reportes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="reportes.h" />
 		<Unit filename="reserva.h" />
 		<Unit filename="reservas.c">
 			<Option compilerVar="CC" />

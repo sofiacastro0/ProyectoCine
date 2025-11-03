@@ -11,13 +11,13 @@ typedef struct  {
     char titulo[cant_char];
     char idioma[cant_char];
     char genero[cant_char];
+    int cantGeneros[10];
     char clasificacion[5];
     char formato[15];
 } Pelicula;
 
 extern Pelicula peliculas[cant_max_peliculas];
 extern int cantidadPelis;
-
 
 void altaPeli();
 void bajaPeli();

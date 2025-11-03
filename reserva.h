@@ -22,7 +22,7 @@ typedef struct {
     EstadoReserva estado;
 } Reserva;
 
-
+int cantidadReservas;
 extern Reserva reservas[MAX_RESERVAS];
 extern int asientosDisponibles;
 static int reservasActivasDeCliente(int idCliente, int idFuncion);

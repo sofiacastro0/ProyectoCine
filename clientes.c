@@ -112,10 +112,16 @@ void altaCliente(){
     scanf(" %d/%d/%d", &dia, &mes, &anio);
         fechaCompleta nacimiento = {dia, mes, anio, -1, -1};
         if (fecha_es_valida(nacimiento)){
-            alta.fechaNac.dia = dia;
-            alta.fechaNac.mes = mes;
-            alta.fechaNac.anio = anio;
-            errorFechaNac=false;
+            fechaCompleta hoy = fecha_actual();
+            if (comparar_fechas(nacimiento, hoy)<=0) {
+                alta.fechaNac.dia = dia;
+                alta.fechaNac.mes = mes;
+                alta.fechaNac.anio = anio;
+                errorFechaNac=false;
+            }else {
+            errorFechaNac=true;
+            printf("ERROR: Fecha de nacimiento no puede ser futura\n");
+            }
         } else {
             errorFechaNac=true;
             printf("ERROR: Fecha de nacimiento invalida\n");

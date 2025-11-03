@@ -13,7 +13,7 @@
 Funcion funciones[CANT_MAX_FUNCIONES];
 int cantFunciones = 0;
 
-// FALTAN ALGUNAS VALIDACIONES y buscar funciones por disponibilidad
+// FALTAN ALGUNAS VALIDACIONES
 
 void altaFuncion(){
 
@@ -26,12 +26,12 @@ void altaFuncion(){
     alta.id = generarId(ENTIDAD_FUNCION);
     alta.altaObaja = 1;
     alta.cantidadReservas = 0;
+    alta.reservasAsistidas = 0;
 
-    bool errorFechaFuncion=false;
     bool errorHoraFuncion=false;
     bool errorPrecio=false;
     bool encontrado=false;
-    int dia, mes, anio, hora, minuto, precio;
+    int dia=0, mes=0, anio=0, hora=0, minuto=0, precio=0;
     int i=0, idBuscado;
 
     fechaCompleta hoy = fecha_actual();
@@ -54,7 +54,7 @@ void altaFuncion(){
             } else {
                 alta.idPelicula = peliculas[i].id;
                 alta.duracionConLimpieza = peliculas[i].duracion + 30;
-                printf("Se selecciono pelicula correctamente\n");  // falta confirmacion
+                printf("Se selecciono pelicula correctamente\n");
                 }
         }
         i++;
@@ -73,35 +73,35 @@ void altaFuncion(){
     printf("\n");
     //Fecha de la funcion
     do {
-    printf("Ingrese la fecha para la funcion (dd/mm/aaaa): ");
-    scanf(" %d/%d/%d", &dia, &mes, &anio);
+        printf("Ingrese la fecha para la funcion (dd/mm/aaaa): ");
+        scanf(" %d/%d/%d", &dia, &mes, &anio);
+        Fecha fechaFuncion = {dia, mes, anio};
 
-        fechaCompleta fechaFuncion = {dia, mes, anio, -1, -1};
+        printf("Ingrese la hora para la funcion (hh:mm): ");
+        scanf(" %d:%d", &hora, &minuto);
 
-        if (fecha_es_valida(fechaFuncion) && fechaFuncionValida(dia,mes,anio)){
+        fechaCompleta horaFuncionCompleta = {dia, mes, anio, hora, minuto};
+        Hora horaFuncion = {hora, minuto};
+
+        if (fecha_es_valida(horaFuncionCompleta) && fechaFuncionValida(fechaFuncion, horaFuncion)){
             alta.fecha.dia = dia;
             alta.fecha.mes = mes;
             alta.fecha.anio = anio;
-            errorFechaFuncion=false;
-        } else {
-            errorFechaFuncion=true;
-            printf("ERROR: Fecha invalida\n");
-        }
-    } while (errorFechaFuncion);
-    //Horario
-    do {
-    printf("Ingrese la hora para la funcion (hh:mm): ");
-    scanf(" %d:%d", &hora, &minuto);
-        fechaCompleta horaFuncion = {dia, mes, anio, hora, minuto};
-        if (fecha_es_valida(horaFuncion)){
             alta.horaInicio.hora = hora;
             alta.horaInicio.minuto = minuto;
             errorHoraFuncion=false;
         } else {
             errorHoraFuncion=true;
-            printf("ERROR: Hora invalida\n");
+            printf("ERROR: Fecha y hora invalidas\n");
         }
     } while (errorHoraFuncion);
+
+    //Validación de solapamiento
+    if(haySolapamiento(-1, alta.idSala, alta.fecha, alta.horaInicio, alta.duracionConLimpieza)) {
+        printf("No se puede programar la funcion: se superpone con otra en la misma sala\n");
+        return;
+    }
+
     //Precio
     do {
     printf("Ingrese el precio de la entrada:  $");
@@ -153,17 +153,13 @@ void bajaFuncion(){
 
 void modificarFuncion(){
 
+    actualizarReservasAsistidas();
+
     Funcion modificacion;
     int opcion=-1, i=0;
     bool encontrado=false;
-    bool errorFechaFuncion=false;
     bool errorHoraFuncion=false;
     bool errorPrecio=false;
-
-    if (cantFunciones==0){
-        printf("No hay funciones registradas\n");
-        return;
-    }
 
     int idBuscado;
     printf("Ingrese el ID de la funcion a modificar: ");
@@ -180,41 +176,46 @@ void modificarFuncion(){
             scanf("%d",&opcion);
 
                 switch (opcion) {
-                    case 1: printf("ID Sala anterior: %d. Nueva Sala: ",funciones[i].idSala);
-                            scanf("%d", &modificacion.idSala);
-                            funciones[i].idSala = modificacion.idSala;
-                            break;
+                    case 1: {
+                    printf("ID Sala anterior: %d. Nueva Sala: " ,funciones[i].idSala);
+                    scanf("%d", &modificacion.idSala);
+                    if(!salaEstaActiva(modificacion.idSala)) {
+                        printf("La sala seleccionada no esta activa\n");
+                        break;
+                    }
+                    if(haySolapamiento(i, modificacion.idSala, funciones[i].fecha, funciones[i].horaInicio, funciones[i].duracionConLimpieza)) {
+                        printf("Esta sala tiene otra funcion en ese horario\n");
+                        break;
+                    }
+                    funciones[i].idSala = modificacion.idSala;
+                    printf("Sala actualizada correctamente\n");
+                    break;
+                }
 
                     case 2: do {
                             printf("Fecha y hora anterior: %d/%d/%d - %d:%d Nueva Fecha: ",funciones[i].fecha.dia,funciones[i].fecha.mes,funciones[i].fecha.anio,funciones[i].horaInicio.hora,funciones[i].horaInicio.minuto);
                             scanf(" %d/%d/%d", &modificacion.fecha.dia, &modificacion.fecha.mes, &modificacion.fecha.anio);
 
-                                fechaCompleta fechaFuncion = {modificacion.fecha.dia, modificacion.fecha.mes, modificacion.fecha.anio, -1, -1};
-
-                                if (fecha_es_valida(fechaFuncion) && fechaFuncionValida(modificacion.fecha.dia, modificacion.fecha.mes, modificacion.fecha.anio)){
-                                    funciones[i].fecha.dia = modificacion.fecha.dia;
-                                    funciones[i].fecha.mes = modificacion.fecha.mes;
-                                    funciones[i].fecha.anio = modificacion.fecha.anio;
-                                    errorFechaFuncion=false;
-                                } else {
-                                    errorFechaFuncion=true;
-                                    printf("ERROR: Fecha invalida\n");
-                                }
-                            } while (errorFechaFuncion);
-
-                            do {
                             printf("Nueva hora: ");
                             scanf(" %d:%d", &modificacion.horaInicio.hora, &modificacion.horaInicio.minuto);
 
                                 fechaCompleta horaFuncion = {modificacion.fecha.dia, modificacion.fecha.mes, modificacion.fecha.anio, modificacion.horaInicio.hora, modificacion.horaInicio.minuto};
 
-                                if (fecha_es_valida(horaFuncion)){
-                                    funciones[i].horaInicio.hora = modificacion.horaInicio.hora;
-                                    funciones[i].horaInicio.minuto = modificacion.horaInicio.minuto;
-                                    errorHoraFuncion=false;
+                                if (fecha_es_valida(horaFuncion) && fechaFuncionValida(modificacion.fecha, modificacion.horaInicio)){
+                                    if(haySolapamiento(i, funciones[i].idSala, modificacion.fecha, modificacion.horaInicio, funciones[i].duracionConLimpieza)) {
+                                        printf("Esta sala tiene otra funcion en ese horario\n");
+                                        errorHoraFuncion=true;
+                                    } else {
+                                        funciones[i].fecha.dia = modificacion.fecha.dia;
+                                        funciones[i].fecha.mes = modificacion.fecha.mes;
+                                        funciones[i].fecha.anio = modificacion.fecha.anio;
+                                        funciones[i].horaInicio.hora = modificacion.horaInicio.hora;
+                                        funciones[i].horaInicio.minuto = modificacion.horaInicio.minuto;
+                                        errorHoraFuncion=false;
+                                    }
                                 } else {
                                     errorHoraFuncion=true;
-                                    printf("ERROR: Hora invalida\n");
+                                    printf("ERROR: Fecha y Hora invalida\n");
                                 }
 
                             } while (errorHoraFuncion);
@@ -234,11 +235,9 @@ void modificarFuncion(){
                                 }
 
                             } while (errorPrecio);
+                            printf("Precio actualizado correctamente\n");
 
                             break;
-
-
-
 
                     case 4: break;
                     default: printf("Opcion invalida\n"); break;
@@ -253,52 +252,11 @@ void modificarFuncion(){
     }
 }
 
-void listarFunciones(){
-
-    printf("\n--- Listado de Funciones ---\n");
-        if (cantFunciones == 0) {
-            printf("No hay funciones registrados.\n");
-            return;
-        }
-
-    for(int i=0; i<cantFunciones; i++){
-
-        if(funciones[i].altaObaja){
-            printf("ID:%d | Pelicula: %d | Sala :%d | Fecha y hora: %d/%d/%d - %d:%d | Precio: %d | Estado: ",
-                   funciones[i].id,
-                   funciones[i].idPelicula,
-                   funciones[i].idSala,
-                   funciones[i].fecha.dia,
-                   funciones[i].fecha.mes,
-                   funciones[i].fecha.anio,
-                   funciones[i].horaInicio.hora,
-                   funciones[i].horaInicio.minuto,
-                   funciones[i].precio);
-        }
-
-        if (funciones[i].altaObaja == 1) {
-            printf("Funcion activa\n");
-        } else {
-            printf("Funcion cancelada\n");
-        }
-    }
+bool fechaFuncionValida(Fecha fecha, Hora hora){
+    fechaCompleta inicio = {fecha.dia, fecha.mes, fecha.anio, hora.hora, hora.minuto};
+    return comparar_fechas(inicio, fecha_actual());
 }
 
-bool fechaFuncionValida(int dia, int mes, int anio){   // esta funcion valida que no se pongan fechas antes de la fecha actual
-
-    fechaCompleta hoy = fecha_actual();
-
-    // Si el año es menor al actual, retorna que es invalido
-    if (anio < hoy.anio) return false;
-
-    // Si el año es el mismo, revisa si el mes es valido
-    if (anio == hoy.anio && mes < hoy.mes) return false;
-
-    // Si el mes también es el mismo, revisa el día
-    if (anio == hoy.anio && mes == hoy.mes && dia < hoy.dia) return false;
-
-    return true;
-}
 bool precioValido(int precio){
     return (precio > 0);
 }
@@ -314,9 +272,9 @@ bool hayDisponibilidadEnFuncion(int idFuncion){
 }
 
 void menuBuscarFunciones(){
-
+    actualizarReservasAsistidas();
     int opcionCliente = -1;
-    while(opcionCliente != 6){
+    while(opcionCliente != 0){
         limpiarPantalla();
         printf("\n--- BUSCAR FUNCIONES ---\n");
         printf("1. Buscar funcion por Pelicula\n");
@@ -337,15 +295,11 @@ void menuBuscarFunciones(){
             case 0: printf("Volviendo al menú anterior...\n"); break;
             default: printf("Opción inválida.\n");
         }
-
-        //if(opcionCliente != 6){
-         //   printf("Presione Enter para continuar...");
-         //   getchar(); getchar();
-        //}
     }
 }
 
 void buscarFuncionesPorHorario() {
+    actualizarReservasAsistidas();
     int horaBuscada, minutoBuscado;
     printf("Ingrese la hora (hh:mm): ");
     scanf("%d:%d", &horaBuscada, &minutoBuscado);
@@ -389,7 +343,16 @@ void buscarFuncionesPorHorario() {
 }
 
 void buscarFuncionesPorPelicula() {
+    actualizarReservasAsistidas();
     char nombreBuscado[50];
+
+    printf("\n--- Titulos de peliculas disponibles ---\n");
+        for(int i = 0; i < cantidadPelis; i++){
+            if(peliculas[i].altaObaja){
+                printf("Nº %d: %s\n", i+1, peliculas[i].titulo);
+        }
+    }
+
     printf("Ingrese el título de la película: ");
     scanf(" %50[^\n]", nombreBuscado);
 
@@ -397,53 +360,63 @@ void buscarFuncionesPorPelicula() {
     for (int i=0; i<cantidadPelis; i++) {
         if (peliculas[i].altaObaja && strcmp(peliculas[i].titulo, nombreBuscado)==0) {
             encontrado = true;
-            printf("Película encontrada: %s\n", peliculas[i].titulo);
+            printf("Pelicula encontrada: %s\n", peliculas[i].titulo);
 
-            // Buscar funciones de esa películaz
+            // Buscar funciones de esa película
             for (int j=0; j < cantFunciones; j++) {
-                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id) {
-                    printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id && !funcionYaEmpezo(funciones[j])) {
+                    int disponibles = butacasDisponibles(funciones[j]);
+                    printf("Funcion ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %02d:%02d | Disponibles: %d\n",
                            funciones[j].id,
                            funciones[j].idSala,
                            funciones[j].fecha.dia,
                            funciones[j].fecha.mes,
                            funciones[j].fecha.anio,
                            funciones[j].horaInicio.hora,
-                           funciones[j].horaInicio.minuto);
+                           funciones[j].horaInicio.minuto,
+                           disponibles);
                 }
             }
         }
     }
 
     if (!encontrado)
-        printf("No se encontró ninguna película con ese titulo.\n");
+        printf("No se encontro ninguna pelicula con ese titulo.\n");
 
     printf("\nPresione Enter para continuar...");
     getchar(); getchar();
 }
 
 void buscarFuncionesPorIdioma(){
+    actualizarReservasAsistidas();
     char idiomaBuscado[50];
+
+    printf("\n--- Idiomas de peliculas disponibles ---\n");
+    printf("1. Español\n2. Inglés\n3. Francés\n4. Portugués\n5. Japonés\n6. Coreano\n7. Italiano\n");
+
     printf("Ingrese el idioma de la película: ");
     scanf(" %50[^\n]", idiomaBuscado);
 
     bool encontrado=false;
     for (int i=0; i<cantidadPelis; i++) {
-        if (peliculas[i].altaObaja && strcmp(peliculas[i].idioma, idiomaBuscado)) {
+        if (peliculas[i].altaObaja && strcmp(peliculas[i].idioma, idiomaBuscado)==0) {
             encontrado = true;
-            printf("Película encontrada: %s\n", peliculas[i].idioma);
+            printf("Película en idioma: %s\n", peliculas[i].idioma);
 
             // Buscar funciones de esa película
             for (int j=0; j < cantFunciones; j++) {
-                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id) {
-                    printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id && !funcionYaEmpezo(funciones[j])) {
+                    int disponibles = butacasDisponibles(funciones[j]);
+                    printf("Funcion ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %02d:%02d | Titulo: %s | Disponibles: %d\n",
                            funciones[j].id,
                            funciones[j].idSala,
                            funciones[j].fecha.dia,
                            funciones[j].fecha.mes,
                            funciones[j].fecha.anio,
                            funciones[j].horaInicio.hora,
-                           funciones[j].horaInicio.minuto);
+                           funciones[j].horaInicio.minuto,
+                           peliculas[i].titulo,
+                           disponibles);
                 }
             }
         }
@@ -457,27 +430,35 @@ void buscarFuncionesPorIdioma(){
 }
 
 void buscarFuncionesPorGenero(){
-char generoBuscado[50];
+    actualizarReservasAsistidas();
+    char generoBuscado[50];
+
+    printf("\n--- Generos de peliculas disponibles ---\n");
+    printf("1. Acción\n2. Aventura\n3. Ciencia ficción\n4. Fantasía\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animación\n10. Documental\n");
+
     printf("Ingrese el genero de la película: ");
     scanf(" %50[^\n]", generoBuscado);
 
     bool encontrado=false;
     for (int i=0; i<cantidadPelis; i++) {
-        if (peliculas[i].altaObaja && strcmp(peliculas[i].genero, generoBuscado)) {
+        if (peliculas[i].altaObaja && strcmp(peliculas[i].genero, generoBuscado)==0) {
             encontrado = true;
-            printf("Película encontrada: %s\n", peliculas[i].genero);
+            printf("Película del genero: %s\n", peliculas[i].genero);
 
             // Buscar funciones de esa película
             for (int j=0; j < cantFunciones; j++) {
-                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id) {
-                    printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                if (funciones[j].altaObaja && funciones[j].idPelicula == peliculas[i].id && !funcionYaEmpezo(funciones[j])) {
+                int disponibles = butacasDisponibles(funciones[j]);
+                printf("Funcion ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %02d:%02d | Titulo: %s | Disponibles: %d\n",
                            funciones[j].id,
                            funciones[j].idSala,
                            funciones[j].fecha.dia,
                            funciones[j].fecha.mes,
                            funciones[j].fecha.anio,
                            funciones[j].horaInicio.hora,
-                           funciones[j].horaInicio.minuto);
+                           funciones[j].horaInicio.minuto,
+                           peliculas[i].titulo,
+                           disponibles);
                 }
             }
         }
@@ -539,5 +520,59 @@ void buscarFuncionesPorDisponibilidad(){
     }
 }
 
+int fechasIguales(Fecha a, Fecha b) {  //compara 2 fechas para ver si hay solapamiento
+    return a.dia == b.dia && a.mes == b.mes && a.anio == b.anio;
+}
 
+int horaEnMinutos(Hora hora) {    //pasa las horas a minutos, ej: 12h = 720m
+    return hora.hora * 60 + hora.minuto;
+}
+
+int haySolapamiento(int ix, int idSala, Fecha fecha, Hora horaInicio, int duracion) {
+    int inicioNueva = horaEnMinutos(horaInicio);
+    int finNueva = inicioNueva + duracion;
+
+    for(int i = 0; i < cantFunciones; i++) {
+        if(funciones[i].altaObaja && funciones[i].idSala == idSala && fechasIguales(funciones[i].fecha, fecha)) {
+            int inicioExistente = horaEnMinutos(funciones[i].horaInicio);
+            int finExistente = inicioExistente + funciones[i].duracionConLimpieza;
+            if(!(finNueva <= inicioExistente || inicioNueva >= finExistente)) {
+                return 1;
+            }
+        }
+    }
+
+    return 0;
+}
+
+int funcionYaEmpezo(Funcion funcion) {   // usamos la libreria que aportaron los profes
+    fechaCompleta inicio = {funcion.fecha.dia, funcion.fecha.mes, funcion.fecha.anio, funcion.horaInicio.hora, funcion.horaInicio.minuto};
+    return comparar_fechas(inicio, fecha_actual()) <= 0;
+}
+
+void actualizarReservasAsistidas() {
+    fechaCompleta ahora = fecha_actual();
+    for(int i = 0; i < cantFunciones; i++) {
+        if(funciones[i].altaObaja) {
+            fechaCompleta inicio = {funciones[i].fecha.dia, funciones[i].fecha.mes, funciones[i].fecha.anio, funciones[i].horaInicio.hora, funciones[i].horaInicio.minuto};
+            if(comparar_fechas(inicio, ahora) <= 0 && funciones[i].cantidadReservas > 0) {
+                funciones[i].reservasAsistidas += funciones[i].cantidadReservas;
+                funciones[i].cantidadReservas = 0;
+            }
+        }
+    }
+}
+
+int butacasDisponibles(Funcion funcion) {
+    int capacidad = 17*16;
+    if(capacidad <= 0) {
+        return 0;
+    }
+
+    int disponibles = capacidad - funcion.cantidadReservas;
+    if(disponibles < 0) {
+        return 0;
+    }
+    return disponibles;
+}
 

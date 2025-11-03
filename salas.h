@@ -11,11 +11,16 @@ typedef struct {
     int activo;
 } Sala;
 
+extern Sala salas[MAX_SALAS];
+extern int cantidadSalas;
+
 int generarIdSala();
 void altaSala();
 void bajaSala();
 void modificarSala();
 void listarSalas();
 void menuGestionSalas();
+
+int salaEstaActiva(int idSala);
 
 #endif

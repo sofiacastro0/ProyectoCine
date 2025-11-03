@@ -16,7 +16,7 @@ extern int cantClientes;
 extern Pelicula peliculas[cant_max_peliculas];
 extern int cantidadPelis;
 
-extern Sala salas[50];
+extern Sala salas[MAX_SALAS];
 extern int cantidadSalas;
 
 extern Funcion funciones[100];

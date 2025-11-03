@@ -21,7 +21,7 @@ extern Cliente clientes[];
 extern int cantClientes;
 
 Reserva reservas[MAX_RESERVAS];
-int cantidadReservas = 0;
+extern int cantidadReservas = 0;
 
 static int reservasActivasDeCliente(int idCliente, int idFuncion){
     int total = 0;

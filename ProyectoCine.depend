@@ -190,30 +190,36 @@
 1759705266 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.c
 	"ids.h"
 
-1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.h
+1762189070 c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.h
 
-1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.c
+1762192911 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
+	<stdbool.h>
 	"clientes.h"
 	"ids.h"
 	"util.h"
+	"fecha.h"
+	"estructuras.h"
 
-1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.h
+1762192199 c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.h
+	"estructuras.h"
+	<stdbool.h>
 
-1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.h
+1762189761 c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.h
 
-1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\main.c
+1762189761 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
 	"clientes.h"
 	"util.h"
+	"datos_prueba.h"
 
-1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.h
+1762189761 c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.h
 
-1759781900 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.c
+1762195745 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -221,17 +227,17 @@
 	"peliculas.h"
 	"ids.h"
 
-1759781832 c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.h
+1762195515 c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.h
 
-1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.c
+1762195424 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.c
 	"salas.h"
 	"ids.h"
 	<stdio.h>
 	<string.h>
 
-1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.h
+1762193060 c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.h
 
-1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.c
+1762189070 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.c
 	<stdlib.h>
 	"util.h"
 
@@ -559,4 +565,86 @@
 	"ids.h"
 	"fecha.h"
 	"estructuras.h"
+
+1762189761 c:\users\mateo\documents\unla\año 1\programación\proyectocine\estructuras.h
+
+1762189445 c:\users\mateo\documents\unla\año 1\programación\proyectocine\fecha.h
+
+1762189445 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\fecha.c
+	"fecha.h"
+	<stdio.h>
+	<time.h>
+
+1762200784 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\funciones.c
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	"funciones.h"
+	"peliculas.h"
+	"salas.h"
+	"util.h"
+	"ids.h"
+	"fecha.h"
+	"estructuras.h"
+
+1762198085 c:\users\mateo\documents\unla\año 1\programación\proyectocine\funciones.h
+	<stdbool.h>
+	"estructuras.h"
+
+1762189445 c:\users\mateo\documents\unla\año 1\programación\proyectocine\datos_prueba.h
+
+1762201804 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"peliculas.h"
+	"ids.h"
+	"clientes.h"
+	"util.h"
+	"salas.h"
+	"funciones.h"
+	"reserva.h"
+	"reportes.h"
+
+1762200660 c:\users\mateo\documents\unla\año 1\programación\proyectocine\reserva.h
+	<stdbool.h>
+	"estructuras.h"
+
+1762200651 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"ids.h"
+	"salas.h"
+	"clientes.h"
+	"peliculas.h"
+	"funciones.h"
+	"reserva.h"
+	"estructuras.h"
+
+1762195829 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\datos_prueba.c
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	"estructuras.h"
+	"ids.h"
+	"clientes.h"
+	"peliculas.h"
+	"salas.h"
+	"funciones.h"
+
+1762201859 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\reportes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"reportes.h"
+	"peliculas.h"
+	"funciones.h"
+	"reserva.h"
+	"clientes.h"
+	"salas.h"
+	"fecha.h"
+
+1762201430 c:\users\mateo\documents\unla\año 1\programación\proyectocine\reportes.h
 

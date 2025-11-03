@@ -8,6 +8,7 @@
 #include "salas.h"
 #include "funciones.h"
 #include "reserva.h"
+#include "reportes.h"
 
 
 void inicioCliente() {
@@ -197,21 +198,23 @@ void menuAdmin(){
 
             case 3: {
                     int opcionCliente = -1;
-                    while(opcionCliente != 2){
+                    while(opcionCliente != 3){
                     limpiarPantalla();
                     printf("\n--- GESTION DE CLIENTES ---\n");
                     printf("1. Listar clientes\n");
-                    printf("2. Volver al menú anterior\n");
+                    printf("2. Historial de reservas de cliente\n");
+                    printf("3. Volver al menú anterior\n");
                     printf("Ingrese opción: ");
                     scanf("%d", &opcionCliente);
 
                     switch(opcionCliente) {
                         case 1: listarClientes(); break;
-                        case 2: printf("Volviendo al menú anterior...\n"); break;
+                        case 2: historialCliente(); break;//Arreglar parametros en reportes.c
+                        case 3: printf("Volviendo al menú anterior...\n"); break;
                         default: printf("Opción inválida.\n");
                     }
 
-                    if(opcionCliente != 2){
+                    if(opcionCliente != 3){
                         printf("Presione Enter para continuar...");
                         getchar(); getchar();
                     }
