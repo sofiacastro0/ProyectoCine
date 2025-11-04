@@ -59,7 +59,7 @@ void reservar() {
     int dni, idFuncion, entradas, entradasDisponibles;
     int maxEntradas, entradasYaReservadas, entradasRestantes, maxReservables;
 
-    printf("Ingrese DNI: ");
+    printf("\nIngrese DNI: ");
     scanf("%d", &dni);
     //Busca DNI ingresa y si lo encuentra, guarda la posición del DNI en el array de CLientes.
     int posCliente = -1;
@@ -69,6 +69,7 @@ void reservar() {
             break;
         }
     }
+
     //Si no, cancela la reserva.
     if (posCliente == -1) {
         printf("DNI no encontrado.\n");
@@ -243,6 +244,18 @@ void cancelarReserva() {
 
     verMisReservas();
 
+    int dni;
+    int idCliente = -1;
+    for (int i = 0; i < cantClientes; i++) {
+        if (clientes[i].dni == dni) {
+            idCliente = clientes[i].id;
+            break;
+        }
+    }
+    if (idCliente == -1) {
+        return;
+    }
+
     printf("Ingrese el ID de la reserva a cancelar: ");
     scanf("%d", &idReserva);
 
@@ -265,20 +278,21 @@ void cancelarReserva() {
 
 void mostrarButacasDisponibles() {
     int idFuncion;
-    printf("Ingrese ID de la función: ");
+    printf("\nIngrese ID de la función: ");
     scanf("%d", &idFuncion);
     getchar();
 
     for (int i = 0; i < cantFunciones; i++) {
         if (funciones[i].id == idFuncion) {
             int disponibles = (MAX_FILAS*MAX_COLUMNAS)-funciones[i].cantidadReservas;
-            printf("Butacas disponibles: %d\n", disponibles);
+            printf("Butacas disponibles: %d\n\n", disponibles);
             printf("Presione Enter para continuar...");
             getchar(); // espera a que el usuario presione Enter
+            getchar();
             return;
         }
     }
-    printf("No se encontró la función.\n");
+    printf("No se encontró la función.\n\n");
     printf("Presione Enter para continuar...");
     getchar();
 }

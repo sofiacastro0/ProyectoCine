@@ -6,21 +6,15 @@
 	"menus.h"
 	"clientes.h"
 
-1762201804 h"
-
 1758650621 source:g:\otros ordenadores\mi pc\unla\primer aÑo\segundo cuatrimestre\programaciÓn de computadoras\tp grupal\repositorio\proyectocine\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 
-1762144114 
-
 1758925705 c:\users\sofic\desktop\proyectocine\menus.h
 
 1758909762 c:\users\sofic\desktop\proyectocine\clientes.h
 	"estructuras.h"
-
-1762200651 as.h"
 
 1758910197 c:\users\sofic\desktop\proyectocine\estructuras.h
 
@@ -67,8 +61,6 @@
 	"peliculas.h"
 	"ids.h"
 
-1762195829 .h"
-
 1759347887 c:\users\natas\desktop\tp grupal programacion\proyectocine\peliculas.h
 
 1759347887 source:c:\users\natas\desktop\tp grupal programacion\proyectocine\peliculas.c
@@ -77,7 +69,7 @@
 	<stdio.h>
 	<string.h>
 
-1761847764 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
+1762188115 source:c:\users\sofic\desktop\proyectocine-ramanati\clientes.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -86,31 +78,29 @@
 	"ids.h"
 	"util.h"
 	"fecha.h"
-	"estructuras.h"
 
-1761845914 c:\users\sofic\desktop\proyectocine-ramanati\clientes.h
-	"estructuras.h"
+1762188112 c:\users\sofic\desktop\proyectocine-ramanati\clientes.h
+	"util.h"
 	<stdbool.h>
 
-1762054284 >
-
-1761845914 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
+1762187882 c:\users\sofic\desktop\proyectocine-ramanati\estructuras.h
 
 1759782353 source:c:\users\sofic\desktop\proyectocine-ramanati\ids.c
 	"ids.h"
 
 1761786293 c:\users\sofic\desktop\proyectocine-ramanati\ids.h
 
-1761786293 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
+1762123028 source:c:\users\sofic\desktop\proyectocine-ramanati\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
 	"clientes.h"
 	"util.h"
+	"datos_prueba.h"
 
-1761786293 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
+1762123028 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
 
-1761849264 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
+1762188777 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -120,10 +110,12 @@
 	"util.h"
 	"salas.h"
 	"funciones.h"
+	"reportes.h"
+	"reservas.h"
 
-1761847764 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
+1762123028 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
 
-1761847764 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
+1762188776 source:c:\users\sofic\desktop\proyectocine-ramanati\peliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -183,55 +175,47 @@
 	<string.h>
 	"util.h"
 
-1761786293 c:\users\sofic\desktop\proyectocine-ramanati\util.h
+1762187882 c:\users\sofic\desktop\proyectocine-ramanati\util.h
 
 1761786293 source:c:\users\sofic\desktop\proyectocine-ramanati\util.c
 	<stdlib.h>
 	"util.h"
 
-1761845914 source:c:\users\sofic\desktop\proyectocine-ramanati\salas.c
+1762188776 source:c:\users\sofic\desktop\proyectocine-ramanati\salas.c
 	"salas.h"
 	"ids.h"
 	<stdio.h>
 	<string.h>
 
-1761786293 c:\users\sofic\desktop\proyectocine-ramanati\salas.h
+1762123028 c:\users\sofic\desktop\proyectocine-ramanati\salas.h
 
 1759705266 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.c
 	"ids.h"
 
-1762189070 c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.h
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\ids.h
 
-1762192911 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.c
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
-	<stdbool.h>
 	"clientes.h"
 	"ids.h"
 	"util.h"
-	"fecha.h"
-	"estructuras.h"
 
-1762192199 c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.h
-	"estructuras.h"
-	<stdbool.h>
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\clientes.h
 
-1762189761 c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.h
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.h
 
-1762189761 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\main.c
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
 	"clientes.h"
 	"util.h"
-	"datos_prueba.h"
 
-1762127551 eba.h"
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.h
 
-1762189761 c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.h
-
-1762195745 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.c
+1759781900 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -239,17 +223,17 @@
 	"peliculas.h"
 	"ids.h"
 
-1762195515 c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.h
+1759781832 c:\users\mateo\documents\unla\año 1\programación\proyectocine\peliculas.h
 
-1762195424 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.c
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.c
 	"salas.h"
 	"ids.h"
 	<stdio.h>
 	<string.h>
 
-1762193060 c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.h
+1759781572 c:\users\mateo\documents\unla\año 1\programación\proyectocine\salas.h
 
-1762189070 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.c
+1759781572 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\util.c
 	<stdlib.h>
 	"util.h"
 
@@ -320,7 +304,7 @@
 
 1761845914 c:\users\sofic\desktop\proyectocine-ramanati\fecha.h
 
-1761849264 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
+1762188124 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
@@ -330,41 +314,91 @@
 	"util.h"
 	"ids.h"
 	"fecha.h"
-	"estructuras.h"
 
-1761848209 c:\users\sofic\desktop\proyectocine-ramanati\funciones.h
+1762188777 c:\users\sofic\desktop\proyectocine-ramanati\funciones.h
+	<stdbool.h>
+	"util.h"
+
+1762188105 c:\users\sofic\desktop\proyectocine-ramanati\reportes.h
+
+1762185736 source:c:\users\sofic\desktop\proyectocine-ramanati\reportes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"reportes.h"
+	"peliculas.h"
+	"funciones.h"
+	"reservas.h"
+	"clientes.h"
+	"salas.h"
+
+1762123028 c:\users\sofic\desktop\proyectocine-ramanati\datos_prueba.h
+
+1762119348 c:\users\sofic\desktop\proyectocine-ramanati\reserva.h
 	<stdbool.h>
 	"estructuras.h"
 
-1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\clientes.c
+1762188776 source:c:\users\sofic\desktop\proyectocine-ramanati\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"util.h"
+	"ids.h"
+	"salas.h"
+	"clientes.h"
+	"peliculas.h"
+	"funciones.h"
+	"reservas.h"
+	"reportes.h"
+
+1762188776 source:c:\users\sofic\desktop\proyectocine-ramanati\datos_prueba.c
 	<stdio.h>
 	<string.h>
-	<stdlib.h>
 	<stdbool.h>
-	"clientes.h"
 	"ids.h"
-	"util.h"
-	"fecha.h"
-	"estructuras.h"
+	"clientes.h"
+	"peliculas.h"
+	"salas.h"
+	"funciones.h"
 
-1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\clientes.h
+1762188776 c:\users\sofic\desktop\proyectocine-ramanati\reservas.h
+	<stdbool.h>
+
+1762229028 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\datos_prueba.c
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	"estructuras.h"
+	"ids.h"
+	"clientes.h"
+	"peliculas.h"
+	"salas.h"
+	"funciones.h"
+
+1762229097 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\ids.h
+
+1762229028 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\clientes.h
 	"estructuras.h"
 	<stdbool.h>
 
-1762044439 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\estructuras.h
+1762229097 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\util.h
 
-1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\ids.h
+1762229097 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\peliculas.h
 
-1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\util.h
+1762229097 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\salas.h
 
-1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\fecha.h
+1762229038 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\funciones.h
+	<stdbool.h>
+	"estructuras.h"
 
-1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\fecha.c
+1762229028 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\fecha.c
 	"fecha.h"
 	<stdio.h>
 	<time.h>
 
-1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\funciones.c
+1762229028 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\fecha.h
+
+1762231876 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\funciones.c
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
@@ -376,18 +410,10 @@
 	"fecha.h"
 	"estructuras.h"
 
-1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\funciones.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\peliculas.h
-
-1762042075 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\salas.h
-
-1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\ids.c
+1762228859 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\ids.c
 	"ids.h"
 
-1762049059 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\main.c
+1762229028 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -395,219 +421,11 @@
 	"util.h"
 	"datos_prueba.h"
 
-1762050266 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\menus.h
+1762229097 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\menus.h
 
-1762049782 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\peliculas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"peliculas.h"
-	"ids.h"
+1762229028 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\datos_prueba.h
 
-1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\salas.c
-	"salas.h"
-	"ids.h"
-	<stdio.h>
-	<string.h>
-
-1762042075 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\util.c
-	<stdlib.h>
-	"util.h"
-
-1762050266 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\menus.c
-	<stdio.h>
-	<stdlib.h>
-	"menus.h"
-	"peliculas.h"
-	"ids.h"
-	"clientes.h"
-	"util.h"
-	"salas.h"
-	"funciones.h"
-	"reserva.h"
-
-1762152320 "
-
-1762047446 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\reserva.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762050577 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\reservas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"ids.h"
-	"salas.h"
-	"clientes.h"
-	"peliculas.h"
-	"funciones.h"
-	"reserva.h"
-	"estructuras.h"
-
-1762049965 source:c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\datos_prueba.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"estructuras.h"
-	"ids.h"
-	"clientes.h"
-	"peliculas.h"
-	"salas.h"
-	"funciones.h"
-
-1762048843 c:\users\natas\desktop\proyecto cine clonado o me suicido\proyectocine\datos_prueba.h
-
-1762151713 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\clientes.c
-	<stdio.h>
-	<string.h>
-	<stdlib.h>
-	<stdbool.h>
-	"clientes.h"
-	"ids.h"
-	"util.h"
-	"fecha.h"
-	"estructuras.h"
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\clientes.h
-	"estructuras.h"
-	<stdbool.h>
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\estructuras.h
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\ids.h
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\util.h
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\fecha.h
-
-1762054284 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\datos_prueba.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"estructuras.h"
-	"ids.h"
-	"clientes.h"
-	"peliculas.h"
-	"salas.h"
-	"funciones.h"
-
-1762056889 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\peliculas.h
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\salas.h
-
-1762147234 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\funciones.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762054284 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\fecha.c
-	"fecha.h"
-	<stdio.h>
-	<time.h>
-
-1762054284 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\ids.c
-	"ids.h"
-
-1762127551 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\main.c
-	<stdio.h>
-	<stdlib.h>
-	"menus.h"
-	"clientes.h"
-	"util.h"
-	"datos_prueba.h"
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\menus.h
-
-1762054284 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\datos_prueba.h
-
-1762152320 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\menus.c
-	<stdio.h>
-	<stdlib.h>
-	"menus.h"
-	"peliculas.h"
-	"ids.h"
-	"clientes.h"
-	"util.h"
-	"salas.h"
-	"funciones.h"
-	"reserva.h"
-
-1762140184 c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\reserva.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762057779 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\peliculas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"peliculas.h"
-	"ids.h"
-
-1762152024 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\reservas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"ids.h"
-	"salas.h"
-	"clientes.h"
-	"peliculas.h"
-	"funciones.h"
-	"reserva.h"
-	"estructuras.h"
-
-1762144114 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\salas.c
-	"salas.h"
-	"ids.h"
-	<stdio.h>
-	<string.h>
-
-1762054284 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\util.c
-	<stdlib.h>
-	"util.h"
-
-1762149551 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine-ramanati2\proyectocine-ramanati2\funciones.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"funciones.h"
-	"peliculas.h"
-	"salas.h"
-	"util.h"
-	"ids.h"
-	"fecha.h"
-	"estructuras.h"
-
-1762189761 c:\users\mateo\documents\unla\año 1\programación\proyectocine\estructuras.h
-
-1762189445 c:\users\mateo\documents\unla\año 1\programación\proyectocine\fecha.h
-
-1762189445 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\fecha.c
-	"fecha.h"
-	<stdio.h>
-	<time.h>
-
-1762200784 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\funciones.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"funciones.h"
-	"peliculas.h"
-	"salas.h"
-	"util.h"
-	"ids.h"
-	"fecha.h"
-	"estructuras.h"
-
-1762198085 c:\users\mateo\documents\unla\año 1\programación\proyectocine\funciones.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762189445 c:\users\mateo\documents\unla\año 1\programación\proyectocine\datos_prueba.h
-
-1762201804 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\menus.c
+1762231236 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -620,219 +438,21 @@
 	"reserva.h"
 	"reportes.h"
 
-1762200660 c:\users\mateo\documents\unla\año 1\programación\proyectocine\reserva.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762200651 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\reservas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"ids.h"
-	"salas.h"
-	"clientes.h"
-	"peliculas.h"
-	"funciones.h"
-	"reserva.h"
-	"estructuras.h"
-
-1762195829 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\datos_prueba.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"estructuras.h"
-	"ids.h"
-	"clientes.h"
-	"peliculas.h"
-	"salas.h"
-	"funciones.h"
-
-1762201859 source:c:\users\mateo\documents\unla\año 1\programación\proyectocine\reportes.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"reportes.h"
-	"peliculas.h"
-	"funciones.h"
-	"reserva.h"
-	"clientes.h"
-	"salas.h"
-	"fecha.h"
-
-1762201430 c:\users\mateo\documents\unla\año 1\programación\proyectocine\reportes.h
-
-1762202119 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/clientes.c
-	<stdio.h>
-	<string.h>
-	<stdlib.h>
-	<stdbool.h>
-	"clientes.h"
-	"ids.h"
-	"util.h"
-	"fecha.h"
-	"estructuras.h"
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/clientes.h
-	"estructuras.h"
-	<stdbool.h>
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/estructuras.h
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/ids.h
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/util.h
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/fecha.h
-
-1762210380 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/datos_prueba.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"estructuras.h"
-	"ids.h"
-	"clientes.h"
-	"peliculas.h"
-	"salas.h"
-	"funciones.h"
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/peliculas.h
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/salas.h
-
-1762212389 /home/estudiante/Escritorio/ProyectoCine-SaruRama/funciones.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762202119 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/fecha.c
-	"fecha.h"
-	<stdio.h>
-	<time.h>
-
-1762212478 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/funciones.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"funciones.h"
-	"peliculas.h"
-	"salas.h"
-	"util.h"
-	"ids.h"
-	"fecha.h"
-	"estructuras.h"
-
-1762202119 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/ids.c
-	"ids.h"
-
-1762202119 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/main.c
-	<stdio.h>
-	<stdlib.h>
-	"menus.h"
-	"clientes.h"
-	"util.h"
-	"datos_prueba.h"
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/menus.h
-
-1762202119 /home/estudiante/Escritorio/ProyectoCine-SaruRama/datos_prueba.h
-
-1762213492 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/peliculas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"peliculas.h"
-	"ids.h"
-
-1762212790 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/reservas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"ids.h"
-	"salas.h"
-	"clientes.h"
-	"peliculas.h"
-	"funciones.h"
-	"reserva.h"
-	"estructuras.h"
-
-1762208925 /home/estudiante/Escritorio/ProyectoCine-SaruRama/reserva.h
-	<stdbool.h>
-	"estructuras.h"
-	"fecha.h"
-
-1762202119 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/salas.c
-	"salas.h"
-	"ids.h"
-	<stdio.h>
-	<string.h>
-
-1762202119 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/util.c
-	<stdlib.h>
-	"util.h"
-
-1762211045 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/menus.c
-	<stdio.h>
-	<stdlib.h>
-	"menus.h"
-	"peliculas.h"
-	"ids.h"
-	"clientes.h"
-	"util.h"
-	"salas.h"
-	"funciones.h"
-	"reserva.h"
-	"reportes.h"
-
-1762207363 /home/estudiante/Escritorio/ProyectoCine-SaruRama/reportes.h
+1762229097 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\reportes.h
 	"reserva.h"
 
-1762210381 source:/home/estudiante/Escritorio/ProyectoCine-SaruRama/reportes.c
+1762228859 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\reservas.h
+	<stdbool.h>
+
+1762229028 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\peliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"reportes.h"
+	"util.h"
 	"peliculas.h"
-	"funciones.h"
-	"reserva.h"
-	"clientes.h"
-	"salas.h"
-	"fecha.h"
-
-1762224903 source:c:\users\sofic\desktop\proyectocine-sarurama\fecha.c
-	"fecha.h"
-	<stdio.h>
-	<time.h>
-
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\fecha.h
-
-1762221568 source:c:\users\sofic\desktop\proyectocine-sarurama\ids.c
 	"ids.h"
 
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\ids.h
-
-1762225715 source:c:\users\sofic\desktop\proyectocine-sarurama\main.c
-	<stdio.h>
-	<stdlib.h>
-	"menus.h"
-	"clientes.h"
-	"util.h"
-	"datos_prueba.h"
-
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\menus.h
-
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\clientes.h
-	"estructuras.h"
-	<stdbool.h>
-
-1762223849 c:\users\sofic\desktop\proyectocine-sarurama\estructuras.h
-
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\util.h
-
-1762227028 c:\users\sofic\desktop\proyectocine-sarurama\datos_prueba.h
-
-1762225973 source:c:\users\sofic\desktop\proyectocine-sarurama\reportes.c
+1762229028 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\reportes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -845,89 +465,7 @@
 	"fecha.h"
 	"util.h"
 
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\reportes.h
-	"reserva.h"
-
-1762225199 c:\users\sofic\desktop\proyectocine-sarurama\reserva.h
-	<stdbool.h>
-	"estructuras.h"
-	"fecha.h"
-	"funciones.h"
-
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\peliculas.h
-
-1762225854 c:\users\sofic\desktop\proyectocine-sarurama\funciones.h
-	<stdbool.h>
-	"estructuras.h"
-
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\salas.h
-
-1762221568 source:c:\users\sofic\desktop\proyectocine-sarurama\util.c
-	<stdlib.h>
-	"util.h"
-
-1762223849 source:c:\users\sofic\desktop\proyectocine-sarurama\clientes.c
-	<stdio.h>
-	<string.h>
-	<stdlib.h>
-	<stdbool.h>
-	"clientes.h"
-	"ids.h"
-	"util.h"
-	"fecha.h"
-	"estructuras.h"
-
-1762226997 source:c:\users\sofic\desktop\proyectocine-sarurama\datos_prueba.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"ids.h"
-	"clientes.h"
-	"peliculas.h"
-	"salas.h"
-	"funciones.h"
-	"datos_prueba.h"
-
-1762225859 source:c:\users\sofic\desktop\proyectocine-sarurama\funciones.c
-	<stdio.h>
-	<string.h>
-	<stdbool.h>
-	"funciones.h"
-	"peliculas.h"
-	"salas.h"
-	"util.h"
-	"ids.h"
-	"fecha.h"
-	"estructuras.h"
-
-1762225715 source:c:\users\sofic\desktop\proyectocine-sarurama\menus.c
-	<stdio.h>
-	<stdlib.h>
-	"menus.h"
-	"peliculas.h"
-	"ids.h"
-	"clientes.h"
-	"util.h"
-	"salas.h"
-	"funciones.h"
-	"reserva.h"
-	"reportes.h"
-
-1762225199 source:c:\users\sofic\desktop\proyectocine-sarurama\peliculas.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"util.h"
-	"peliculas.h"
-	"ids.h"
-
-1762223849 source:c:\users\sofic\desktop\proyectocine-sarurama\salas.c
-	"salas.h"
-	"ids.h"
-	<stdio.h>
-	<string.h>
-
-1762225214 source:c:\users\sofic\desktop\proyectocine-sarurama\reservas.c
+1762231876 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\reservas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -939,4 +477,33 @@
 	"funciones.h"
 	"reserva.h"
 	"estructuras.h"
+
+1762229028 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\salas.c
+	"salas.h"
+	"ids.h"
+	<stdio.h>
+	<string.h>
+
+1762229028 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\util.c
+	<stdlib.h>
+	"util.h"
+
+1762229437 source:c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\clientes.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdbool.h>
+	"clientes.h"
+	"ids.h"
+	"util.h"
+	"fecha.h"
+	"estructuras.h"
+
+1762223849 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\estructuras.h
+
+1762229096 c:\users\sofic\desktop\proyectocine-b6de6a58c501b69d515fd115c6ffa3a8d2cd1071\reserva.h
+	<stdbool.h>
+	"estructuras.h"
+	"fecha.h"
+	"funciones.h"
 

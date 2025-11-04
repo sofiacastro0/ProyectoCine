@@ -31,11 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename=".gitignore" />
-		<Unit filename="ProyectoCine.cbp" />
-		<Unit filename="ProyectoCine.depend" />
-		<Unit filename="ProyectoCine.layout" />
-		<Unit filename="README.md" />
 		<Unit filename="clientes.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -44,7 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="datos_prueba.h" />
-		<Unit filename="estructuras.h" />
 		<Unit filename="fecha.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -72,10 +66,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="reportes.h" />
-		<Unit filename="reserva.h" />
 		<Unit filename="reservas.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="reservas.h" />
 		<Unit filename="salas.c">
 			<Option compilerVar="CC" />
 		</Unit>

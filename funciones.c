@@ -200,6 +200,9 @@ void modificarFuncion(){
                     }
                     funciones[i].idSala = modificacion.idSala;
                     printf("Sala actualizada correctamente\n");
+                    printf("Presione Enter para continuar...");
+                    getchar(); // espera a que el usuario presione Enter
+                    getchar();
                     break;
                 }
 
@@ -228,8 +231,11 @@ void modificarFuncion(){
                                     errorHoraFuncion=true;
                                     printf("ERROR: Fecha y Hora invalida\n");
                                 }
-
                             } while (errorHoraFuncion);
+                            printf("Fecha y hora modificadas correctamente");
+                            printf("Presione Enter para continuar...");
+                            getchar();
+                            getchar();
                             break;
 
                     case 3: do {
@@ -247,11 +253,18 @@ void modificarFuncion(){
 
                             } while (errorPrecio);
                             printf("Precio actualizado correctamente\n");
-
+                            printf("Presione Enter para continuar...");
+                            getchar();
+                            getchar();
                             break;
 
-                    case 4: break;
+                    case 0: printf("Volviendo al menu anterior");
+                            printf("Presione Enter para continuar...");
+                            getchar();
+                            getchar();
+                            break;
                     default: printf("Opcion invalida\n"); break;
+
                 }
                 return;
         }
@@ -328,7 +341,7 @@ void buscarFuncionesPorHorario() {
                 // busca datos de las peliculas con ese horario
                 for (int j = 0; j < cantidadPelis; j++) {
                     if (peliculas[j].id == funciones[i].idPelicula && peliculas[j].altaObaja) {
-                        printf("Pelicula: %s | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d | Genero: %s | Idioma: %s\n",
+                        printf("Pelicula: %s | Sala: %d | Fecha: %d/%d/%d | Hora: %02d:%02d | Genero: %s | Idioma: %s\n",
                                peliculas[j].titulo,
                                funciones[i].idSala,
                                funciones[i].fecha.dia,
@@ -360,7 +373,7 @@ void buscarFuncionesPorPelicula() {
     printf("\n--- Titulos de peliculas disponibles ---\n");
         for(int i = 0; i < cantidadPelis; i++){
             if(peliculas[i].altaObaja){
-                printf("Nº %d: %s\n", i+1, peliculas[i].titulo);
+                printf("%s\n", peliculas[i].titulo);
         }
     }
 
@@ -403,7 +416,7 @@ void buscarFuncionesPorIdioma(){
     char idiomaBuscado[50];
 
     printf("\n--- Idiomas de peliculas disponibles ---\n");
-    printf("1. Español\n2. Inglés\n3. Francés\n4. Portugués\n5. Japonés\n6. Coreano\n7. Italiano\n");
+    printf("Español\nIngles\nFrances\nPortugues\nJapones\nCoreano\nItaliano\n");
 
     printf("Ingrese el idioma de la película: ");
     scanf(" %50[^\n]", idiomaBuscado);
@@ -445,16 +458,16 @@ void buscarFuncionesPorGenero(){
     char generoBuscado[50];
 
     printf("\n--- Generos de peliculas disponibles ---\n");
-    printf("1. Acción\n2. Aventura\n3. Ciencia ficción\n4. Fantasía\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animación\n10. Documental\n");
+    printf("Accion\nAventura\nCiencia ficcion\nFantasia\nTerror\nComedia\nRomance\nDrama\nAnimacion\nDocumental\n");
 
-    printf("Ingrese el genero de la película: ");
+    printf("Ingrese el genero de la pelicula: ");
     scanf(" %50[^\n]", generoBuscado);
 
     bool encontrado=false;
     for (int i=0; i<cantidadPelis; i++) {
         if (peliculas[i].altaObaja && strcmp(peliculas[i].genero, generoBuscado)==0) {
             encontrado = true;
-            printf("Película del genero: %s\n", peliculas[i].genero);
+            printf("Pelicula del genero: %s\n", peliculas[i].genero);
 
             // Buscar funciones de esa película
             for (int j=0; j < cantFunciones; j++) {
@@ -476,7 +489,7 @@ void buscarFuncionesPorGenero(){
     }
 
     if (!encontrado)
-        printf("No se encontró ninguna película con ese genero.\n");
+        printf("No se encontro ninguna pelicula con ese genero.\n");
 
     printf("\nPresione Enter para continuar...");
     getchar(); getchar();
@@ -488,14 +501,14 @@ void buscarFuncionesPorDisponibilidad(){
     printf("BUSCAR FUNCIONES...\n");
     printf("1. Con disponibilidad\n");
     printf("2. Sin disponibilidad\n");
-    printf("Ingrese opción: ");
+    printf("Ingrese opcion: ");
     scanf("%d", &opcionCliente);
 
     switch(opcionCliente) {
         case 1:
             for (int i=0; i<cantFunciones; i++){
                     if(hayDisponibilidadEnFuncion(funciones[i].id)==true){
-                        printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                        printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %02d:%02d\n",
                            funciones[i].id,
                            funciones[i].idSala,
                            funciones[i].fecha.dia,
@@ -511,7 +524,7 @@ void buscarFuncionesPorDisponibilidad(){
         case 2:
             for (int i=0; i<cantFunciones; i++){
                     if(hayDisponibilidadEnFuncion(funciones[i].id)==false){
-                        printf("Función ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
+                        printf("Funcion ID: %d | Sala: %d | Fecha: %d/%d/%d | Hora: %d:%d\n",
                            funciones[i].id,
                            funciones[i].idSala,
                            funciones[i].fecha.dia,
@@ -525,7 +538,7 @@ void buscarFuncionesPorDisponibilidad(){
             getchar();
          break;
         default:
-             printf("Opción inválida.\n");
+             printf("Opcion invalida.\n");
             getchar();
             getchar();
     }
