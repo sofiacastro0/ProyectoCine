@@ -43,7 +43,7 @@ void buscarFuncionesPorDisponibilidad();
 
 int fechasIguales(Fecha a, Fecha b);
 int horaEnMinutos(Hora hora);
-int haySolapamiento(int ix, int idSala, Fecha fecha, Hora horaInicio, int duracion);
+int haySolapamiento(int idSala, Fecha fecha, Hora horaInicio, int duracion);
 int funcionYaEmpezo(Funcion funcion);
 int butacasDisponibles(Funcion funcion);
 

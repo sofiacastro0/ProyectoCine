@@ -102,7 +102,7 @@ void altaFuncion(){
     } while (errorHoraFuncion);
 
     //Validación de solapamiento
-    if(haySolapamiento(-1, alta.idSala, alta.fecha, alta.horaInicio, alta.duracionConLimpieza)) {
+    if(haySolapamiento(alta.idSala, alta.fecha, alta.horaInicio, alta.duracionConLimpieza)) {
         printf("No se puede programar la funcion: se superpone con otra en la misma sala\n");
         return;
     }
@@ -194,7 +194,7 @@ void modificarFuncion(){
                         printf("La sala seleccionada no esta activa\n");
                         break;
                     }
-                    if(haySolapamiento(i, modificacion.idSala, funciones[i].fecha, funciones[i].horaInicio, funciones[i].duracionConLimpieza)) {
+                    if(haySolapamiento(modificacion.idSala, funciones[i].fecha, funciones[i].horaInicio, funciones[i].duracionConLimpieza)) {
                         printf("Esta sala tiene otra funcion en ese horario\n");
                         break;
                     }
@@ -213,7 +213,7 @@ void modificarFuncion(){
                                 fechaCompleta horaFuncion = {modificacion.fecha.dia, modificacion.fecha.mes, modificacion.fecha.anio, modificacion.horaInicio.hora, modificacion.horaInicio.minuto};
 
                                 if (fecha_es_valida(horaFuncion) && fechaFuncionValida(modificacion.fecha, modificacion.horaInicio)==1){
-                                    if(haySolapamiento(i, funciones[i].idSala, modificacion.fecha, modificacion.horaInicio, funciones[i].duracionConLimpieza)) {
+                                    if(haySolapamiento(funciones[i].idSala, modificacion.fecha, modificacion.horaInicio, funciones[i].duracionConLimpieza)) {
                                         printf("Esta sala tiene otra funcion en ese horario\n");
                                         errorHoraFuncion=true;
                                     } else {
@@ -539,7 +539,7 @@ int horaEnMinutos(Hora hora) {    //pasa las horas a minutos, ej: 12h = 720m
     return hora.hora * 60 + hora.minuto;
 }
 
-int haySolapamiento(int ix, int idSala, Fecha fecha, Hora horaInicio, int duracion) {
+int haySolapamiento(int idSala, Fecha fecha, Hora horaInicio, int duracion) {
     int inicioNueva = horaEnMinutos(horaInicio);
     int finNueva = inicioNueva + duracion;
 

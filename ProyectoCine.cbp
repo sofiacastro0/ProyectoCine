@@ -31,6 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename=".gitignore" />
+		<Unit filename="ProyectoCine.cbp" />
+		<Unit filename="ProyectoCine.depend" />
+		<Unit filename="ProyectoCine.layout" />
+		<Unit filename="README.md" />
 		<Unit filename="clientes.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -22,7 +22,7 @@ extern int cantClientes;
 Reserva reservas[MAX_RESERVAS];
 int cantidadReservas = 0;
 
-static int reservasActivasDeCliente(int idCliente, int idFuncion){
+int reservasActivasDeCliente(int idCliente, int idFuncion){
     int total = 0;
         for (int i = 0; i < cantidadReservas; i++) {
             if (reservas[i].idCliente == idCliente && reservas[i].idFuncion == idFuncion && reservas[i].estado.activa) {
@@ -32,8 +32,7 @@ static int reservasActivasDeCliente(int idCliente, int idFuncion){
     return total;
 }
 
-int clasificacionAInt(const char *clasificacion) { ///////////////////////////////////////////////////////////
-    char aux[3];
+int clasificacionAInt(const char *clasificacion) {
     if (strcmp(clasificacion, "ATP") == 0) return 0;
     if (clasificacion[0] == '+')return atoi(clasificacion + 1);
          //atoi pasa de string a num entero

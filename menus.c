@@ -12,10 +12,8 @@
 
 int idCliente;
 
-
 void inicioCliente() {
     int opcion=1;
-    char tecla;
         limpiarPantalla();
         printf("---- Gestion de Clientes ----\n");
         printf("1. Registrarse\n");
@@ -26,23 +24,18 @@ void inicioCliente() {
 
         switch (opcion) {
             case 1: altaCliente();
-            menuCliente();
-                break;
-
-            case 2: if (iniciarSesion()){
-                        menuCliente();
-                        }
+                    menuCliente();
                     break;
-            case 0: break;
 
+            case 2: if (iniciarSesion()){ menuCliente(); } break;
+            case 0: break;
             default: printf("Opcion invalida\n"); break;
-            }
+        }
 }
 
 void menuCliente() {
     int opcion = -1;
     char tecla;
-
     do {
         limpiarPantalla();
         printf("--------- Menu Cliente -----------\n");
@@ -58,73 +51,59 @@ void menuCliente() {
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 
-
         while ((tecla = getchar()) != '\n' && tecla != EOF) {}
 
         switch(opcion) {
-            case 1:
-                menuBuscarFunciones();
-                break;
-
+            case 1: menuBuscarFunciones(); break;
             case 2:
                 limpiarPantalla();
                 mostrarButacasDisponibles();
-                printf("Presione Enter para continuar...");
-                getchar();
                 break;
 
             case 3:
                 limpiarPantalla();
                 reservar();
-                printf("Presione Enter para continuar...");
-                getchar();
                 break;
 
             case 4:
                 limpiarPantalla();
                 cancelarReserva();
-                printf("Presione Enter para continuar...");
-                getchar();
                 break;
 
             case 5:
                 limpiarPantalla();
                 verMisReservas();
-                printf("Presione Enter para continuar...");
-                getchar();
                 break;
 
             case 6:
                 limpiarPantalla();
                 bajaCliente();
-                printf("Presione Enter para continuar...");
-                getchar();
                 break;
 
             case 7:
                 limpiarPantalla();
                 modificacionCliente();
-                printf("Presione Enter para continuar...");
-                getchar();
                 break;
 
-            case 0:
-                printf("Volviendo al menu principal...\n"); break;
+            case 0: printf("Volviendo al menu principal...\n"); break;
                 break;
 
             default:
                 limpiarPantalla();
                 printf("La opcion %d no existe en el menu.\n", opcion);
-                printf("Presione Enter para continuar...");
-                getchar();
                 break;
+
+            if(opcion != 0){
+                printf("Presione Enter para continuar...");
+                getchar(); getchar();
+            }
+
         }
     } while(opcion != 0);
 }
 //menu administrador//
 void menuAdmin(){
     int opcion = -1;
-    char tecla;
     do {
         limpiarPantalla();
         printf("------- Menu Administrador -------\n");
@@ -153,10 +132,10 @@ void menuAdmin(){
 
 //Switch en una sola linea para que sea mas prolijo de leer
                     switch(opcionPeli) {
-                        case 1: altaPeli(); break; //Listo
-                        case 2: bajaPeli(); break; //Listo
-                        case 3: modificacionPeli(); break; //Listo
-                        case 4: listaDePelis(); break; //Listo
+                        case 1: altaPeli(); break;
+                        case 2: bajaPeli(); break;
+                        case 3: modificacionPeli(); break;
+                        case 4: listaDePelis(); break;
                         case 0: printf("Volviendo al menú admin...\n"); break;
                         default: printf("Opción inválida\n"); break;
                     }
@@ -216,7 +195,7 @@ void menuAdmin(){
                             printf("Escriba el ID del Cliente a consultar:\n");
                             scanf("%d", &idCliente);
                             historialCliente(idCliente);
-                        break;//Arreglar parametros en reportes.c
+                        break;
                         }
 
                         case 0: printf("Volviendo al menú anterior...\n"); break;
@@ -250,8 +229,6 @@ void menuAdmin(){
                         case 0: printf("Volviendo al menú anterior...\n"); break;
                         default: printf("Opción inválida.\n");
                     }
-
-
                 }
                 break;
             }
@@ -309,6 +286,3 @@ void menuAdmin(){
     return;
 
 }
-
-
-

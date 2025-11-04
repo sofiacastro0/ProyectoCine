@@ -190,9 +190,10 @@ void historialCliente(int idCliente) {
                 printf("Asistida\n");
             }
         }
-        return;
     }
-    printf("El cliente no tiene reservas\n");
+    if (!hayReservas) {
+        printf("El cliente no tiene reservas\n");
+    }
 }
 //Testear
 void reportePromedio() {

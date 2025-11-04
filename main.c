@@ -5,8 +5,6 @@
 #include "util.h"
 #include "datos_prueba.h"
 
-//revisar todos los "Presione Enter para continuar."
-
 int main() {
     cargarDatosDePrueba();
     int seleccion = -1;
@@ -25,17 +23,10 @@ int main() {
         scanf("%d",&seleccion);
 
             switch (seleccion) {
-                case 1: // cliente
-                    inicioCliente();
-                    break;
-                case 2: // admin
-                    menuAdmin(); //maneja su propio submenú
-                    break;
-                case 0:
-                    break;
-                default:
-                    printf("Opcion invalida\n");
-                    break;
+                case 1: inicioCliente(); break;
+                case 2: menuAdmin(); break; //maneja su propio submenú
+                case 0: break;
+                default: printf("Opcion invalida\n"); break;
             }
 
             if(seleccion!=0){  //limpia el buffer

@@ -800,7 +800,7 @@
 	"salas.h"
 	"fecha.h"
 
-1762221568 source:c:\users\sofic\desktop\proyectocine-sarurama\fecha.c
+1762224903 source:c:\users\sofic\desktop\proyectocine-sarurama\fecha.c
 	"fecha.h"
 	<stdio.h>
 	<time.h>
@@ -812,7 +812,7 @@
 
 1762221568 c:\users\sofic\desktop\proyectocine-sarurama\ids.h
 
-1762221568 source:c:\users\sofic\desktop\proyectocine-sarurama\main.c
+1762225715 source:c:\users\sofic\desktop\proyectocine-sarurama\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -830,9 +830,9 @@
 
 1762221568 c:\users\sofic\desktop\proyectocine-sarurama\util.h
 
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\datos_prueba.h
+1762227028 c:\users\sofic\desktop\proyectocine-sarurama\datos_prueba.h
 
-1762224145 source:c:\users\sofic\desktop\proyectocine-sarurama\reportes.c
+1762225973 source:c:\users\sofic\desktop\proyectocine-sarurama\reportes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -848,7 +848,7 @@
 1762221568 c:\users\sofic\desktop\proyectocine-sarurama\reportes.h
 	"reserva.h"
 
-1762224521 c:\users\sofic\desktop\proyectocine-sarurama\reserva.h
+1762225199 c:\users\sofic\desktop\proyectocine-sarurama\reserva.h
 	<stdbool.h>
 	"estructuras.h"
 	"fecha.h"
@@ -856,7 +856,7 @@
 
 1762221568 c:\users\sofic\desktop\proyectocine-sarurama\peliculas.h
 
-1762221568 c:\users\sofic\desktop\proyectocine-sarurama\funciones.h
+1762225854 c:\users\sofic\desktop\proyectocine-sarurama\funciones.h
 	<stdbool.h>
 	"estructuras.h"
 
@@ -877,7 +877,7 @@
 	"fecha.h"
 	"estructuras.h"
 
-1762223849 source:c:\users\sofic\desktop\proyectocine-sarurama\datos_prueba.c
+1762226997 source:c:\users\sofic\desktop\proyectocine-sarurama\datos_prueba.c
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
@@ -886,8 +886,9 @@
 	"peliculas.h"
 	"salas.h"
 	"funciones.h"
+	"datos_prueba.h"
 
-1762223849 source:c:\users\sofic\desktop\proyectocine-sarurama\funciones.c
+1762225859 source:c:\users\sofic\desktop\proyectocine-sarurama\funciones.c
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
@@ -899,7 +900,7 @@
 	"fecha.h"
 	"estructuras.h"
 
-1762223849 source:c:\users\sofic\desktop\proyectocine-sarurama\menus.c
+1762225715 source:c:\users\sofic\desktop\proyectocine-sarurama\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -912,7 +913,7 @@
 	"reserva.h"
 	"reportes.h"
 
-1762223849 source:c:\users\sofic\desktop\proyectocine-sarurama\peliculas.c
+1762225199 source:c:\users\sofic\desktop\proyectocine-sarurama\peliculas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -926,7 +927,7 @@
 	<stdio.h>
 	<string.h>
 
-1762224437 source:c:\users\sofic\desktop\proyectocine-sarurama\reservas.c
+1762225214 source:c:\users\sofic\desktop\proyectocine-sarurama\reservas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

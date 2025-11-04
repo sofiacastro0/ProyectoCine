@@ -143,7 +143,7 @@ void modificacionPeli() {
 
     int opcionIdioma;
     printf("Idioma anterior: %s\n",peliculas[i].idioma);
-    printf("\Reingrese el idioma:\n");
+    printf("Reingrese el idioma:\n");
     printf("1. Español\n2. Ingles\n3. Frances\n4. Portugues\n5. Japones\n6. Coreano\n7. Italiano\n");
     printf("Opción: ");
     scanf("%d", &opcionIdioma);
@@ -162,7 +162,7 @@ void modificacionPeli() {
 
     int opcionGenero;
     printf("Genero anterior: %s\n",peliculas[i].genero);
-    printf("\Reingrese el genero:\n");
+    printf("Reingrese el genero:\n");
     printf("1. Accion\n2. Aventura\n3. Ciencia ficcion\n4. Fantasia\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animacion\n10. Documental\n");
     printf("Opción: ");
     scanf("%d", &opcionGenero);

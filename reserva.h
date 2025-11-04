@@ -27,7 +27,7 @@ typedef struct {
 extern int cantidadReservas;
 extern Reserva reservas[MAX_RESERVAS];
 extern int asientosDisponibles;
-static int reservasActivasDeCliente(int idCliente, int idFuncion);
+int reservasActivasDeCliente(int idCliente, int idFuncion);
 
 void reservar();
 void verMisReservas();
