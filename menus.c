@@ -168,7 +168,7 @@ void menuAdmin(){
                 int opcionSala = -1;
                 while(opcionSala != 0){
                     limpiarPantalla();
-                    printf("\n--- GESTIÓN DE SALAS ---\n");
+                    printf("\n--- GESTION DE SALAS ---\n");
                     printf("1. Alta de sala\n");
                     printf("2. Baja de sala\n");
                     printf("3. Modificacion de sala\n");

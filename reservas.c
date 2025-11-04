@@ -278,7 +278,7 @@ void cancelarReserva() {
 
 void mostrarButacasDisponibles() {
     int idFuncion;
-    printf("\nIngrese ID de la función: ");
+    printf("\nIngrese ID de la funcion: ");
     scanf("%d", &idFuncion);
     getchar();
 
@@ -292,7 +292,7 @@ void mostrarButacasDisponibles() {
             return;
         }
     }
-    printf("No se encontró la función.\n\n");
+    printf("No se encontro la función.\n\n");
     printf("Presione Enter para continuar...");
     getchar();
 }
@@ -309,7 +309,7 @@ void asistencia(int idFuncion) {
     }
 
     if (asistencia) {
-        printf("Todas las reservas activas para la función %d han sido marcadas como asistidas (1).\n", idFuncion);
+        printf("Todas las reservas activas para la funcion %d han sido marcadas como asistidas (1).\n", idFuncion);
     } else {
         printf("No hay reservas activas para la función con ID: %d.\n", idFuncion);
     }

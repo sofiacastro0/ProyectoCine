@@ -307,7 +307,7 @@ void menuBuscarFunciones(){
         printf("4. Buscar funcion por Genero\n");
         printf("5. Buscar funcion por Disponibilidad\n");
         printf("0. Volver al menú anterior\n");
-        printf("Ingrese opción: ");
+        printf("Ingrese opcion: ");
         scanf("%d", &opcionCliente);
 
         switch(opcionCliente) {
@@ -316,8 +316,8 @@ void menuBuscarFunciones(){
             case 3: buscarFuncionesPorIdioma(); break;
             case 4: buscarFuncionesPorGenero(); break;
             case 5: buscarFuncionesPorDisponibilidad(); break;
-            case 0: printf("Volviendo al menú anterior...\n"); break;
-            default: printf("Opción inválida.\n");
+            case 0: printf("Volviendo al menu anterior...\n"); break;
+            default: printf("Opcion invalida.\n");
         }
     }
 }

@@ -213,7 +213,7 @@ void reportePromedio() {
 
         if (cantFuncionesSala > 0) {
             double promedio = (totalReservadas / (cantFuncionesSala * totalButacas) * 100.0);  //el total de butacas reservadas en esa funcion, dividido las funciones de esa sala * 272 (el total de butacas de esa sala) y todo multiplicado por 100
-            printf("Sala ID %d \n  %.2f%% ocupación promedio (%d funciones)\n", salas[i].id, promedio, cantFuncionesSala);
+            printf("Sala ID %d \n  %.2f%% ocupacion promedio (%d funciones)\n", salas[i].id, promedio, cantFuncionesSala);
         }
         else {
             printf("Sala ID %d sin funciones programadas\n", salas[i].id);
