@@ -4,7 +4,5 @@
 void inicioCliente();
 void menuCliente();
 void menuAdmin();
-
 void menuBuscarFunciones();
-
 #endif

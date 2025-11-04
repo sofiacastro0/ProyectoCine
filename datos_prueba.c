@@ -38,7 +38,6 @@ void cargarClientesDePrueba() {
     cantClientes = 10;
 }
 
-
 void cargarPeliculasDePrueba() {
     const char* titulos[10] = {
         "No soy un hombre facil", "Tierra de osos", "Iron Man 3",
@@ -67,7 +66,6 @@ void cargarPeliculasDePrueba() {
     cantidadPelis = 10;
 }
 
-
 void cargarSalasDePrueba() {
     for (int s = 0; s < 10; s++) {
         salas[s].id = generarId(ENTIDAD_SALA);
@@ -80,7 +78,6 @@ void cargarSalasDePrueba() {
     }
     cantidadSalas = 10;
 }
-
 
 void cargarFuncionesDePrueba() {
     for (int f = 0; f < 10; f++) {

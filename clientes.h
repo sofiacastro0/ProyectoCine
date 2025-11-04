@@ -1,4 +1,4 @@
-#include "util.h"
+#include "estructuras.h"
 
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
@@ -8,10 +8,10 @@ typedef struct {
     int id;
     int altaObaja;
     char nombre[51];
-    char email[51];         //que no se repita, si ya existe uno que pida ingresar
-    char contrasenia[31];   //min de longitud
-    int dni;                //numerico y unico
-    Fecha fechaNac;         //que sea valida la fecha
+    char email[51];
+    char contrasenia[31];
+    int dni;
+    Fecha fechaNac;
     int edad;
     int cantEntradas;
 } Cliente;

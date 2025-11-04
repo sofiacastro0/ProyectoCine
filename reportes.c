@@ -4,10 +4,11 @@
 #include "reportes.h"
 #include "peliculas.h"
 #include "funciones.h"
-#include "reservas.h"
+#include "reserva.h"
 #include "clientes.h"
 #include "salas.h"
 #include "fecha.h"
+#include "util.h"
 
 #define CANT_GENEROS 10
 
@@ -160,8 +161,64 @@ void listarReservasActivas() {
         printf("No hay reservas activas registradas.\n");
     }
 }
-void historialReservasCliente() {}
-void reporteOcupacionSalas(){}
+void historialCliente(int idCliente) {
+    int hayReservas=0;  //ponemos la variable "hayReservas?" en 0, para arrancar como si no hubiera ningun tipo de reservas
+    char nombre[50];
+
+    //Buscamos al cliente para poder mostrar su nombre e id
+    for (int j = 0; j < cantClientes; j++ ) {
+        if(clientes[j].id == idCliente){
+            strcpy(nombre, clientes[j].nombre); //copiamos el nombre del cliente en una variable nombre
+        }
+    }
+
+    printf("El historial de reservas del cliente: %s, con ID: %d\n", nombre, idCliente);
+    for (int i = 0 ; i < cantidadReservas; i++) {  //Recorremos la cantidad de reservas
+        if(reservas[i].idCliente == idCliente){  //Comparamos si el id de la reserva coincide con el id del cliente
+            hayReservas = 1;                     //Si encuentra una coincidencia, hay una reserva
+            printf("Reserva: %d, funcion %d, cantidad de entradas %d\n", reservas[i].id, reservas[i].idFuncion, reservas[i].cantidad); //Imprimimos los datos de la reserva encontrada
+
+    //Acá evalúa el estado de la reserva (Con la estructura EstadoReserva en reserva.h) y muestra en pantalla el estado dependiendo si tienen un 1 como valor.
+            printf ("Estado: ");
+            if (reservas[i].estado.activa) {
+                printf("Activa\n");
+            }
+            if (reservas[i].estado.cancelada) {
+                printf("Cancelada\n");
+            }
+            if (reservas[i].estado.asistida) {
+                printf("Asistida\n");
+            }
+        }
+        return;
+    }
+    printf("El cliente no tiene reservas\n");
+}
+//Testear
+void reportePromedio() {
+    printf("Promedio de ocupacion\n");
+
+    for (int i = 0; i < cantidadSalas; i++) { //recorremos las salas con i
+        int totalButacas = MAX_FILAS * MAX_COLUMNAS;
+        int totalReservadas = 0; //Inicializo una cumulador de reservas en 0 para la sala actual en i,
+        int cantFuncionesSala = 0;//sumamos las butacas reservadas de cada función de la sala (si coincide con el id de la funcion)
+
+        for (int j = 0; j < cantFunciones; j++) { //recorremos la cantidad de funciones con j
+            if (funciones[j].idSala == salas[i].id) { //vamos a las funciones y buscamos el id de la sala en la que están (con el for de i), lo igualamos al id de la sala
+                totalReservadas += funciones[j].cantidadReservas; //el total de butacas reservadas se suma con las butacas reservadas de cada funcion en cada sala
+                cantFuncionesSala++; //incremento en 1 el contador de funciones que pertenecen a la sala
+            }
+        }
+
+        if (cantFuncionesSala > 0) {
+            double promedio = (totalReservadas / (cantFuncionesSala * totalButacas) * 100.0);  //el total de butacas reservadas en esa funcion, dividido las funciones de esa sala * 272 (el total de butacas de esa sala) y todo multiplicado por 100
+            printf("Sala ID %d \n  %.2f%% ocupación promedio (%d funciones)\n", salas[i].id, promedio, cantFuncionesSala);
+        }
+        else {
+            printf("Sala ID %d sin funciones programadas\n", salas[i].id);
+        }
+    }
+}
 void generosMasVistos() {
     printf("\n\n--- Ranking de Generos Mas Vistos ---\n");
 
@@ -238,8 +295,8 @@ void generosMasVistos() {
 
     printf("\n");
 }
-void listadoCancelaciones(Reserva reservas[], int cantidadReservas, Cliente clientes[], int cantClientes) {
-    /*
+void listadoCancelaciones() {
+    limpiarPantalla();
     printf("Reporte de cancelaciones cronologicamente\n");
 
     for (int i = 0; i < cantidadReservas - 1; i++) {//con este tomamos una reserva del arreglo
@@ -268,15 +325,22 @@ void listadoCancelaciones(Reserva reservas[], int cantidadReservas, Cliente clie
     if (reservas[i].estado.cancelada) { //si encuentro
          for (int c = 0; c < cantClientes; c++) { //recorro clientes
             if (clientes[c].id == reservas[i].idCliente) { //y busco quien canceló. Sería que: si el id del cliente coincide con el id del cliente que hizo la reserva, entoncces imprimimos la reserva cancelada
-                printf("Cliente:%s \n ID Reserva: %d \n Función: %d \n Entradas: %d\nFecha %02d/%02d/%04d\n",clientes[c].nombre,reservas[i].id,reservas[i].idFuncion,reservas[i].cantidad,  reservas[i].fechaReserva.dia,reservas[i].fechaReserva.mes,reservas[i].fechaReserva.anio);;
+                printf("Cliente:%s \n ID Reserva: %d \n Función: %d \n Entradas: %d\nFecha %d/%d/%d\n",
+                clientes[c].nombre,
+                reservas[i].id,
+                reservas[i].idFuncion,
+                reservas[i].cantidad,
+                reservas[i].fechaReserva.dia,
+                reservas[i].fechaReserva.mes,
+                reservas[i].fechaReserva.anio);
             }
         }
     }
 
   }
-          printf("\nPresione Enter para volver al menú de reportes...");
+          printf("\nPresione Enter para volver al menú de reportes...\n");
 getchar(); // espera a que el usuario presione Enter
-*/
+
 }
 void listadoClientesMayorCantidadReservas(){
     printf("\n\n--- Clientes con Mayor Cantidad de Reservas ---\n");

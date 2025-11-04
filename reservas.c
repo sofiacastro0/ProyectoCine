@@ -7,8 +7,8 @@
 #include "clientes.h"
 #include "peliculas.h"
 #include "funciones.h"
-#include "reservas.h"
-#include "reportes.h"
+#include "reserva.h"
+#include "estructuras.h"
 
 extern Funcion funciones[];
 extern int cantFunciones;
@@ -22,16 +22,29 @@ extern int cantClientes;
 Reserva reservas[MAX_RESERVAS];
 int cantidadReservas = 0;
 
-int clasificacionAInt(const char *clasificacion) {
+static int reservasActivasDeCliente(int idCliente, int idFuncion){
+    int total = 0;
+        for (int i = 0; i < cantidadReservas; i++) {
+            if (reservas[i].idCliente == idCliente && reservas[i].idFuncion == idFuncion && reservas[i].estado.activa) {
+                total += reservas[i].cantidad;
+            }
+        }
+    return total;
+}
+
+int clasificacionAInt(const char *clasificacion) { ///////////////////////////////////////////////////////////
+    char aux[3];
     if (strcmp(clasificacion, "ATP") == 0) return 0;
-    if (clasificacion[0] == '+') return atoi(clasificacion + 1); //atoi pasa de string a num entero
+    if (clasificacion[0] == '+')return atoi(clasificacion + 1);
+         //atoi pasa de string a num entero
     return atoi(clasificacion);
 }
+
 int edadMinima(int edadCliente, int clasificacion) {
     if (clasificacion == 0) return 1; // ATP seria 0
     return edadCliente >= clasificacion;
 }
-//ver esto pq no sé usar time
+
 void sugerirFuncionesAlt(Funcion funcionAlt) {
     printf("Sugerencias:\n");
     for (int i = 0; i < cantFunciones; i++) {
@@ -42,12 +55,14 @@ void sugerirFuncionesAlt(Funcion funcionAlt) {
         }
     }
 }
+
 void reservar() {
-    int dni, idFuncion, entradas;
+    int dni, idFuncion, entradas, entradasDisponibles;
+    int maxEntradas, entradasYaReservadas, entradasRestantes, maxReservables;
 
     printf("Ingrese DNI: ");
     scanf("%d", &dni);
-
+    //Busca DNI ingresa y si lo encuentra, guarda la posición del DNI en el array de CLientes.
     int posCliente = -1;
     for (int i = 0; i < cantClientes; i++) {
         if (clientes[i].dni == dni && clientes[i].altaObaja) {
@@ -55,14 +70,17 @@ void reservar() {
             break;
         }
     }
-
+    //Si no, cancela la reserva.
     if (posCliente == -1) {
         printf("DNI no encontrado.\n");
+        getchar();
         return;
     }
 
+    //Busca la Funcion y guarda la posición de la misma en el array de Funcion.
     printf("Ingrese ID de la función elegida: ");
     scanf("%d", &idFuncion);
+    getchar();
 
     int posFuncion = -1;
     for (int j = 0; j < cantFunciones; j++) {
@@ -71,40 +89,49 @@ void reservar() {
             break;
         }
     }
-
+    //Si no, cancela la reserva
     if (posFuncion == -1) {
         printf("No se encontró la función con ese ID.\n");
         return;
     }
 
-    int clasificacionNum = clasificacionAInt(
-        peliculas[funciones[posFuncion].idPelicula].clasificacion);
+    //Guarda la clasificación de la pelicula dada en la función pedida.
+    int clasificacionNum = clasificacionAInt(peliculas[funciones[posFuncion].idPelicula].clasificacion);
 
     if (!edadMinima(clientes[posCliente].edad, clasificacionNum)) {
         printf("El cliente no cumple con la edad mínima.\n");
+        getchar();
         return;
     }
 
+    //ENTRADAS: Posibles a reservar, ya reservadas y las disponibles
+    //Del cliente
+    maxEntradas = clientes[posCliente].cantEntradas;
+    entradasYaReservadas = reservasActivasDeCliente(clientes[posCliente].id, funciones[posFuncion].id);
+    entradasRestantes = maxEntradas - entradasYaReservadas;
+    //De la función
+    entradasDisponibles = (MAX_FILAS*MAX_COLUMNAS) - funciones[posFuncion].cantidadReservas;
 
-int maxEntradas;
+    if (entradasRestantes<=entradasDisponibles) maxReservables = entradasRestantes;
+    if (entradasRestantes>entradasDisponibles) maxReservables = entradasDisponibles;
 
-if (clientes[posCliente].edad >= 18) {
-    maxEntradas = 5;
-} else {
-    maxEntradas = 1;
-}
-printf("¿Cuántas entradas desea reservar? (maximo %d):", maxEntradas);
-scanf("%d", &entradas);
-
-if (entradas > maxEntradas) {
-    printf("Supera el límite permitido.\n");
+    if (entradasRestantes <= 0) {
+    printf("Alcanzaste el maximo de entradas permitidas para esta funcion.\n");
     return;
-}
+    }
 
-    int disponibles = (MAX_FILAS*MAX_COLUMNAS)-funciones[posFuncion].cantidadReservas;
-    if (entradas > disponibles) {
-        printf("No hay suficientes butacas.\n");
+    printf("¿Cuántas entradas desea reservar? (maximo %d):", maxReservables);
+    scanf("%d", &entradas);
+
+    if (entradas > entradasDisponibles) {
+        printf("No hay suficientes butacas para esa cantidad de entradas.\n");
         sugerirFuncionesAlt(funciones[posFuncion]);
+        return;
+    }
+
+    if (entradas < 1 || entradas > maxReservables) {
+        printf("Cantidad invalida. Debe estar entre 1 y %d.\n", maxReservables);
+        getchar();
         return;
     }
 
@@ -114,6 +141,9 @@ if (entradas > maxEntradas) {
     nueva.idFuncion = funciones[posFuncion].id;
     nueva.cantidad = entradas;
     nueva.estado.activa = 1;
+    nueva.estado.cancelada = 0;
+    nueva.estado.asistida  = 0;
+    nueva.fechaReserva = fecha_actual();
 
     reservas[cantidadReservas++] = nueva;
     funciones[posFuncion].cantidadReservas += entradas;
@@ -149,7 +179,11 @@ if (entradas > maxEntradas) {
                precioEntrada,
                nueva.cantidad,
                total);
+
+    printf("Reserva generada con ID: %d\n", nueva.id);
+    getchar();
 }
+
 void verMisReservas() {
     int dni;
     printf("Ingrese su DNI: ");
@@ -167,7 +201,6 @@ void verMisReservas() {
     if (idCliente == -1) {
         printf("Cliente no encontrado.\n");
         printf("Presione Enter para continuar...");
-        getchar();
         return;
     }
 
@@ -204,35 +237,20 @@ void verMisReservas() {
          printf("Presione Enter para continuar...");
          getchar();
 }
+
+
 void cancelarReserva() {
-    int dni;
-    printf("Ingrese su DNI: ");
-    scanf("%d", &dni);
-    getchar(); // limpia el '\n' que queda en el buffer
-
-    int idCliente = -1;
-    for (int i = 0; i < cantClientes; i++) {
-        if (clientes[i].dni == dni) {
-            idCliente = clientes[i].id;
-            break;
-        }
-    }
-
-    if (idCliente == -1) {
-        printf("Cliente no encontrado.\n");
-        printf("Presione Enter para continuar...");
-        getchar();
-        return;
-    }
-
     int idReserva;
+
+    verMisReservas();
+
     printf("Ingrese el ID de la reserva a cancelar: ");
     scanf("%d", &idReserva);
 
     for (int i = 0; i < cantidadReservas; i++) {
         if (reservas[i].id == idReserva && reservas[i].estado.activa) {
             reservas[i].estado.activa = 0;
-
+            reservas[i].estado.cancelada = 1;
             for (int j = 0; j < cantFunciones; j++) {
                 if (funciones[j].id == reservas[i].idFuncion) {
                     funciones[j].cantidadReservas -= reservas[i].cantidad;
@@ -245,6 +263,7 @@ void cancelarReserva() {
     }
     printf("No se encontró la reserva.\n");
 }
+
 void mostrarButacasDisponibles() {
     int idFuncion;
     printf("Ingrese ID de la función: ");
@@ -264,6 +283,8 @@ void mostrarButacasDisponibles() {
     printf("Presione Enter para continuar...");
     getchar();
 }
+
+
 void asistencia(int idFuncion) {
     int asistencia = 0;
 
@@ -280,6 +301,7 @@ void asistencia(int idFuncion) {
         printf("No hay reservas activas para la función con ID: %d.\n", idFuncion);
     }
 }
+
 int obtenerDiaSemana(Fecha fecha) {
     int dia = fecha.dia;
     int mes = fecha.mes;
@@ -329,4 +351,3 @@ int aplicarDescuento(Funcion funcion, int precioBase) {
 
     return precioBase;
 }
-

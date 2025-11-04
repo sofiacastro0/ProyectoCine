@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#include "util.h"
+#include "estructuras.h"
 
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
@@ -15,7 +15,7 @@ typedef struct {
     Hora horaInicio;
     int duracionConLimpieza;
     int precio;
-    int cantidadReservas;   // Cada vez que se hace una reserva = cantidadReservas++
+    int cantidadReservas;
     int reservasAsistidas;
 } Funcion;
 
@@ -26,8 +26,12 @@ void altaFuncion();
 void bajaFuncion();
 void modificarFuncion();
 
-bool fechaFuncionValida(Fecha fecha, Hora hora);
+void listarFunciones();
+
+int fechaFuncionValida(Fecha fecha, Hora hora);
 bool precioValido(int precio);
+bool hayDisponibilidadEnFuncion(int idFuncion);
+void actualizarReservasAsistidas();
 
 void menuBuscarFunciones();
 
@@ -36,7 +40,6 @@ void buscarFuncionesPorPelicula();
 void buscarFuncionesPorIdioma();
 void buscarFuncionesPorGenero();
 void buscarFuncionesPorDisponibilidad();
-void actualizarReservasAsistidas();
 
 int fechasIguales(Fecha a, Fecha b);
 int horaEnMinutos(Hora hora);

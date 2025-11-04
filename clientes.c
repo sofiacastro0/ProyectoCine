@@ -6,6 +6,7 @@
 #include "ids.h"
 #include "util.h"
 #include "fecha.h"
+#include "estructuras.h"
 
 #define CANT_MAX_CLIENTES 100
 Cliente clientes[CANT_MAX_CLIENTES];
@@ -62,12 +63,17 @@ void altaCliente(){
     do {
     printf("Email:  ");
     scanf(" %50[^\n]", email);
+        if (!formatoEmailValido(email)){
+            printf("ERROR: Formato de Email invalido\n");
+            errorEmail=true;
+        }else if (!emailUnico(email,clientes,cantClientes)){
+            printf("ERROR: Su email ya está registrado\n");
+            errorEmail=true;
+        }
+
         if (formatoEmailValido(email) && emailUnico(email,clientes,cantClientes)){
             strcpy(alta.email, email);
             errorEmail=false;
-        } else {
-            errorEmail=true;
-            printf("ERROR: Email invalido\n");
         }
     } while (errorEmail);
 
@@ -86,29 +92,35 @@ void altaCliente(){
     do {
     printf("DNI:  ");
     scanf("%d", &dni);
+
+    if (!dniValido(dni)){
+            printf("ERROR: El formato o DNI es invalido\n");
+            errorDni=true;
+        }else if (!dniUnico(dni, clientes, cantClientes)){
+            printf("ERROR: Su DNI ya está registrado\n");
+            errorDni=true;
+        }
+
         if (dniValido(dni) && dniUnico(dni, clientes, cantClientes)){
             alta.dni = dni;
             errorDni=false;
-        } else {
-            errorDni=true;
-            printf("ERROR: DNI invalido\n");
         }
     } while (errorDni);
 
     do {
-    printf("Fecha de nacimiento (dd/mm/aaaa): ");  //Arreglar lo de la fecha de nacimiento
+    printf("Fecha de nacimiento (dd/mm/aaaa): ");
     scanf(" %d/%d/%d", &dia, &mes, &anio);
         fechaCompleta nacimiento = {dia, mes, anio, -1, -1};
         if (fecha_es_valida(nacimiento)){
             fechaCompleta hoy = fecha_actual();
-            if (comparar_fechas(nacimiento, hoy) <= 0) {
+            if (comparar_fechas(nacimiento, hoy)<=0) {
                 alta.fechaNac.dia = dia;
                 alta.fechaNac.mes = mes;
                 alta.fechaNac.anio = anio;
                 errorFechaNac=false;
-            } else {
-                errorFechaNac=true;
-                printf("ERROR: La fecha de nacimiento no puede ser futura\n");
+            }else {
+            errorFechaNac=true;
+            printf("ERROR: Fecha de nacimiento no puede ser futura\n");
             }
         } else {
             errorFechaNac=true;
@@ -119,7 +131,7 @@ void altaCliente(){
     fechaCompleta nacimiento = {dia, mes, anio, -1, -1};
     fechaCompleta hoy = fecha_actual();
     alta.edad = diferencia_anios(nacimiento, hoy);
-    if (alta.edad > 18){
+    if (alta.edad >= 18){
         alta.cantEntradas = 5;
     } else {
         alta.cantEntradas = 1;
@@ -134,9 +146,10 @@ void altaCliente(){
     printf("La cantidad de entradas que podes adquirir es de: %d\n", alta.cantEntradas);
 
         printf("Presione Enter para continuar...");
-            getchar(); //limpia buffer
+            getchar();
             getchar(); // espera enter
 }
+
 void bajaCliente(){
     int i=0;
     bool encontrado=false;
@@ -156,7 +169,8 @@ void bajaCliente(){
                 printf("Este cliente ya fue dado de baja\n");
             } else {
                 clientes[i].altaObaja = 0;
-                printf("Su cuenta se dio de baja correctamente\n");   // falta confirmacion
+                printf("Su cuenta se dio de baja correctamente\n");
+                getchar();
             }
             return;
         }
@@ -169,6 +183,7 @@ void bajaCliente(){
 
     return;
 }
+
 void modificacionCliente(){
 
     Cliente modificacion;
@@ -248,7 +263,7 @@ void modificacionCliente(){
                             } while (errorDni);
                             break;
 
-                     case 5: do {
+                    case 5: do {
                             printf("Fecha de nacimiento anterior: %d/%d/%d. Nueva Fecha de nacimiento: ",clientes[i].fechaNac.dia, clientes[i].fechaNac.mes, clientes[i].fechaNac.anio);
                             scanf(" %d/%d/%d", &modificacion.fechaNac.dia, &modificacion.fechaNac.mes, &modificacion.fechaNac.anio);
                                 fechaCompleta nacimiento = {modificacion.fechaNac.dia, modificacion.fechaNac.mes, modificacion.fechaNac.anio, -1,-1};
@@ -298,7 +313,7 @@ void modificacionCliente(){
 
 }
 
-void listarClientes() {  //esta lista tiene que estar en administrador
+void listarClientes() {
 
     printf("\n--- Listado de Clientes ---\n");
     if (cantClientes == 0) {
@@ -326,7 +341,8 @@ void listarClientes() {  //esta lista tiene que estar en administrador
 bool formatoEmailValido(char email[]){
     bool hayArroba=false;
     bool hayPunto=false;
-
+    int len = strlen(email);
+    if (!(len<8)) {
         for (int i=0; i<strlen(email); i++) {
             if (email[i] == '@'){
                 hayArroba=true;
@@ -338,6 +354,7 @@ bool formatoEmailValido(char email[]){
         if (hayArroba && hayPunto){
             return true;
         }
+    }
     return false;
 }
 bool emailUnico(char email[], Cliente clientes[], int cant){

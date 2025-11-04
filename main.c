@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "menus.h"
 #include "clientes.h"
-#include "util.h"+
+#include "util.h"
 #include "datos_prueba.h"
 
 //revisar todos los "Presione Enter para continuar."
@@ -15,7 +15,7 @@ int main() {
     do {
         limpiarPantalla();
         printf("---------------------------------\n");
-        printf("   Sistema de Reservas de Cine\n");
+        printf("          Cine Hoyts \n");
         printf("---------------------------------\n");
         printf("1. Operar como Cliente\n");
         printf("2. Operar como Administrador\n");

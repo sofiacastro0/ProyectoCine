@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// Alta de sala hay que indicar que le pongan un nombre a la sala
-// Modificacion de sala se puede elegir modificar el nombre
-
 Sala salas[MAX_SALAS];  // Array de salas
 int cantidadSalas = 0;  // Contador de salas actuales
 
@@ -30,6 +27,7 @@ void altaSala() {
 
     printf("Sala agregada. ID: %d\n", nueva.id);
 }
+
 void bajaSala() {
     int id;
     printf("Ingrese ID de sala a dar de baja: ");
@@ -44,6 +42,7 @@ void bajaSala() {
     }
     printf("No se encontro sala activa con ese ID %d\n", id);
 }
+
 void modificarSala() {
     int id;
     printf("Ingrese ID de sala que quiere modificar: ");
@@ -61,8 +60,9 @@ void modificarSala() {
     }
     printf("No se encontro sala activa con ese ID %d\n", id);
 }
+
 //Pusimos un max de 16 filas y 17 columnas , por eso da igual a 272 butacas
-//lista de salas
+
     void listarSalas() {
     printf("Lista de salas \n");
     for(int i = 0; i < cantidadSalas; i++) {
@@ -77,7 +77,7 @@ void modificarSala() {
     }
 }
 
-int salaEstaActiva(int idSala) {
+int salaEstaActiva(int idSala){
     for(int i = 0; i < cantidadSalas; i++) {
         if(salas[i].id == idSala) {
             return salas[i].activo;
@@ -85,6 +85,3 @@ int salaEstaActiva(int idSala) {
     }
     return 0;
 }
-
-
-

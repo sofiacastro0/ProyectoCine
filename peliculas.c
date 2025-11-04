@@ -31,9 +31,10 @@ void altaPeli() {
     printf("Ingrese clasificacion (ATP, +13, +16, +18): ");
     scanf(" %s", alta.clasificacion);
 
+
     int opcionIdioma;
     printf("\nSeleccione el idioma:\n");
-    printf("1. Español\n2. Inglés\n3. Francés\n4. Portugués\n5. Japonés\n6. Coreano\n7. Italiano\n");
+    printf("1. Español\n2. Ingles\n3. Frances\n4. Portugues\n5. Japones\n6. Coreano\n7. Italiano\n");
     printf("Opción: ");
     scanf("%d", &opcionIdioma);
 
@@ -48,9 +49,10 @@ void altaPeli() {
         default: strcpy(alta.idioma, "Sin definir"); break;
     }
 
+
     int opcionGenero;
     printf("\nSeleccione el genero:\n");
-    printf("1. Acción\n2. Aventura\n3. Ciencia ficción\n4. Fantasía\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animación\n10. Documental\n");
+    printf("1. Accion\n2. Aventura\n3. Ciencia ficcion\n4. Fantasia\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animacion\n10. Documental\n");
     printf("Opción: ");
     scanf("%d", &opcionGenero);
 
@@ -77,6 +79,7 @@ void altaPeli() {
 
     printf("Pelicula cargada con ID %d\n", alta.id);
 }
+
 void bajaPeli() {
     if (cantidadPelis==0){
         printf("No hay peliculas registradas\n");
@@ -93,12 +96,13 @@ void bajaPeli() {
                 printf("Esta pelicula ya fue dada de baja\n");
             } else {
                 peliculas[i].altaObaja = 0;
-                printf("La pelicula se dio de baja correctamente\n");  // falta confirmacion
+                printf("La pelicula se dio de baja correctamente\n");
             }
             return;
         }
     }
 }
+
 void modificacionPeli() {
     int encontrado=0;
     int i=0;
@@ -124,32 +128,73 @@ void modificacionPeli() {
                 return;
             }
 
-            printf("Reingrese titulo: ");
-            scanf(" %[^\n]", modificacion.titulo);
+    printf("Titulo anterior: %s\n",peliculas[i].titulo);
+    printf("Reingrese titulo: ");
+    scanf(" %50[^\n]", modificacion.titulo);
 
-            printf("Reingrese duracion (minutos): ");
-            scanf("%d", &modificacion.duracion);
+    printf("Duracion anterior: %d\n",peliculas[i].duracion);
+    printf("Reingrese duracion (minutos): ");
+    scanf("%d", &modificacion.duracion);
 
-            printf("Reingrese clasificacion (ATP, +13, +16, +18): ");
-            scanf(" %s", modificacion.clasificacion);
+    printf("Clasificacion anterior: %s\n",peliculas[i].clasificacion);
+    printf("Reingrese clasificacion (ATP, +13, +16, +18): ");
+    scanf(" %s", modificacion.clasificacion);
 
-            printf("Reingrese idioma: ");
-            scanf(" %[^\n]", modificacion.idioma);
 
-            printf("Reingrese genero: ");
-            scanf(" %[^\n]", modificacion.genero);
+    int opcionIdioma;
+    printf("Idioma anterior: %s\n",peliculas[i].idioma);
+    printf("\Reingrese el idioma:\n");
+    printf("1. Español\n2. Ingles\n3. Frances\n4. Portugues\n5. Japones\n6. Coreano\n7. Italiano\n");
+    printf("Opción: ");
+    scanf("%d", &opcionIdioma);
 
-            printf("Reingrese formato (2D, 3D, 4D): ");
-            scanf(" %s", modificacion.formato);
+    switch(opcionIdioma) {
+        case 1: strcpy(modificacion.idioma, "Español"); break;
+        case 2: strcpy(modificacion.idioma, "Ingles"); break;
+        case 3: strcpy(modificacion.idioma, "Frances"); break;
+        case 4: strcpy(modificacion.idioma, "Portugues"); break;
+        case 5: strcpy(modificacion.idioma, "Japones"); break;
+        case 6: strcpy(modificacion.idioma, "Coreano"); break;
+        case 7: strcpy(modificacion.idioma, "Italiano"); break;
+        default: strcpy(modificacion.idioma, "Sin definir"); break;
+    }
 
-            peliculas[i] = modificacion;
-            printf("Pelicula ID %d modificada correctamente.\n", peliculas[i].id);
+
+    int opcionGenero;
+    printf("Genero anterior: %s\n",peliculas[i].genero);
+    printf("\Reingrese el genero:\n");
+    printf("1. Accion\n2. Aventura\n3. Ciencia ficcion\n4. Fantasia\n5. Terror\n6. Comedia\n7. Romance\n8. Drama\n9. Animacion\n10. Documental\n");
+    printf("Opción: ");
+    scanf("%d", &opcionGenero);
+
+    switch(opcionGenero) {
+        case 1: strcpy(modificacion.genero, "Accion"); break;
+        case 2: strcpy(modificacion.genero, "Aventura"); break;
+        case 3: strcpy(modificacion.genero, "Ciencia Ficcion"); break;
+        case 4: strcpy(modificacion.genero, "Fantasia"); break;
+        case 5: strcpy(modificacion.genero, "Terror"); break;
+        case 6: strcpy(modificacion.genero, "Comedia"); break;
+        case 7: strcpy(modificacion.genero, "Romance"); break;
+        case 8: strcpy(modificacion.genero, "Drama"); break;
+        case 9: strcpy(modificacion.genero, "Animacion"); break;
+        case 10: strcpy(modificacion.genero, "Documental"); break;
+        default: strcpy(modificacion.genero, "Sin definir"); break;
+    }
+
+    printf("Formato anterior: %s",peliculas[i].formato);
+    printf("Reingrese formato (2D, 3D, 4D): ");
+    scanf(" %s", modificacion.formato);
+
+    peliculas[i] = modificacion;
+    printf("Pelicula ID %d modificada correctamente.\n", peliculas[i].id);
+
             return;
         }
         i++;
     }
     printf("No se ha encontrado ese ID.\n");
 }
+
 void listaDePelis() {
     printf("\n--- Listado de Peliculas ---\n");
     for(int i = 0; i < cantidadPelis; i++){
@@ -165,3 +210,5 @@ void listaDePelis() {
         }
     }
 }
+
+
