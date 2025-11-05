@@ -422,10 +422,10 @@ void buscarFuncionesPorIdioma(){
     scanf(" %50[^\n]", idiomaBuscado);
 
     bool encontrado=false;
+    printf("\n\nPelícula en idioma: %s\n", idiomaBuscado);
     for (int i=0; i<cantidadPelis; i++) {
         if (peliculas[i].altaObaja && strcmp(peliculas[i].idioma, idiomaBuscado)==0) {
             encontrado = true;
-            printf("Película en idioma: %s\n", peliculas[i].idioma);
 
             // Buscar funciones de esa película
             for (int j=0; j < cantFunciones; j++) {
@@ -464,10 +464,10 @@ void buscarFuncionesPorGenero(){
     scanf(" %50[^\n]", generoBuscado);
 
     bool encontrado=false;
+    printf("\n\nPelícula del genero: %s\n", generoBuscado);
     for (int i=0; i<cantidadPelis; i++) {
         if (peliculas[i].altaObaja && strcmp(peliculas[i].genero, generoBuscado)==0) {
             encontrado = true;
-            printf("Pelicula del genero: %s\n", peliculas[i].genero);
 
             // Buscar funciones de esa película
             for (int j=0; j < cantFunciones; j++) {

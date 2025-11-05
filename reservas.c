@@ -168,7 +168,7 @@ void reservar() {
            funciones[posFuncion].horaInicio.minuto);
 
     int precioEntradaBase = funciones[posFuncion].precio;
-    int precioEntrada = aplicarDescuento(funciones[posFuncion], precioEntradaBase);
+    int precioEntrada = aplicarDescuento(precioEntradaBase);
     int total = precioEntrada * nueva.cantidad;
 
         if (precioEntrada != precioEntradaBase) {
@@ -352,14 +352,15 @@ int obtenerDiaSemana(Fecha fecha) {
     */
 
 }
-int aplicarDescuento(Funcion funcion, int precioBase) {
-    int lunes = 1;
-    int martes = 2;
-    int miercoles = 3;
+int aplicarDescuento(int precioBase) {
+    fechaCompleta hoy = fecha_actual();
+    Fecha fHoy = {hoy.dia, hoy.mes, hoy.anio};
 
-    if (obtenerDiaSemana(funcion.fecha) == lunes || obtenerDiaSemana(funcion.fecha) == martes || obtenerDiaSemana(funcion.fecha) == miercoles) {
-        int precioConDescuento = precioBase / 2;
-        return precioConDescuento;
+    int diaSemana = obtenerDiaSemana(fHoy);
+
+    // lunes = 1, martes = 2, miércoles = 3
+    if (diaSemana == 1 || diaSemana == 2 || diaSemana == 3) {
+        return precioBase / 2;
     }
 
     return precioBase;

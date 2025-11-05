@@ -36,6 +36,6 @@ void mostrarButacasDisponibles();
 void asistencia(int idFuncion);
 
 int obtenerDiaSemana(Fecha fecha);
-int aplicarDescuento(Funcion funcion, int precioBase);
+int aplicarDescuento(int precioBase);
 
 #endif // RESERVA_H_INCLUDED

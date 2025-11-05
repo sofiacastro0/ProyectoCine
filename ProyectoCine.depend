@@ -101,7 +101,7 @@
 
 1762232133 c:\users\sofic\desktop\proyectocine-ramanati\menus.h
 
-1762188777 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
+1762233013 source:c:\users\sofic\desktop\proyectocine-ramanati\menus.c
 	<stdio.h>
 	<stdlib.h>
 	"menus.h"
@@ -111,8 +111,8 @@
 	"util.h"
 	"salas.h"
 	"funciones.h"
+	"reserva.h"
 	"reportes.h"
-	"reservas.h"
 
 1762232133 c:\users\sofic\desktop\proyectocine-ramanati\peliculas.h
 
@@ -305,7 +305,7 @@
 
 1762229028 c:\users\sofic\desktop\proyectocine-ramanati\fecha.h
 
-1762188124 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
+1762301270 source:c:\users\sofic\desktop\proyectocine-ramanati\funciones.c
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
@@ -315,31 +315,37 @@
 	"util.h"
 	"ids.h"
 	"fecha.h"
+	"estructuras.h"
 
 1762232133 c:\users\sofic\desktop\proyectocine-ramanati\funciones.h
 	<stdbool.h>
 	"estructuras.h"
 
-1762188105 c:\users\sofic\desktop\proyectocine-ramanati\reportes.h
+1762232133 c:\users\sofic\desktop\proyectocine-ramanati\reportes.h
+	"reserva.h"
 
-1762185736 source:c:\users\sofic\desktop\proyectocine-ramanati\reportes.c
+1762233007 source:c:\users\sofic\desktop\proyectocine-ramanati\reportes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"reportes.h"
 	"peliculas.h"
 	"funciones.h"
-	"reservas.h"
+	"reserva.h"
 	"clientes.h"
 	"salas.h"
+	"fecha.h"
+	"util.h"
 
 1762232133 c:\users\sofic\desktop\proyectocine-ramanati\datos_prueba.h
 
-1762119348 c:\users\sofic\desktop\proyectocine-ramanati\reserva.h
+1762299909 c:\users\sofic\desktop\proyectocine-ramanati\reserva.h
 	<stdbool.h>
 	"estructuras.h"
+	"fecha.h"
+	"funciones.h"
 
-1762188776 source:c:\users\sofic\desktop\proyectocine-ramanati\reservas.c
+1762299892 source:c:\users\sofic\desktop\proyectocine-ramanati\reservas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -349,8 +355,8 @@
 	"clientes.h"
 	"peliculas.h"
 	"funciones.h"
-	"reservas.h"
-	"reportes.h"
+	"reserva.h"
+	"estructuras.h"
 
 1762232133 source:c:\users\sofic\desktop\proyectocine-ramanati\datos_prueba.c
 	<stdio.h>
